@@ -1,0 +1,87 @@
+{%set
+  slider = {
+    slider: [
+      {
+        title: 'Вино красное Batono (saperavi)',
+        price: '<div class="price price--sm price--old price--red">2500<small>грн</small></div> <div class="price price--gray-dark">1150.00<small>грн</small></div> (0,75 л.)'
+      },
+      {
+        title: 'Вино красное Alazani Valley'
+      },
+      {
+        title: 'Вино белое Alazani Valley'
+      },
+      {
+        title: 'Вино красное iveria (saperavi)'
+      },
+      {
+        title: 'Вино белое Alazani Valley'
+      }
+    ]
+  }
+  %}
+
+<!-- begin slider -->
+<div class="slider__wrap slider--items__wrap js-tabs">
+
+
+  <div class="swiper-container js-slider" data-slider="items">
+    <div class="swiper-wrapper">
+      {% for i in slider.slider %}
+      <div class="swiper-slide">
+        <!-- begin item -->
+        <div class="item item--white">
+          <div class="item__label item__label-age">18+</div>
+          <!-- <div class="item__img js-lazy" data-background-image="img/slider/vine.png"> -->
+          <div class="item__img">
+            <img data-src="img/slider/vine.png" alt="" class="js-lazy">
+          </div>
+
+          <div class="item__title">{{ i.title }}</div>
+
+          <div class="item__price">
+            {% if i.price %}
+            {{ i.price | safe }}
+            {% else %}
+            <div class="price price--gray-dark">1150.00<small>грн</small></div> (0.75 л)
+            {% endif %}
+
+          </div>
+
+          <div class="item__counter">
+            <!-- begin counter -->
+            <div class="counter counter--white">
+              <div class="counter__inner">
+                <button>-</button>
+                <input type="text" value="1">
+                <button>+</button>
+              </div>
+            </div>
+            <!-- end counter -->
+          </div>
+
+          <div class="item__btn">
+            <!-- begin border -->
+            <div class="border border--sm-dark">
+
+              {{ mixins.btn(
+                  title = 'Заказать доставку',
+                  mod = 'btn--full'
+                ) }}
+            </div>
+            <!-- end border -->
+          </div>
+        </div>
+        <!-- end item -->
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="slider__btns">
+    <button class="slider__prev prev prev--white js-prev"></button>
+    <button class="slider__next next next--white js-next"></button>
+  </div>
+
+</div>
+<!-- end slider -->

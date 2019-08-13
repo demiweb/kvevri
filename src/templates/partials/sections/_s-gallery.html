@@ -1,0 +1,31 @@
+<!-- begin section -->
+<section class="section s-gallery bg-cover bg-center-center pt-xll pb-xl js-lazy" data-background-image="img/bg-section/bg-gallery.jpg">
+  <div class="section-img is-right is-top">
+    <img data-src="img/pngs/spice-03.png" alt="" class="js-lazy">
+  </div>
+  <div class="container">
+    <div class="section__title">
+      <h2 class="title title--white">Посмотрите на нашу фотогалерею</h2>
+
+      <div class="section__subttl">Мы очень гордимся своей сетью ресторанов и показываем
+          самые лучшие моменты в нашей галерее</div>
+    </div>
+  </div>
+
+  <!-- begin slider -->
+  <div class="slider__wrap slider--gallery__wrap">
+    <div class="swiper-container js-slider" data-slider="gallery">
+      <div class="swiper-wrapper">
+        {% for i in range(0, 10) %}
+          <div class="swiper-slide">
+            <!-- begin gallery-slide -->
+            <a href="#" class="gallery-slide js-lazy" data-background-image="img/gallery/01.jpg"></a>
+            <!-- end gallery-slide -->
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  <!-- end slider -->
+</section>
+<!-- end section -->

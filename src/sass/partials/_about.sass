@@ -1,0 +1,76 @@
+.about
+
+.about-block
+  $this: &
+  position: relative
+  +cover
+  background-size: auto
+  background-position: 0 100%
+  &:nth-child(1)
+    #{$this}__text
+      top: 10%
+      left: 15%
+      max-width: 595px
+  &:nth-child(2)
+    margin-top: -20px
+    +flex(flex-end)
+    #{$this}__text
+      max-width: 835px
+      top: 50%
+      transform: translate(0, -50%)
+      right: 30%
+    #{$this}__img
+      img[data-loaded="true"]
+        position: relative
+        right: -20%
+  &:nth-child(3)
+    +flex(flex-start, center)
+    #{$this}__img
+      width: percentage(5/12)
+      text-align: center
+      img
+        display: inline-block
+    #{$this}__qoute-fu
+      width: percentage(7/12)
+  &:nth-child(4)
+    +flex(flex-end)
+    margin-top: -100px
+    #{$this}__quote
+      position: absolute
+      top: 50%
+      transform: translate(0, -50%)
+      right: 40%
+    #{$this}__img
+  &__img
+    // +cover
+    // pt
+    border-radius: 15px
+    img
+      border-radius: 15px
+  &__img-right
+    position: absolute
+    top: -20px
+    right: 0
+    img[data-loaded="true"]
+      position: relative
+      right: -30%
+  &__text
+    position: absolute
+    z-index: 2
+    box-shadow: 0px 3px 57px 0px rgba(0, 0, 0, 0.11)
+    background-color: $white
+    border-radius: 15px
+    padding: 45px 15px 40px 50px
+    .title
+      margin-bottom: 20px
+      +md
+        margin-bottom: 10px
+    p
+      +notlast
+        margin-bottom: 30px
+        +md
+          margin-bottom: 15px
+  &__quote
+    max-width: 730px
+  &__quote-fu
+    max-width: 770px

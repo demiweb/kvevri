@@ -1,0 +1,111 @@
+{%set
+features = {
+  items: [
+    {
+      img: '01.png',
+      title: 'Только лучшие
+      сорта <em class="accent">мяса</em>',
+      text: '<p>Мы знаем, как отличить свежее мясо высшего сорта
+          от всего остального. Наши повара - специалисты
+          своего дела и никогда не возьмутся за плохо
+          пахнущий кусок мяса...</p>
+          <p>Кстати, каждое блюдо наши повара обязательно
+              пробуют лично. Можете нам доверять.</p>',
+      imgContent: 'tomato.png'
+    },
+    {
+      mod: '',
+      img: '02.png',
+      title: 'Отбираем только самые 
+      свежие <em class="accent">овощи</em>',
+      text: '<p>Мы знаем, где растет самая ароматная кинза и зреют
+          самые вкусные томаты. Используем только проверенных
+          поставщиков, которые гарантируют качество и соблюдение
+          всех норм санитарии...</p>
+          <p>Мы выбираем овощи без химических добавок и пестицидов,
+              поэтому вам и вашим детям ничего не грозит.</p>',
+      imgContent: ''
+    },
+    {
+      img: '03.png',
+      title: 'Выбираем только настоящие
+      грузинские <em class="accent">приправы</em>',
+      text: '<p>На втором месте по важности после выбора свежайших
+          продуктов для нас стоит качество приправ. 
+          Наш шеф-повар знает, как выбрать правильную
+          и настоящую грузинскую приправу...</p>
+          <p>Только настоящие уцхо-сунели и сванская соль для
+              настоящих ценителей Грузии.</p>',
+      imgContent: 'hach.png'
+    },
+    {
+      mod: '',
+      img: '04.png',
+      title: 'Используем муку 
+      высшего <em class="accent">сорта</em>',
+      text: '<p>Качество выпечки для грузина - это святое. Поэтому мы готовим
+          только лучшие хачапури в Киеве из правильной муки 
+          высочайшего качества. Мы понимаем важность каждого 
+          ингридиента и уделяем внимание каждой мелоче...
+          </p>
+          <p>Настоящие грузинские хачапури по-аджарски вы можете
+              попробовать только у нас.</p>',
+      imgContent: ''
+    }
+  ]
+}
+ %}
+
+<!-- begin section -->
+<section class="section s-features overflow-hidden bg-top-right pb-md js-lazy" data-background-image="img/bg-section/bg-feature.png">
+  <div class="section-img is-left is-top-center">
+    <img data-src="img/pngs/spice-05.png" alt="" class="js-lazy">
+  </div>
+  <div class="section-img is-right is-bottom">
+      <img data-src="img/pngs/berry-02.png" alt="" class="js-lazy">
+    </div>
+  <div class="container">
+    <div class="section__title section-title">
+      <div class="section-title__title">
+        <h2 class="title">Мы используем только самые <em class="accent">свежие</em> продукты </h2>
+      </div>
+
+      <div class="section-title__text">
+          Наш шеф-повар очень тщательно отбирает самые качественные <br>
+          продукты для наших блюд. А доверяем их приготовление <br>
+          мы только лучшим поварам Киева! 
+      </div>
+    </div>
+
+    <!-- begin features -->
+    <div class="features">
+      {% for i in features.items %}
+        <!-- begin feature -->
+        <div class="feature{% if i.mod %} {{ i.mod }}{% endif %}">
+          <div class="feature__img">
+            <img data-src="img/features/{{ i.img }}" alt="" class="js-lazy">
+          </div>
+
+          <div class="feature__content">
+            <div class="feature__title">
+              <h3 class="title title--h3">{{ i.title | safe  }}</h3>
+            </div>
+
+            <div class="feature__text">{{ i.text | safe }}</div>
+
+            {% if i.imgContent %}
+              <div class="feature__img-content">
+                <img data-src="img/features/{{ i.imgContent }}" alt="" class="js-lazy">
+              </div>
+            {% endif %}
+          </div>
+        </div>
+        <!-- end feature -->
+      {% endfor %}
+    </div>
+    <!-- end features -->
+  </div>
+
+
+</section>
+<!-- end section -->

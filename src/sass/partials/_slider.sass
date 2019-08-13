@@ -1,0 +1,104 @@
+.slider
+  &__wrap
+    position: relative
+    *
+      box-sizing: border-box
+    .swiper-slide
+      height: auto
+  &__tabs-nav
+    margin-bottom: 75px
+  &__tabs-item
+    max-height: 0
+    overflow: hidden
+    &.is-active
+      max-height: none
+      overflow: visible
+  &__btns
+    position: absolute
+    z-index: 1
+    top: 50%
+    transform: translate(0, -50%)
+    left: 0
+    right: 0
+
+  &--hero
+    &__wrap
+      .slider
+        &__prev
+          left: 40px
+        &__next
+          right: 40px
+  &--items
+    &__wrap
+      .swiper-container
+        // margin-left: auto
+        // margin-right: auto
+        // padding-left: 80px
+        // padding-right: 80px
+        // max-width: 1570px
+      .slider
+        &__prev
+          left: 0
+        &__next
+          right: 0
+        &__wrap
+          margin-left: auto
+          margin-right: auto
+          padding-left: 80px
+          padding-right: 80px
+          max-width: 1570px
+  &--gallery
+    &__wrap
+      .swiper-slide
+        width: 40%
+
+.prev,
+.next
+  width: 55px
+  height: 55px
+  border-radius: 50%
+  display: inline-flex
+  justify-content: center
+  align-items: center
+  background-color: rgba($black, .65)
+  position: absolute
+  top: 50%
+  transform: translate(0, -50%)
+  color: $white
+  z-index: 1
+  +tr(color .3s, background-color .3s)
+  +before
+    +icon-arrow(12, 12, 2, currentColor, 45)
+    display: inline-block
+    margin-left: 0.3em
+  &--gray
+    background-color: $gray
+  &--white
+    box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.1)
+    background-color: $white
+    color: $gray
+
+
+.next
+  +before
+    +rotate(225)
+    margin-left: 0
+    margin-right: 0.3em
+
+.slider-nav
+  text-align: center
+  color: $white
+  +light
+  &__btn
+    background-color: transparent
+    display: inline-block
+    padding: 8px 30px 10px
+    border-radius: 30px
+    border: 1px solid transparent
+    +tr(border-color .3s, color .3s)
+    text-align: center
+    &.is-active
+      border-color: $accent
+    +hover
+      @extend .slider-nav__btn.is-active
+

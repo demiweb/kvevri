@@ -1,0 +1,110 @@
+.section
+  position: relative
+  +cover
+  background-size: auto
+  background-position: 0 100%
+  &__title
+    text-align: center
+  &__title-left
+    max-width: 515px
+    margin-right: percentage(1/12)
+  &__layer
+    position: absolute
+    z-index: 0
+    left: 0
+    right: 0
+    top: 0
+    // background-color: $white
+    +flex(flex-end, normal, column)
+    +before
+      position: absolute
+      z-index: -1
+      background-color: $white
+      left: 0
+      right: 0
+      top: 0
+      bottom: 45px
+  &--black
+    background-color: $black
+  
+.section-img
+  position: absolute
+  z-index: 5
+  &.is-left
+    left: 0
+  &.is-bottom
+    bottom: 0
+  &.is-bottom-100
+    bottom: 10%
+  &.is-right
+    right: 0
+  &.is-top-center
+    top: 50%
+    transform: translate(0, -50%)
+  &.is-top
+    top: 0
+  &.is-top-100
+    top: 10%
+  &.is-top-200
+    top: 20%
+
+.section-title
+  $this: &
+  position: relative
+  max-width: 900px
+  margin-left: auto
+  margin-right: auto
+  
+  &__title
+    +image('border-title.png')
+    +cover
+    background-size: 100%
+    padding: 50px
+  &__text
+    transform: translate(0, -50%)
+  
+  &--light
+    #{$this}__title
+      +image('border-light.png')
+
+.s-hits
+  .section__layer
+    height: 135px
+  .section__title
+    margin-bottom: 65px
+    +xl
+      margin-bottom: 50px
+    +lg
+      margin-bottom: 40px
+    +md
+      margin-bottom: 30px
+    +sm
+      margin-bottom: 20px
+
+.s-vine
+  .section-title
+    margin-bottom: 90px
+
+.s-features-item
+  min-height: 80vh
+
+.s-delivery
+  .section__title
+    max-width: 565px
+    margin-left: auto
+    margin: auto
+.s-gallery
+  .section__title
+    max-width: 605px
+    margin-left: auto
+    margin-right: auto
+    margin-bottom: 70px
+    .title
+      margin-bottom: 25px
+
+.s-contacts
+  .section__title
+    max-width: 705px
+    margin-left: auto
+    margin: auto
+    margin-bottom: 30px

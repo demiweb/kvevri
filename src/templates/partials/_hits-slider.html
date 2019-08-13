@@ -1,0 +1,219 @@
+{%set
+slider = {
+  tabs: [
+    {
+      active: true,
+      btn: 'Горячие блюда',
+      tab: 'main_course',
+      slider: [
+        {
+          label: true,
+          title: 'кебаб из курицы'
+        },
+        {
+          title: 'шашлык из свинины'
+        },
+        {
+          title: 'форель на мангале'
+        },
+        {
+          title: 'шашлык из свинины'
+        },
+        {
+          title: 'форель на мангале'
+        }
+      ]
+    },
+    {
+      btn: 'Салаты',
+      tab: 'salad',
+      slider: [
+        {
+          label: true,
+          title: 'кебаб из курицы'
+        },
+        {
+          title: 'шашлык из свинины'
+        },
+        {
+          title: 'форель на мангале'
+        },
+        {
+          title: 'шашлык из свинины'
+        },
+        {
+          title: 'форель на мангале'
+        }
+      ]
+    },
+    {
+      tab: 'appetizer',
+      btn: 'Холодные закуски',
+      slider: [
+        {
+          label: true,
+          title: 'кебаб из курицы'
+        },
+        {
+          title: 'шашлык из свинины'
+        },
+        {
+          title: 'форель на мангале'
+        },
+        {
+          title: 'шашлык из свинины'
+        },
+        {
+          title: 'форель на мангале'
+        }
+      ]
+    },
+    {
+      tab: 'greel',
+      btn: 'Мангал/Гриль',
+      slider: [
+        {
+          label: true,
+          title: 'кебаб из курицы'
+        },
+        {
+          title: 'шашлык из свинины'
+        },
+        {
+          title: 'форель на мангале'
+        },
+        {
+          title: 'шашлык из свинины'
+        },
+        {
+          title: 'форель на мангале'
+        }
+      ]
+    },
+    {
+      tab: 'soup',
+      btn: 'Первые блюда',
+      slider: [
+        {
+          label: true,
+          title: 'кебаб из курицы'
+        },
+        {
+          title: 'шашлык из свинины'
+        },
+        {
+          title: 'форель на мангале'
+        },
+        {
+          title: 'шашлык из свинины'
+        },
+        {
+          title: 'форель на мангале'
+        }
+      ]
+    },
+    {
+      tab: 'bevarage',
+      btn: 'Напитки',
+      slider: [
+        {
+          label: true,
+          title: 'кебаб из курицы'
+        },
+        {
+          title: 'шашлык из свинины'
+        },
+        {
+          title: 'форель на мангале'
+        },
+        {
+          title: 'шашлык из свинины'
+        },
+        {
+          title: 'форель на мангале'
+        }
+      ]
+    }    
+  ]
+}
+%}
+
+<!-- begin slider -->
+<div class="slider__wrap slider--items__wrap js-tabs">
+  <div class="slider__tabs-nav">
+    <!-- begin slider-nav -->
+    <div class="slider-nav">
+      {% for i in slider.tabs %}
+      <button class="slider-nav__btn js-tab{% if i.active %} is-active{% endif %}"
+        data-target-tab="{{ i.tab }}">{{ i.btn }}</button>
+      {% endfor %}
+    </div>
+    <!-- end slider-nav -->
+  </div>
+
+
+  <div class="slider__tabs-items">
+    {% for i in slider.tabs %}
+    <div class="slider__tabs-item js-tabs-item{% if i.active %} is-active{% endif %} " data-tab="{{ i.tab }}">
+      <div class="slider__wrap">
+        <div class="swiper-container js-slider" data-slider="items">
+          <div class="swiper-wrapper">
+            {% for j in i.slider %}
+            <div class="swiper-slide">
+              <!-- begin item -->
+              <div class="item">
+                {% if j.label %}
+                <div class="item__label">акция</div>
+                {% endif %}
+                <!-- <div class="item__img js-lazy" data-background-image="img/slider/lulya3.png"> -->
+                <div class="item__img">
+                  <img data-src="img/slider/lulya3.png" alt="" class="js-lazy">
+                </div>
+
+                <div class="item__title">{{ j.title }}</div>
+
+                <div class="item__price">
+                  <div class="price">95.00<small>грн</small></div> (100 г)
+                </div>
+
+                <div class="item__counter">
+                  <!-- begin counter -->
+                  <div class="counter">
+                    <div class="counter__inner">
+                      <button>-</button>
+                      <input type="text" value="1">
+                      <button>+</button>
+                    </div>
+                  </div>
+                  <!-- end counter -->
+                </div>
+
+                <div class="item__btn">
+                  <!-- begin border -->
+                  <div class="border">
+
+                    {{ mixins.btn(
+                      title = 'Заказать доставку',
+                      mod = 'btn--full'
+                    ) }}
+                  </div>
+                  <!-- end border -->
+                </div>
+              </div>
+              <!-- end item -->
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+
+        <div class="slider__btns">
+          <button class="slider__prev prev prev--gray js-prev"></button>
+          <button class="slider__next next next--gray js-next"></button>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+</div>
+<!-- end slider -->

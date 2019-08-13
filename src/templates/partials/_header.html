@@ -1,0 +1,84 @@
+<!-- begin header -->
+<header class="header">
+  <div class="header__top">
+    <div class="container">
+      <div class="header__inner">
+        <div class="header__logo">
+          <a href="/" class="logo">
+            <img data-src="img/logo.png" alt="" class="js-lazy">
+          </a>
+        </div>
+
+        <div class="header__contact contact contact--first">
+          <div class="contact__title">Резерв столов:</div>
+          <a href="tel:+380987059474 " class="contact__phone">+380987059474</a>
+        </div>
+
+        <div class="header__contact contact">
+          <div class="contact__title">Заказать доставку:</div>
+          <a href="tel:+380737059474 " class="contact__phone">+380737059474</a>
+        </div>
+
+        <div class="header__top-right">
+          <div class="header__meta contact">
+            <div class="contact__title">Мы в соцсетях:</div>
+            <div class="contact__social">
+              {{ mixins.list(
+                name = 'social',
+                modifications = { wrap: '', item: '', link: '' },
+                list = [
+                  { link: mixins.icon('instagram') },
+                  { link: mixins.icon('google-plus') },
+                  { link: mixins.icon('facebook') }
+                ]
+              ) }}
+            </div>
+          </div>
+
+          <div class="header__meta contact">
+            <div class="contact__title">Радио “Квеври”</div>
+            <div class="contact__social-center">
+              {{ mixins.list(
+                name = 'social',
+                modifications = { wrap: '', item: '', link: '' },
+                list = [
+                  { link: mixins.icon('radio') }
+                ]
+              ) }}
+            </div>
+          </div>
+        </div>
+
+        <div class="header__cart">
+          <!-- begin header-cart -->
+          <div class="header-cart">
+            <div class="header-cart__icon">
+              {{ mixins.icon('shopping-bag') }}
+            </div>
+
+            <div class="header-cart__content">
+              <div class="header-cart__title">12 товаров на 4500 грн</div>
+              <a href="#">Оформить заказ</a>
+            </div>
+          </div>
+          <!-- end header-cart -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="header__bottom">
+    <div class="container">
+      <div class="header__inner">
+        {% include "partials/_nav.html" %}
+      </div>
+    </div>
+  </div>
+  <div class="header__marquee">
+    <!-- begin marquee -->
+    <div class="marquee">
+      <div class="marquee__text">Мастер-класс по приготовлению Хачапури по-Аджарски от бренд-шефа «Квеври». Пройдет меробриятие 18 сентября в нашем ресторане на строителей 34/1. Записать на мастер класс можно в разделе «События» </div>      
+    </div>
+    <!-- end marquee -->
+  </div>
+</header>
+<!-- end header -->

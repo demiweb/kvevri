@@ -1,0 +1,75 @@
+{%set
+items = [
+  {
+    title: 'Доставка',
+    img: '01.png',
+    text: 'Заказывайте доставку лучших грузинских
+    блюд в Киеве в офис или на дом.
+    Мин. сумма заказа - 500 грн',
+    btn: 'Заказать доставку'
+  },
+  {
+    title: 'Наши рестораны',
+    img: '02.png',
+    text: 'Посетите наши рестораны находятся
+    на ул. Строителей, Позняках и Гидропарке. 
+    Мы работаем с 11:00 до 23:30',
+    btn: 'Посетить ресторан'
+  },
+  {
+    title: 'Мероприятия',
+    img: '03.png',
+    text: 'Хотите устроить банкет, свадьбу или
+    тимбилдинг-вечеринку? Мы с радостью
+    организуем для вас любое мероприятие',
+    btn: 'Заказать мероприятие'
+  }
+]  
+%}
+
+<!-- begin section -->
+<section class="section s-delivery bg-cover bg-center-center pt-xl pb-lgl js-lazy" data-background-image="img/bg-section/bg-delivery.jpg">
+  <div class="section__layer">
+    <img data-src="img/bg-layer-02.png" alt="" class="js-lazy">
+  </div>
+
+  <div class="section-img is-right is-top-200">
+    <img data-src="img/pngs/spice-02.png" alt="" class="js-lazy">
+  </div>
+  <div class="container">
+    <div class="section__title section-title section-title--light">
+      <div class="section-title__title">
+        <h2 class="title title--white">Уже <em class="accent">готовы</em>
+            попробовать?</h2>
+      </div>
+    </div>
+
+    <!-- begin del-items -->
+    <div class="del-items">
+      {% for i in items %}
+        <!-- begin del-item -->
+        <div class="del-item__wrap">
+          <div class="del-item">
+            <div class="del-item__img">
+              <img data-src="img/delivery/{{ i.img }}" alt="" class="js-lazy">
+            </div>
+
+            <div class="del-item__title">{{ i.title }}</div>
+
+            <div class="del-item__text">{{ i.text }}</div>
+
+            <div class="del-item__btn border">
+              {{ mixins.btn(
+                title = i.btn,
+                mod = 'btn--transp btn--full'
+              ) }}
+            </div>
+          </div>
+        </div>
+        <!-- end del-item -->
+      {% endfor %}
+    </div>
+    <!-- end del-items -->
+  </div>
+</section>
+<!-- end section -->

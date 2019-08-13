@@ -1,0 +1,26 @@
+.btn
+  display: inline-block
+  background-color: $accent
+  border: 1px solid $accent
+  text-align: center
+  color: $white
+  min-width: 265px
+  padding: 16px 10px
+  border-radius: 30px
+  +semi
+  +tr(background-color .3s, border-color .3s, color .3s)
+  +hover
+    background-color: transparent
+    color: $accent
+  
+  &--transp
+    border-color: currentColor
+    background-color: transparent
+  &--white-dark    
+    color: $white-dark
+  &--gray-dark
+    color: $gray-dark
+  &--full
+    min-width: 0
+    width: 100%
+    

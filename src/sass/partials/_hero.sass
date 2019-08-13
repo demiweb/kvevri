@@ -1,0 +1,33 @@
+.hero
+  position: relative
+  &__content
+    max-width: 630px
+  &__title, &__btns
+    margin-bottom: 25px
+    +md
+      margin-bottom: 15px
+  &__text
+    margin-bottom: 50px
+    +md
+      margin-bottom: 30px
+    +sm
+      margin-bottom: 15px
+  &__btns
+    +flex
+  &__btn
+    +notlast
+      margin-right: 15px
+  &__del
+    color: $white
+    .icon
+      font-size: 45px
+      margin-right: 10px
+      vertical-align: middle
+
+
+  .hero-slide
+    +cover
+    &__inner
+      +flex(center, normal, column)
+      padding-top: 10%
+      padding-bottom: 12%

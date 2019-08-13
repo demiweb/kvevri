@@ -1,0 +1,86 @@
+{%set
+tabs = [
+  {
+    btn: 'Ресторан на строителей',
+    tab: 'stroiteley',
+    contacts: [
+      { title: 'Адрес', text: 'Киев, Княжий Затон, 4' },
+      { title: 'Телефон', text: 'Тел.: +38 (068) 954 5557' },
+      { title: 'Режим работы', text: '11:00 - 23:30' }
+    ]
+  },
+  {
+    btn: 'Ресторан на Гидропарке',
+    tab: 'hidropark',
+    contacts: [
+      { title: 'Адрес', text: 'Киев, Княжий Затон, 4' },
+      { title: 'Телефон', text: 'Тел.: +38 (068) 954 5557' },
+      { title: 'Режим работы', text: '11:00 - 23:30' }
+    ]
+  },
+  {
+    btn: 'Грузинское кафе на Позняках',
+    tab: 'poznyaki',
+    contacts: [
+      { title: 'Адрес', text: 'Киев, Княжий Затон, 4' },
+      { title: 'Телефон', text: 'Тел.: +38 (068) 954 5557' },
+      { title: 'Режим работы', text: '11:00 - 23:30' }
+    ]
+  }
+]
+  %}
+
+<!-- begin section -->
+<section class="section s-contacts pt-lg pb-lg">
+  <div class="section-img is-right is-top-100">
+    <img data-src="img/pngs/berry-02.png" alt="" class="js-lazy">
+  </div>
+  <div class="container">
+    <div class="section__title section-title">
+      <div class="section-title__title">
+        <h2 class="title">Наши <em class="accent">рестораны</em></h2>
+      </div>
+    </div>
+
+    <!-- begin contacts-tabs -->
+    <div class="contacts-tabs js-tabs">
+      <div class="contacts-tabs__nav">
+        {% for i in tabs %}
+          <button class="contacts-tabs__btn js-tab" data-target-tab="{{ i.tab }}">{{ i.btn }}</button>
+        {% endfor %}
+      </div>
+
+      <div class="contacts-tabs__content">
+        {% for i in tabs %}
+          <div class="contacts-tabs__item js-tabs-item" data-tab="{{ i.tab }}">
+            <!-- begin contacts -->
+            <div class="contacts">
+              <div class="contacts__block">
+                {% for j in i.contact %}
+                  <!-- begin contact -->
+                  <div class="contact">
+                    <div class="contact__title">{{ j.title }}</div>
+                    <div class="contact__text">{{ j.text | safe }}</div>
+                  </div>
+                  <!-- end contact -->
+                {% endfor %}
+
+                <div class="contacts__block-btn border border--sm-dark">
+                  {{ mixins.btn(
+                    title = 'Хочу к вам в ресторан',
+                    mod = 'btn--transp btn--gray-dark'
+                  ) }}
+                </div>
+              </div>
+
+              <div class="contacts__img js-lazy" data-bakcground-image="img/contacts/01.jpg"></div>
+            </div>
+            <!-- end contacts -->
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+    <!-- end contacts-tabs -->
+  </div>
+</section>
+<!-- end section -->

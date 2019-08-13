@@ -1,0 +1,38 @@
+.del-items
+  +flex(flex-start, normal, row, wrap)
+  margin-left: -15px
+  margin-right: -15px
+
+.del-item
+  text-align: center
+  height: 100%
+  +flex(flex-start, center, column)
+  padding-left: 40px
+  padding-right: 40px
+  &__wrap
+    padding-left: 15px
+    padding-right: 15px
+    width: 33.33333%
+  &__img
+    margin-bottom: 40px
+    +flex(center, center)
+    height: 185px
+    +lg
+      margin-bottom: 30px
+    +md
+      margin-bottom: 15px
+  &__title, &__text
+    margin-bottom: 20px
+    +md
+      margin-bottom: 10px
+  &__title
+    text-transform: uppercase
+    color: $white-dark
+    +bold
+    font-size: 21px
+  &__text
+    color: $gray-light
+    flex-grow: 1
+  &__btn
+    width: 100%
+    max-width: 280px

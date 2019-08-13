@@ -1,0 +1,40 @@
+.features
+  // +clr
+  +flex(flex-start, normal, row, wrap)
+
+.feature
+  $this: &
+  width: 50%
+  position: relative
+  margin-bottom: 100px
+  &:nth-child(odd)
+    padding-left: 270px
+    width: percentage(7/12)
+    #{$this}__img
+      position: absolute
+      top: 0
+      left: 0
+  &:nth-child(even)
+    width: percentage(5/12)
+  &:nth-child(3)
+    #{$this}__img
+      img[data-loaded="true"]
+        left: -30%
+        position: relative
+    
+  &__title
+    margin-bottom: 30px
+    +md
+      margin-bottom: 15px
+  &__img
+    // text-align: center
+  &__text
+    p
+      +notlast
+        margin-bottom: 20px
+        +md
+          margin-bottom: 10px
+  &__img-content
+    margin-top: 100px
+    // margin-bottom: 100px
+    text-align: center

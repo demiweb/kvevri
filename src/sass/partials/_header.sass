@@ -1,0 +1,83 @@
+.header
+  position: relative
+  z-index: 10
+  &__inner
+    position: relative
+    +flex(flex-start, center)
+    padding-left: 240px
+  &__top
+    background-color: $white
+    padding-top: 20px
+    padding-bottom: 20px
+    
+  &__bottom
+    background-color: $black-light
+    box-shadow: 0px 6px 7px 0px rgba(0, 0, 0, 0.45)
+  &__contact
+    position: relative
+    padding-left: 50px
+    padding-right: 50px
+    +after
+      height: 30px
+      border-right: 1px solid $c-border
+      position: absolute
+      top: 50%
+      transform: translate(0, -50%)
+      right: 0
+  &__top-right
+    +flex(space-around, center)
+    flex-grow: 1
+  &__logo
+    position: absolute
+    top: -20px
+    left: 0
+  &__cart
+
+.contact
+  &__title
+    color: $gray
+    font-size: 13px
+    margin-bottom: 5px
+  &__phone
+    color: $black
+    +bold
+  &__social-center
+    text-align: center
+  &--first
+    padding-left: 0
+
+.header-cart
+  padding-left: 30px
+  position: relative
+  color: $gray
+  a, button
+    text-decoration: underline
+    color: $accent
+    background-color: transparent
+  &__title
+    font-size: 13px
+  &__icon
+    position: absolute
+    top: 50%
+    left: 0
+    transform: translate(0, -50%)
+    .icon
+      font-size: 21px
+
+.marquee
+  color: $white
+  background-color: #2c2d2d
+  padding-top: 15px
+  padding-bottom: 15px
+  white-space: nowrap
+  overflow: hidden
+  &__text
+    animation: marquee 25s linear infinite
+
+  @keyframes marquee
+    0%
+      transform: translate(100%, 0)
+    100%
+      transform: translate(-105%, 0)
+  
+
