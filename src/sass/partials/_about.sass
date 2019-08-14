@@ -6,6 +6,9 @@
   +cover
   background-size: auto
   background-position: 0 100%
+  +md
+    margin-bottom: 15px
+    background-size: 60%
   &:nth-child(1)
     #{$this}__text
       top: 10%
@@ -14,15 +17,34 @@
   &:nth-child(2)
     margin-top: -20px
     +flex(flex-end)
+    +md
+      margin-top: 0
+    +sm
+      margin-bottom: 55px
     #{$this}__text
       max-width: 835px
       top: 50%
       transform: translate(0, -50%)
       right: 30%
+      +sm
+        right: auto
+        left: 50%
+        transform: translate(-50%, 0)
+        top: auto
+        bottom: -40px
+        width: 90%
     #{$this}__img
       img[data-loaded="true"]
         position: relative
         right: -20%
+        +md
+          right: 0
+      +xs
+        height: 400px
+        img
+          object-fit: cover
+          width: 100%
+          height: 100%
   &:nth-child(3)
     +flex(flex-start, center)
     #{$this}__img
@@ -35,20 +57,48 @@
   &:nth-child(4)
     +flex(flex-end)
     margin-top: -100px
+    +xl
+      margin-top: -80px
+    +lg
+      margin-top: -60px
+    +md
+      margin-top: -50px
+    +sm
+      margin-top: 0
+      margin-bottom: 40px
     #{$this}__quote
       position: absolute
       top: 50%
       transform: translate(0, -50%)
       right: 40%
+      +md
+        right: auto
+        left: 0
+        max-width: 90%
+      +sm
+        top: auto
+        left: 50%
+        transform: translate(-50%, 0)
+        bottom: -40px
+        width: 90%
     #{$this}__img
+      +xs
+        height: 400px
+        img
+          height: 100%
+          width: 100%
+          object-fit: cover
   &__img
     // +cover
     // pt
     border-radius: 15px
+    position: relative
+    z-index: 1
     img
       border-radius: 15px
   &__img-right
     position: absolute
+    z-index: 0
     top: -20px
     right: 0
     img[data-loaded="true"]
@@ -61,6 +111,12 @@
     background-color: $white
     border-radius: 15px
     padding: 45px 15px 40px 50px
+    +xl
+      padding: 35px 15px 35px 35px
+    +lg
+      padding: 30px 15px 30px 30px
+    +sm
+      padding: 15px
     .title
       margin-bottom: 20px
       +md
@@ -72,5 +128,7 @@
           margin-bottom: 15px
   &__quote
     max-width: 730px
+    position: relative
+    z-index: 2
   &__quote-fu
     max-width: 770px

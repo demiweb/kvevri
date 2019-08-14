@@ -1,6 +1,7 @@
 {%set
 tabs = [
   {
+    active: true,
     btn: 'Ресторан на строителей',
     tab: 'stroiteley',
     contacts: [
@@ -28,12 +29,12 @@ tabs = [
     ]
   }
 ]
-  %}
+%}
 
 <!-- begin section -->
-<section class="section s-contacts pt-lg pb-lg">
+<section class="section s-contacts pt-sm pb-lg">
   <div class="section-img is-right is-top-100">
-    <img data-src="img/pngs/berry-02.png" alt="" class="js-lazy">
+    <img data-src="./img/pngs/berry-02.png" alt="" class="js-lazy">
   </div>
   <div class="container">
     <div class="section__title section-title">
@@ -46,17 +47,17 @@ tabs = [
     <div class="contacts-tabs js-tabs">
       <div class="contacts-tabs__nav">
         {% for i in tabs %}
-          <button class="contacts-tabs__btn js-tab" data-target-tab="{{ i.tab }}">{{ i.btn }}</button>
+          <button class="contacts-tabs__btn{% if i.active %} is-active{% endif %} js-tab" data-target-tab="{{ i.tab }}">{{ i.btn }}</button>
         {% endfor %}
       </div>
 
       <div class="contacts-tabs__content">
         {% for i in tabs %}
-          <div class="contacts-tabs__item js-tabs-item" data-tab="{{ i.tab }}">
+          <div class="contacts-tabs__item{% if i.active %} is-active{% endif %} js-tabs-item" data-tab="{{ i.tab }}">
             <!-- begin contacts -->
             <div class="contacts">
               <div class="contacts__block">
-                {% for j in i.contact %}
+                {% for j in i.contacts %}
                   <!-- begin contact -->
                   <div class="contact">
                     <div class="contact__title">{{ j.title }}</div>
@@ -73,7 +74,7 @@ tabs = [
                 </div>
               </div>
 
-              <div class="contacts__img js-lazy" data-bakcground-image="img/contacts/01.jpg"></div>
+              <div class="contacts__img anim-img js-lazy" data-background-image="./img/contacts/01.jpg"></div>
             </div>
             <!-- end contacts -->
           </div>

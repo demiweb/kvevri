@@ -7,12 +7,27 @@
       height: auto
   &__tabs-nav
     margin-bottom: 75px
+    +xl
+      margin-bottom: 50px
+    +lg
+      margin-bottom: 40px
+    +md
+      margin-bottom: 30px
+    +sm
+      margin-bottom: 20px
+    +xs
+      margin-bottom: 10px
   &__tabs-item
     max-height: 0
     overflow: hidden
+    opacity: 0
+    // transform: translate(0, 30px)
+    +tr(opacity .5s, transform .5s)
     &.is-active
       max-height: none
       overflow: visible
+      opacity: 1
+      // transform: translate(0, 0)
   &__btns
     position: absolute
     z-index: 1
@@ -20,37 +35,82 @@
     transform: translate(0, -50%)
     left: 0
     right: 0
+  &__pagination
+    text-align: center
+    .swiper-pagination-bullet
+      width: 14px
+      height: 14px
+      &.swiper-pagination-bullet-active
+        background-color: $accent
 
   &--hero
     &__wrap
       .slider
+        &__prev, &__next
+          +xs
+            display: none
         &__prev
           left: 40px
+          +r(1600)
+            left: 0
         &__next
           right: 40px
+          +r(1600)
+            right: 0
+        &__pagination
+          position: absolute
+          width: 100%
+          z-index: 1
+          left: 0
+          bottom: 10%
   &--items
     &__wrap
-      .swiper-container
-        // margin-left: auto
-        // margin-right: auto
-        // padding-left: 80px
-        // padding-right: 80px
-        // max-width: 1570px
+      margin-left: auto
+      margin-right: auto
+      padding-left: 80px
+      padding-right: 80px
+      max-width: 1570px
+      +lg
+        padding-left: 55px
+        padding-right: 55px
+      +xs
+        padding-left: 40px
+        padding-right: 40px
       .slider
         &__prev
           left: 0
         &__next
           right: 0
+          
+  &--items-tabs    
+    &__wrap
+      margin-left: 0 !important
+      margin-right: 0 !important
+      padding-left: 0 !important
+      padding-right: 0 !important
+      max-width: none !important
+      .slider
         &__wrap
           margin-left: auto
           margin-right: auto
           padding-left: 80px
           padding-right: 80px
           max-width: 1570px
+          +lg
+            padding-left: 55px
+            padding-right: 55px
+          +xs
+            padding-left: 40px
+            padding-right: 40px
   &--gallery
     &__wrap
       .swiper-slide
         width: 40%
+        &:not(.swiper-slide-active)
+          opacity: 0.3
+          pointer-events: none
+        +sm
+          width: 60%
 
 .prev,
 .next
@@ -71,6 +131,12 @@
     +icon-arrow(12, 12, 2, currentColor, 45)
     display: inline-block
     margin-left: 0.3em
+  +lg
+    width: 45px
+    height: 45px
+  +xs
+    width: 35px
+    height: 35px
   &--gray
     background-color: $gray
   &--white

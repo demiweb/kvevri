@@ -1,7 +1,7 @@
 <!-- begin section -->
-<section class="section s-gallery bg-cover bg-center-center pt-xll pb-xl js-lazy" data-background-image="img/bg-section/bg-gallery.jpg">
+<section class="section s-gallery bg-cover bg-center-center js-lazy" data-background-image="./img/bg-section/bg-gallery.jpg">
   <div class="section-img is-right is-top">
-    <img data-src="img/pngs/spice-03.png" alt="" class="js-lazy">
+    <img data-src="./img/pngs/spice-03.png" alt="" class="js-lazy">
   </div>
   <div class="container">
     <div class="section__title">
@@ -15,13 +15,15 @@
   <!-- begin slider -->
   <div class="slider__wrap slider--gallery__wrap">
     <div class="swiper-container js-slider" data-slider="gallery">
-      <div class="swiper-wrapper">
+      <div class="swiper-wrapper js-lightgallery">
         {% for i in range(0, 10) %}
-          <div class="swiper-slide">
             <!-- begin gallery-slide -->
-            <a href="#" class="gallery-slide js-lazy" data-background-image="img/gallery/01.jpg"></a>
+            <a
+              href="./img/gallery/01.jpg"
+              class="swiper-slide gallery-slide js-lazy"
+              data-exthumbimage="./img/gallery/01.jpg"
+              data-background-image="./img/gallery/01.jpg"></a>
             <!-- end gallery-slide -->
-          </div>
         {% endfor %}
       </div>
     </div>

@@ -6,7 +6,7 @@
       <div class="swiper-wrapper">
         {% for i in range(0, 3) %}
           <div class="swiper-slide">
-            <div class="hero-slide js-lazy" data-background-image="img/hero-01.jpg">
+            <div class="hero-slide js-lazy" data-background-image="./img/hero-01.jpg">
               <div class="container">
                 <div class="hero-slide__inner">                
                   <div class="hero__content">
@@ -47,12 +47,13 @@
 
       <button class="slider__prev prev js-prev"></button>
       <button class="slider__next next js-next"></button>
+      <div class="slider__pagination js-pagination"></div>
     </div>
   </div>
   <!-- end slider -->
 
-  <div class="section-img is-bottom is-left">
-    <img data-src="img/pngs/tomato.png" alt="" class="js-lazy">
+  <div class="section-img js-parallax-scene is-bottom is-left">
+    <img data-depth="0.1" data-src="./img/pngs/tomato.png" alt="" class="js-lazy">
   </div>
 </section>
 <!-- end hero -->

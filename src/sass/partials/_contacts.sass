@@ -1,0 +1,92 @@
+.contacts-tabs
+  &__nav
+    +flex(space-around, center, row, wrap)
+    margin-bottom: 35px
+  &__btn
+    display: block
+    margin-left: 10px
+    margin-right: 10px
+    background-color: transparent
+    color: $gray-light
+    +light
+    +tr(color .3s, transform .3s)
+    &.is-active
+      color: $black
+      +scale(1.4)
+      +lg
+        +scale(1)
+        font-size: 1.2em
+    +hover
+      @extend .contacts-tabs__btn.is-active
+  &__item
+    max-height: 0
+    overflow: hidden
+    &.is-active
+      max-height: none
+      overflow: visible
+      .contacts
+        &__img
+          display: block
+          opacity: 1
+        &__block
+          .contact, .contacts__block-btn
+            opacity: 1
+
+.contacts
+  position: relative
+  +flex(flex-end)
+  +sm
+    margin-bottom: 40px
+  &__img
+    +cover
+    padding-top: 40%
+    width: percentage(10/12)
+    position: relative
+    margin-right: 50px
+    border-radius: 15px
+    display: none
+    +md
+      padding-top: 50%
+      margin-right: 0
+      width: 100%
+    +xs
+      padding-top: 80%
+    +xss
+      padding-top: 100%
+  &__block
+    background-color: $white
+    border-radius: 15px
+    box-shadow: 0px 0px 35px 0px rgba(0, 0, 0, 0.16)
+    text-align: center
+    // padding: 50px 15px 45px
+    padding: 15px
+    +flex(center, center, column)
+    position: absolute
+    width: percentage(3/12)
+    top: 30px
+    bottom: 30px
+    left: 0
+    z-index: 2
+    .contact, .contacts__block-btn
+      +tr(opacity .5s)
+      opacity: 0
+    +lg
+      width: percentage(4/12)
+    +md
+      width: 50%
+    +sm
+      width: 100%
+      max-width: 400px
+      transform: translate(-50%, 0)
+      left: 50%
+      top: auto
+      bottom: -40px
+
+.contact
+  margin-bottom: 30px
+  +md
+    margin-bottom: 15px
+  &__title
+    +semi
+    color: $gray-dark
+

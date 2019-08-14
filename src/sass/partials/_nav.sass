@@ -2,17 +2,55 @@
   color: $white-dark
   ul
     +flex
+    +md
+      display: block
+  li
+    +xss
+      +notlast
+        margin-bottom: 10px
   a
     display: block
-    padding-top: 25px
-    padding-bottom: 25px
     text-transform: uppercase
     +tr(color .3s, background-color .3s)
-    padding-left: 25px
-    padding-right: 40px
+    padding: 25px
+    // padding-right: 40px
+    +xl
+      padding-left: 10px
+      padding-right: 10px
+    +lg
+      padding-left: 5px
+      padding-right: 5px
+    +xss
+      display: inline
+      padding: 0
     &.is-active
       color: $white
       background-color: #1f1f1f
     +hover
       color: $white
       background-color: #1f1f1f
+
+  &--footer
+    color: $gray-light
+    ul
+      display: block
+    li
+      display: block
+      +notlast
+        margin-bottom: 15px
+        +md
+          margin-bottom: 10px
+        +sm
+          margin-bottom: 5px
+        +xss
+          margin-bottom: 5px
+    a
+      padding: 0 !important
+      display: inline
+      text-transform: none
+      &.is-active
+        color: $white
+        background-color: transparent
+      +hover
+        color: $white
+        background-color: transparent

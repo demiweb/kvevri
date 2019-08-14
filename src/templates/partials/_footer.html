@@ -1,0 +1,93 @@
+<!-- begin footer -->
+<footer class="footer js-lazy" data-background-image="./img/bg-footer.jpg">
+  <div class="container">
+    <div class="footer__inner">
+      <div class="footer__col">
+        <div class="footer__logo">
+          <a href="/" class="logo">
+            <img data-src="./img/logo.png" alt="" class="js-lazy">
+          </a>
+        </div>
+
+        <div class="footer__copy">
+          <p>&copy; 2019 Квеври</p>
+          <p>Квеври - лучший ресторан<br> грузинской кухня в Киеве!</p>
+        </div>
+
+        <div class="footer__pay">
+          <span>Принимаем к оплате:</span>
+          <img data-src="./img/mastercard.svg" width="38" height="22" alt="" class="js-lazy">
+          <img data-src="./img/visa.svg" width="38" height="22" alt="" class="js-lazy">
+        </div>
+      </div>
+
+      <div class="footer__col">
+        <div class="footer__nav">
+          <div class="footer__title">Полезные ссылки</div>
+
+          {{ mixins.list(
+            name = 'nav',
+            modifications = { wrap: 'nav--footer', item: '', link: '' },
+            list = [
+              { link: 'Главная' },
+              { link: 'Меню' },
+              { link: 'Доставка и оплата' },
+              { link: 'Контакты' }
+            ]
+          ) }}
+        </div>
+      </div>
+
+      <div class="footer__col">
+        <div class="footer__nav">
+          <div class="footer__title">Наши рестораны</div>
+
+          {{ mixins.list(
+            name = 'nav',
+            modifications = { wrap: 'nav--footer', item: '', link: '' },
+            list = [
+              { item: 'Киев, Строителей, 34/1' },
+              { item: 'Киев, Броварской проспект 3А' },
+              { item: 'Киев, Княжий Затон, 4 ' }
+            ]
+          ) }}
+        </div>
+      </div>
+
+      <div class="footer__col footer__col-flex">
+        <div class="footer__nav">
+          <div class="footer__title">О нас</div>
+
+          {{ mixins.list(
+            name = 'nav',
+            modifications = { wrap: 'nav--footer', item: '', link: '' },
+            list = [
+              { link: 'Фотогалерея' },
+              { link: 'О ресторане' },
+              { link: 'События' }
+            ]
+          ) }}
+        </div>
+
+        <div class="footer__social">
+          {{ mixins.list(
+            name = 'social',
+            modifications = { wrap: 'social--vert', item: '', link: '' },
+            list = [
+              { link: mixins.icon('instagram') },
+              { link: mixins.icon('google-plus') },
+              { link: mixins.icon('facebook') }
+            ]
+          ) }}
+        </div>
+      </div>
+
+      
+
+      <div class="footer__auth">
+        Разработка сайта <a href="#">Demiweb International</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- end footer -->

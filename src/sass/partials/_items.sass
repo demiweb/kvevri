@@ -13,6 +13,12 @@
   +flex(flex-end, normal, column)
   +hover
     border-color: $accent
+  +sm
+    margin-bottom: 40px
+    height: calc(100% - 40px)
+  +xs
+    margin-bottom: 30px
+    height: calc(100% - 30px)
 
   &__img
     // +cover
@@ -64,6 +70,10 @@
     margin-bottom: -45px
     padding-left: 15px
     padding-right: 15px
+    +sm
+      margin-bottom: -40px
+    +xs
+      margin-bottom: -30px
 
   &--white
     background-color: $white

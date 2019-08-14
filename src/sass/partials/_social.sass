@@ -7,7 +7,21 @@
       margin-right: 30px
   a
     display: block
+    +tr(color .3s)
+    +hover
+      color: $gray
   .icon
     font-size: 20px
   .icon-google-plus
     font-size: 1.5em
+
+  &--vert
+    color: $white-dark
+    li
+      display: block
+      +notlast
+        margin-right: 0
+        margin-bottom: 15px
+    a
+      +hover
+        color: $gray-light

@@ -9,26 +9,27 @@ class Tabs {
 
   toggleTabs(e) {
     e.preventDefault();
-    const $clickTarget = $(e.currentTarget);
-    const $wrap = $clickTarget.closest('.'+Tabs.classNames.wrap);
-    const $tabs = $wrap.find('.'+Tabs.classNames.tab);
-    const $items = $wrap.find('.'+Tabs.classNames.item);
-    const tabData = $clickTarget.data('target-tab');
-    const $tabTargetItem = $wrap.find('[data-tab="'+tabData+'"]');
+    this.$btn = $(e.currentTarget);
+    this.$wrap = this.$btn.closest('.'+Tabs.classNames.wrap);
+    this.$tabs = this.$wrap.find('.'+Tabs.classNames.tab);
+    this.$items = this.$wrap.find('.'+Tabs.classNames.item);
+    this.tabName = this.$btn.data('target-tab');
+    this.$item = this.$wrap.find('[data-tab="'+this.tabName+'"]');
 
-    $tabs.removeClass(Tabs.classNames.active);
-    $items.removeClass(Tabs.classNames.active);
+    this.$tabs.removeClass(Tabs.classNames.active);
+    this.$items.removeClass(Tabs.classNames.active);
 
-    $clickTarget.addClass(Tabs.classNames.active);
-    $tabTargetItem.addClass(Tabs.classNames.active);
+    this.$btn.addClass(Tabs.classNames.active);
+    this.$item.addClass(Tabs.classNames.active);    
   };
 
   _initTabs() {
-    $(document).on('click', '.'+Tabs.classNames.tab, this.toggleTabs);
+    this.toggleTabsBinded = this.toggleTabs.bind(this);
+    $(document).on('click', '.'+Tabs.classNames.tab, this.toggleTabsBinded);
   };
 
   _destroy() {
-    $(document).off('click', '.'+Tabs.classNames.tab, this.toggleTabs);
+    $(document).off('click', '.'+Tabs.classNames.tab, this.toggleTabsBinded);
   };
 };
 

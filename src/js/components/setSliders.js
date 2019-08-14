@@ -10,6 +10,7 @@ export default function setSliders() {
     const $wrap = $(slider).closest('.slider__wrap');
     const prev = $wrap.find('.js-prev')[0];
     const next = $wrap.find('.js-next')[0];
+    const pagination = $wrap.find('.js-pagination')[0];
     const options = {
       hero: {
         navigation: {
@@ -17,6 +18,14 @@ export default function setSliders() {
           prevEl: prev,
         },
         loop: true,
+        breakpoints: {
+          568: {
+            pagination: {
+              el: pagination,
+              type: 'bullets',
+            }
+          }
+        },
         on: {
           init: setLazy
         }
@@ -29,6 +38,20 @@ export default function setSliders() {
         slidesPerView: 4,
         spaceBetween: 30,
         loop: true,
+        breakpoints: {
+          768: {
+            slidesPerView: 1
+          },
+          992: {
+            slidesPerView: 2
+          },
+          1200: {
+            slidesPerView: 3
+          },
+          1400: {
+            spaceBetween: 20
+          }
+        },
         on: {
           init: setLazy
         }
@@ -38,6 +61,11 @@ export default function setSliders() {
         spaceBetween: 30,
         grabCursor: true,
         centeredSlides: true,
+        breakpoints: {
+          568: {
+            spaceBetween: 20
+          }
+        }
       }
     };
 

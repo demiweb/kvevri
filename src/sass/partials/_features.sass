@@ -7,20 +7,46 @@
   width: 50%
   position: relative
   margin-bottom: 100px
+  +xl
+    margin-bottom: 80px
+  +lg
+    margin-bottom: 60px
+  +md
+    margin-bottom: 40px
+  +sm
+    margin-bottom: 25px
   &:nth-child(odd)
     padding-left: 270px
     width: percentage(7/12)
+    +xl
+      padding-left: 240px
+    +lg
+      padding-left: 180px
+    +md
+      padding-left: 150px
+    +sm 
+      padding-left: 125px
+    +xs
+      padding-left: 0
+      width: 50%
+    
     #{$this}__img
       position: absolute
       top: 0
       left: 0
+      +xs
+        position: static
   &:nth-child(even)
     width: percentage(5/12)
+    +xs
+      width: 50%
   &:nth-child(3)
     #{$this}__img
       img[data-loaded="true"]
         left: -30%
         position: relative
+        +xll
+          left: 0
     
   &__title
     margin-bottom: 30px
@@ -28,6 +54,16 @@
       margin-bottom: 15px
   &__img
     // text-align: center
+    +xll
+      width: 260px
+    +xl
+      width: 220px
+    +lg
+      width: 180px
+    +md
+      width: 150px
+    +sm 
+      width: 125px
   &__text
     p
       +notlast
@@ -38,3 +74,17 @@
     margin-top: 100px
     // margin-bottom: 100px
     text-align: center
+    +xl
+      margin-top: 80px
+    +lg
+      margin-top: 60px
+    +md
+      margin-top: 40px
+    +sm
+      margin-top: 25px
+  &__content
+    padding-left: 10px
+    padding-right: 10px
+    +xs
+      padding-left: 5px
+      padding-right: 5px

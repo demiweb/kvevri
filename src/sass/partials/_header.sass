@@ -1,18 +1,60 @@
 .header
+  $this: &
   position: relative
   z-index: 10
   &__inner
     position: relative
     +flex(flex-start, center)
-    padding-left: 240px
+    // padding-left: 240px
+    +css-lock(120, 240, 992, 1499, padding-left)
+    +sm
+      padding-left: 80px
+    +xs
+      padding-left: 40px
   &__top
     background-color: $white
     padding-top: 20px
     padding-bottom: 20px
+    +lg
+      padding-top: 10px
+      padding-bottom: 10px
+    +sm
+      padding-top: 5px
+      padding-bottom: 5px
     
   &__bottom
     background-color: $black-light
     box-shadow: 0px 6px 7px 0px rgba(0, 0, 0, 0.45)
+    +md
+      position: fixed
+      overflow: auto
+      width: 100%
+      height: 100%
+      left: 0
+      top: 0
+      z-index: 10
+      transform: translate(-102%, 0)
+      +tr(transform .3s)
+      &.is-active
+        transform: translate(0, 0)
+    +xss
+      +vertical
+      .container
+        display: inline-block
+        vertical-align: middle
+        font-size: 14px
+        width: 100%
+    #{$this}__inner
+      +md
+        padding-left: 0
+        justify-content: space-between
+      +xss
+        display: block
+        padding-top: 15px
+        padding-bottom: 15px
+        text-align: center
+        .nav
+          margin-bottom: 15px
   &__contact
     position: relative
     padding-left: 50px
@@ -24,45 +66,140 @@
       top: 50%
       transform: translate(0, -50%)
       right: 0
+    +lg
+      padding-left: 25px
+      padding-right: 25px
+    +sm
+      padding-left: 10px
+      padding-right: 10px
+    +xss
+      padding-left: 5px
+      padding-right: 5px
+  &__top-right-mob
+    display: none
+    +md
+      display: block
+    +xss
+      +flex(center, center)
   &__top-right
     +flex(space-around, center)
     flex-grow: 1
+    +md
+      display: none
   &__logo
     position: absolute
     top: -20px
     left: 0
+    z-index: 1
+    +lg
+      top: -10px
+    +sm
+      top: -5px
+    +xs
+      left: -15px
   &__cart
+    +md
+      flex-grow: 1
+      padding-left: 15px
+      +flex(flex-end)
+    +xss
+      padding-left: 5px
+  &__meta
+    +md
+      margin-bottom: 15px
+    +xss
+      margin-bottom: 0
+      margin-right: 10px
+      margin-left: 10px
+  &__burger
+    display: none
+    margin-left: 10px
+    +md
+      display: block
+    +xss
+      margin-left: 5px
+  &__marquee
+    +sm
+      display: none
+  &__close
+    display: none    
+    top: 15px
+    right: 15px
+    z-index: 1
+    color: $white
+    background-color: transparent
+    +icon-close(25, 2, currentColor)
+    position: absolute
+    +tr(color .3s)
+    +hover
+      color: currentColor
+    +md
+      display: block
 
-.contact
+.header-contact
+  +xss
+    font-size: 13px
   &__title
     color: $gray
     font-size: 13px
     margin-bottom: 5px
+    +xss
+      font-size: 11px
+    +r(374)
+      display: none
   &__phone
     color: $black
     +bold
+    +r(374)
+      font-size: 11px
   &__social-center
     text-align: center
   &--first
-    padding-left: 0
+    padding-left: 0 !important
 
 .header-cart
   padding-left: 30px
   position: relative
   color: $gray
-  a, button
+  display: block
+  +sm
+    padding-left: 0
+  &__btn
     text-decoration: underline
     color: $accent
     background-color: transparent
+    display: block
   &__title
     font-size: 13px
+    display: block
+  &__content
+    display: block
+    +sm
+      display: none
   &__icon
     position: absolute
     top: 50%
     left: 0
     transform: translate(0, -50%)
+    text-decoration: none
+    display: block
+    white-space: nowrap
+    +sm
+      color: $accent
+      position: relative
     .icon
       font-size: 21px
+      +xss
+        font-size: 16px
+    sup
+      font-size: 0.7em      
+      vertical-align: top
+      position: relative
+      top: -.5em
+      right: .5em
+      display: none
+      +sm
+        display: inline-block
 
 .marquee
   color: $white
@@ -73,6 +210,43 @@
   overflow: hidden
   &__text
     animation: marquee 25s linear infinite
+
+.burger
+  display: block
+  width: 28px
+  height: 28px
+  margin-top: -14px
+  background-color: transparent
+  +xss
+    width: 20px
+    height: 20px
+  span:after, span:before 
+    content: ""
+    position: absolute
+    left: 0
+    top: 9px
+    +xs
+      top: 5px
+  span:after
+    top: 18px
+    +xs
+      top: 10px
+  span 
+    position: relative
+    display: block
+  span, span:after, span:before
+    width: 100%
+    height: 2px
+    background-color: currentColor
+    transition: all 0.3s
+    backface-visibility: hidden
+    border-radius: 2px
+  // &.is-active span 
+  //   background-color: transparent
+  // &.is-active span:before 
+  //   transform: rotate(45deg) translate(-1px, 0px)
+  // &.is-active span:after 
+  //   transform: rotate(-45deg) translate(6px, -7px)
 
   @keyframes marquee
     0%

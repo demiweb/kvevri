@@ -13,7 +13,7 @@ h1, h2, h3, h4, h5, h6
   font-weight: 400
 
 .title
-  font-size: 60px
+  +css-lock(32, 60, 320, 1499, font-size)
   +georgia
   line-height: 1
   color: $gray-dark
@@ -23,7 +23,8 @@ h1, h2, h3, h4, h5, h6
   &--white
     color: $white
   &--h3
-    font-size: 35px
+    // font-size: 35px
+    +css-lock(21, 35, 320, 1499, font-size)
 
 .h1, h1
 
