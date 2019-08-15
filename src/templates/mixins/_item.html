@@ -1,0 +1,51 @@
+{% from 'mixins/_btn.html' import btn %}
+{%set btn = btn %}
+
+{% macro item(mod, img, label, title, price, counter, border) %}
+  <!-- begin item -->
+  <div class="item{% if mod %} {{ mod }}{% endif %}">
+    {% if label %}
+      <div class="item__label{% if label.mod %} {{ label.mod }}{% endif %}">{{ label.title | safe }}</div>
+    {% endif %}
+
+    <!-- <div class="item__img js-lazy" data-background-image="./img/slider/vine.png"> -->
+    <div class="item__img">
+      <img data-src="./img/items/{{ img }}" alt="" class="js-lazy">
+    </div>
+
+    {% if title %}
+      <div class="item__title">{{ title | safe }}</div>
+    {% endif %}
+
+    <div class="item__price">
+      {% if price %}
+        {{ price | safe }}
+      {% endif %}
+    </div>
+
+    <div class="item__counter">
+      <!-- begin counter -->
+      <div class="counter{% if counter.mod %} {{ counter.mod }}{% endif %}">
+        <div class="counter__inner">
+          <button>-</button>
+          <input type="text" value="1">
+          <button>+</button>
+        </div>
+      </div>
+      <!-- end counter -->
+    </div>
+
+    <div class="item__btn">
+      <!-- begin border -->
+      <div class="border{% if border.mod %} {{ border.mod }}{% endif %}">
+
+        {{ btn(
+          title = 'Заказать доставку',
+          mod = 'btn--full'
+        ) }}
+      </div>
+      <!-- end border -->
+    </div>
+  </div>
+  <!-- end item -->
+{% endmacro %}

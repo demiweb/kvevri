@@ -1,4 +1,4 @@
-import { $DOC, $BODY, IS_ACTIVE, NO_SCROLL } from '../constants';
+import { $DOC, $BODY, IS_ACTIVE, NO_SCROLL, IS_HIDDEN, HAS_OPEN_MENU } from '../constants';
 
 class Burger {
   init() {
@@ -7,13 +7,14 @@ class Burger {
 
   toggle(e) {
     e.preventDefault();
+    e.stopPropagation();
 
     this.$btn = $(e.currentTarget);
     this.name = e.currentTarget.getAttribute('data-menu-target');
     this.$target = this.name 
-      ? $(`.${Burger.classNames.menu}[data-menu="${name}"]`)
+      ? $(`.${Burger.classNames.menu}[data-menu="${this.name}"]`)
       : $(`.${Burger.classNames.menu}`);
-
+      
     this.$btn.toggleClass(IS_ACTIVE);
     this.$target.toggleClass(IS_ACTIVE);
 
@@ -46,16 +47,37 @@ export default function toggleMenu() {
   const burger = new Burger();
   burger.onToggle = () => {
     $BODY.toggleClass(NO_SCROLL);
+    $BODY.toggleClass(HAS_OPEN_MENU);
+    
+    if (burger.name === 'menu_nav') {
+      const $header = $('.header');
+      $header.toggleClass(IS_HIDDEN);
+    };
   };
   burger.onClose = () => {
     $BODY.removeClass(NO_SCROLL);
+    $BODY.removeClass(HAS_OPEN_MENU);
+
+    if (burger.name === 'menu_nav') {
+      const $header = $('.header');
+      $header.removeClass(IS_HIDDEN);
+    };
   };
   burger.init();
 
+  // close menu
   const close = 'js-menu-close';
 
   $DOC.on('click', `.${close}`, e => {
     e.preventDefault();
     burger.close();
+  });
+  $DOC.on('click', e => {
+    if (!$BODY.hasClass(HAS_OPEN_MENU)) return;
+
+    const $menu = $(e.target).closest('.js-menu');
+    if(!$menu.length) {
+      burger.close();      
+    };
   });
 };

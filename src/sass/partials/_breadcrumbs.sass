@@ -1,0 +1,41 @@
+.breadcrumbs
+  +light
+  font-size: 13px
+  color: $white-dark
+  margin-bottom: 25px
+  +md
+    margin-bottom: 15px
+  +sm
+    margin-bottom: 10px
+  li
+    display: inline-block
+  a
+    +tr(color .3s)
+    +hover
+      color: $gray
+
+  .is-active
+    pointer-events: none
+    color: $gray
+
+.back-link
+  position: relative
+  display: inline-block
+  padding-left: 30px
+  +tr(color .3s)
+  +hover
+    color: $white-dark
+  &::before
+    +icon-arrow(8, 8, 1, currentColor, 45)
+    transform: translate(0, -50%) rotate(45deg)
+  &::after
+    width: 20px
+    height: 1px
+    background-color: currentColor
+    transform: translate(0, -50%)
+  &::before, &::after
+    content: ''
+    position: absolute
+    top: 50%
+    left: 0
+    

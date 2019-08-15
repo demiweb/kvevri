@@ -1,10 +1,10 @@
 <!-- begin section -->
-<section class="section s-gallery bg-cover bg-center-center js-lazy" data-background-image="./img/bg-section/bg-gallery.jpg">
-  <div class="section-img is-right is-top">
-    <img data-src="./img/pngs/spice-03.png" alt="" class="js-lazy">
+<section class="section s-gallery overflow-hidden bg-cover bg-center-center js-lazy" data-background-image="./img/bg-section/bg-gallery.jpg">
+  <div class="section-img is-right is-top js-anim-el js-parallax-scene" data-anim-name="rotateInRight">
+    <img data-depth="0.1" data-src="./img/pngs/spice-03.png" alt="" class="js-lazy">
   </div>
   <div class="container">
-    <div class="section__title">
+    <div class="section__title js-anim-el" data-anim-name="fadeInLeft">
       <h2 class="title title--white">Посмотрите на нашу фотогалерею</h2>
 
       <div class="section__subttl">Мы очень гордимся своей сетью ресторанов и показываем
@@ -13,7 +13,7 @@
   </div>
 
   <!-- begin slider -->
-  <div class="slider__wrap slider--gallery__wrap">
+  <div class="slider__wrap slider--gallery__wrap js-anim-el" data-anim-name="fadeInLeft">
     <div class="swiper-container js-slider" data-slider="gallery">
       <div class="swiper-wrapper js-lightgallery">
         {% for i in range(0, 10) %}

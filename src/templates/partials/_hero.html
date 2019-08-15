@@ -10,15 +10,15 @@
               <div class="container">
                 <div class="hero-slide__inner">                
                   <div class="hero__content">
-                    <div class="hero__title">
+                    <div class="hero__title js-anim-el" data-anim-name="fadeInLeft">
                       <div class="title title--white">Сердце <em class="yellow">грузинской</em> кухни в Киеве </div>
                     </div>
 
-                    <div class="hero__text">Лучшая грузинская кухня в Киеве, главной приправой которой является
+                    <div class="hero__text js-anim-el" data-anim-name="fadeInLeft" data-anim-delay="0.1s">Лучшая грузинская кухня в Киеве, главной приправой которой является
                       наша любовь. Приходите к нам в ресторан или закажите кусочек
                       настоящей грузинской заботы прямо к себе в дом!</div>
 
-                    <div class="hero__btns">
+                    <div class="hero__btns js-anim-el" data-anim-name="fadeInLeft" data-anim-delay="0.2s">
                       <div class="hero__btn">
                         {{ mixins.btn(
                           title = 'Заказать доставку',
@@ -33,7 +33,7 @@
                       </div>
                     </div>
 
-                    <div class="hero__del">
+                    <div class="hero__del js-anim-el" data-anim-name="fadeInLeft" data-anim-delay="0.3s">
                       {{ mixins.icon('delivery-truck') }}
                       Бесплатная доставка при заказе <strong>от 1000 грн!</strong> (с 10:00 до 22:00)
                     </div>
@@ -52,7 +52,7 @@
   </div>
   <!-- end slider -->
 
-  <div class="section-img js-parallax-scene is-bottom is-left">
+  <div class="section-img js-parallax-scene is-bottom is-left js-anim-el" data-anim-name="bounceInDown">
     <img data-depth="0.1" data-src="./img/pngs/tomato.png" alt="" class="js-lazy">
   </div>
 </section>

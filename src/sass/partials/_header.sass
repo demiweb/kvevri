@@ -2,6 +2,9 @@
   $this: &
   position: relative
   z-index: 10
+  +tr(transform .3s)
+  &.is-hidden
+    display: none
   &__inner
     position: relative
     +flex(flex-start, center)
@@ -35,6 +38,15 @@
       z-index: 10
       transform: translate(-102%, 0)
       +tr(transform .3s)
+      +vertical
+      .container
+        display: inline-block
+        vertical-align: middle
+        font-size: 16px
+        width: 100%
+        text-align: left
+        +sm
+          font-size: 14px
       &.is-active
         transform: translate(0, 0)
     +xss

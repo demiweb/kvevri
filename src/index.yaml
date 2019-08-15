@@ -2,3 +2,5 @@ ProjectTitle: kvevri
 
 PageList:
 - file: home.html
+- file: one-item.html
+- file: menu.html

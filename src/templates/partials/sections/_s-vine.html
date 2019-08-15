@@ -1,5 +1,5 @@
 <!-- begin section -->
-<section class="section s-vine pt-xll pb-md js-lazy" data-background-image="./img/bg-section/bg-vine.png">
+<section class="section overflow-hidden s-vine pt-xll pb-md js-lazy" data-background-image="./img/bg-section/bg-vine.png">
   <div class="section__layer">
     <img data-src="./img/layer-01.jpg" alt="" class="js-lazy">
   </div>
@@ -10,15 +10,15 @@
   <div class="section-img is-top-100 is-left">
       <img data-src="./img/pngs/grapes.png" alt="" class="js-lazy">
   </div>
-  <div class="section-img is-bottom-100 is-right">
-      <img data-src="./img/pngs/spice-01.png" alt="" class="js-lazy">
+  <div class="section-img is-bottom-100 is-right js-anim-el js-parallax-scene" data-anim-name="rotateInRight">
+      <img data-depth="0.3" data-src="./img/pngs/spice-01.png" alt="" class="js-lazy">
   </div>
-  <div class="section-img is-bottom is-left">
-      <img data-src="./img/pngs/leave.png" alt="" class="js-lazy">
+  <div class="section-img is-bottom is-left js-anim-el js-parallax-scene" data-anim-name="rotateInLeft">
+      <img data-depth="0.1" data-src="./img/pngs/leave.png" alt="" class="js-lazy">
   </div>
 
   <div class="container">
-    <div class="section__title section-title">
+    <div class="section__title section-title js-anim-el" data-anim-name="fadeInLeft">
       <div class="section-title__title">
           <h2 class="title">Мы знаем, что такое  настоящее <em class="accent">грузинское вино</em></h2>
       </div>
@@ -27,7 +27,7 @@
     </div>
   </div>
 
-  <div class="section__slider">
+  <div class="section__slider js-anim-el" data-anim-name="fadeInLeft" data-anim-delay="0.2s">
     {% include "partials/_vine-slider.html" %}
   </div>
 </section>

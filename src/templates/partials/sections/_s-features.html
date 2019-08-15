@@ -24,7 +24,8 @@ features = {
           всех норм санитарии...</p>
           <p>Мы выбираем овощи без химических добавок и пестицидов,
               поэтому вам и вашим детям ничего не грозит.</p>',
-      imgContent: ''
+      imgContent: '',
+      delay: '0.2s'
     },
     {
       img: '03.png',
@@ -36,7 +37,8 @@ features = {
           и настоящую грузинскую приправу...</p>
           <p>Только настоящие уцхо-сунели и сванская соль для
               настоящих ценителей Грузии.</p>',
-      imgContent: 'hach.png'
+      imgContent: 'hach.png',
+      delay: '0.4s'
     },
     {
       mod: '',
@@ -50,7 +52,8 @@ features = {
           </p>
           <p>Настоящие грузинские хачапури по-аджарски вы можете
               попробовать только у нас.</p>',
-      imgContent: ''
+      imgContent: '',
+      delay: '0.6s'
     }
   ]
 }
@@ -58,14 +61,14 @@ features = {
 
 <!-- begin section -->
 <section class="section s-features overflow-hidden bg-top-right pb-md js-lazy" data-background-image="./img/bg-section/bg-feature.png">
-  <div class="section-img is-left is-top-center">
-    <img data-src="./img/pngs/spice-05.png" alt="" class="js-lazy">
+  <div class="section-img is-left is-top-center js-anim-el js-parallax-scene" data-anim-name="rotateInLeft">
+    <img data-depth="0.1" data-src="./img/pngs/spice-05.png" alt="" class="js-lazy">
   </div>
-  <div class="section-img is-right is-bottom">
-      <img data-src="./img/pngs/berry-02.png" alt="" class="js-lazy">
+  <div class="section-img is-right is-bottom js-anim-el js-parallax-scene" data-anim-name="rotateInRight">
+      <img data-depth="0.1" data-src="./img/pngs/berry-02.png" alt="" class="js-lazy">
     </div>
   <div class="container">
-    <div class="section__title section-title">
+    <div class="section__title section-title js-anim-el" data-anim-name="fadeInLeft">
       <div class="section-title__title">
         <h2 class="title">Мы используем только самые <em class="accent">свежие</em> продукты </h2>
       </div>
@@ -81,7 +84,7 @@ features = {
     <div class="features">
       {% for i in features.items %}
         <!-- begin feature -->
-        <div class="feature{% if i.mod %} {{ i.mod }}{% endif %}">
+        <div class="feature{% if i.mod %} {{ i.mod }}{% endif %} js-anim-el" data-anim-name="fadeInLeft" data-anim-delay="{{ i.delay }}">
           <div class="feature__img">
             <img data-src="./img/features/{{ i.img }}" alt="" class="js-lazy">
           </div>

@@ -1,7 +1,9 @@
 .hero
+  background-color: $black
   position: relative
   .section-img
     z-index: 1
+    opacity: 0
     +xl
       img
         max-width: 80%
@@ -11,10 +13,12 @@
     max-width: 630px
   &__title, &__btns
     margin-bottom: 25px
+    opacity: 0
     +md
       margin-bottom: 15px
   &__text
     margin-bottom: 50px
+    opacity: 0
     +md
       margin-bottom: 30px
     +sm
@@ -31,6 +35,7 @@
         margin-bottom: 10px
   &__del
     color: $white
+    opacity: 0
     .icon
       font-size: 45px
       margin-right: 10px

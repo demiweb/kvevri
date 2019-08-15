@@ -30,6 +30,33 @@
       bottom: 45px
   &--black
     background-color: $black
+  &--noisy-white
+    background-color: $white
+    +image('noisy-white.png')
+    background-size: auto !important
+    background-repeat: repeat
+  &--download
+    &__inner
+      +flex(flex-start, normal, row, wrap)
+    &__content
+      width: 50%
+      +flex(center, normal, column)
+      +xs
+        width: 100%
+    &__img
+      width: 50%
+      +flex(center, normal, column)
+      +xs
+        width: 100%
+    &__title, &__subttl
+      margin-bottom: 20px
+    &__btn
+      .border
+        display: inline-block
+        +xs
+          display: block
+
+    
   
 .section-img
   position: absolute
@@ -44,9 +71,11 @@
   &.is-right
     right: 0
     text-align: right
+    img
+      display: inline-block !important
   &.is-top-center
     top: 50%
-    transform: translate(0, -50%)
+    // transform: translate(0, -50%)
   &.is-top
     top: 0
   &.is-top-100
@@ -74,6 +103,10 @@
   &--light
     #{$this}__title
       +image('border-light.png')
+  &--auto
+    text-align: center
+    #{$this}__title
+      display: inline-block
 
 .s-hits
   .section__layer
@@ -172,3 +205,25 @@
     margin-left: auto
     margin: auto
     margin-bottom: 30px
+
+.s-item
+  &__title
+    margin-bottom: 50px
+  &__item
+    margin-bottom: 85px
+    +xl
+      margin-bottom: 70px
+    +lg
+      margin-bottom: 60px
+    +md
+      margin-bottom: 50px
+    +sm
+      margin-bottom: 30px
+    +xs 
+      margin-bottom: 20px
+
+.s-menu
+  position: relative
+  z-index: 2
+  box-shadow: 0px 6px 7px 0px rgba(0, 0, 0, 0.75)
+  z-index: 9

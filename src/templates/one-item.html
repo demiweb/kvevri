@@ -1,0 +1,48 @@
+---
+title: one-item
+page: one-item
+mainClass: main--noise
+breadcrumbs: {
+  list: [
+    { link: 'Главная' },
+    { item: '-' },
+    { link: 'Меню' },
+    { item: '-' },
+    { link: 'Мангал/Гриль' },
+    { item: '-' },
+    { link: 'Форель на мангале', modLink: 'is-active' }
+  ],
+  link: true
+}
+slider: {
+  slider: [
+    {
+      title: 'форель на мангале',
+      price: '<div class="price">95.00<small>грн</small></div> (100 г)'
+    },
+    {
+      title: 'шашлык из курицы',
+      price: '<div class="price">95.00<small>грн</small></div> (100 г)'
+    },
+    {
+      title: 'шашлык из свинины',
+      price: '<div class="price">95.00<small>грн</small></div> (100 г)'
+    },
+    {
+      title: 'люля-кебаб из Говядины',
+      price: '<div class="price">95.00<small>грн</small></div> (100 г)'
+    },
+    {
+      title: 'форель на мангале',
+      price: '<div class="price">95.00<small>грн</small></div> (100 г)'
+    }
+  ]
+}
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+  {% include "partials/sections/_s-item.html" %}
+{% endblock %}
+
+

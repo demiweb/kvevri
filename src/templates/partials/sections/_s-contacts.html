@@ -32,12 +32,12 @@ tabs = [
 %}
 
 <!-- begin section -->
-<section class="section s-contacts pt-sm pb-lg">
-  <div class="section-img is-right is-top-100">
-    <img data-src="./img/pngs/berry-02.png" alt="" class="js-lazy">
+<section class="section overflow-hidden s-contacts pt-sm pb-lg">
+  <div class="section-img is-right is-top-100 js-anim-el js-parallax-scene" data-anim-name="rotateInRight">
+    <img data-depth="0.1" data-src="./img/pngs/berry-02.png" alt="" class="js-lazy">
   </div>
   <div class="container">
-    <div class="section__title section-title">
+    <div class="section__title section-title js-anim-el" data-anim-name="fadeInLeft">
       <div class="section-title__title">
         <h2 class="title">Наши <em class="accent">рестораны</em></h2>
       </div>
@@ -45,13 +45,13 @@ tabs = [
 
     <!-- begin contacts-tabs -->
     <div class="contacts-tabs js-tabs">
-      <div class="contacts-tabs__nav">
+      <div class="contacts-tabs__nav js-anim-el" data-anim-name="fadeInLeft" data-anim-delay="0.2s">
         {% for i in tabs %}
           <button class="contacts-tabs__btn{% if i.active %} is-active{% endif %} js-tab" data-target-tab="{{ i.tab }}">{{ i.btn }}</button>
         {% endfor %}
       </div>
 
-      <div class="contacts-tabs__content">
+      <div class="contacts-tabs__content js-anim-el" data-anim-name="fadeInLeft" data-anim-delay="0.4s">
         {% for i in tabs %}
           <div class="contacts-tabs__item{% if i.active %} is-active{% endif %} js-tabs-item" data-tab="{{ i.tab }}">
             <!-- begin contacts -->

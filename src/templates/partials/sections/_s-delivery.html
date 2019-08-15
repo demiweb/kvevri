@@ -14,7 +14,8 @@ items = [
     text: 'Посетите наши рестораны находятся
     на ул. Строителей, Позняках и Гидропарке. 
     Мы работаем с 11:00 до 23:30',
-    btn: 'Посетить ресторан'
+    btn: 'Посетить ресторан',
+    delay: '0.2s'
   },
   {
     title: 'Мероприятия',
@@ -22,22 +23,23 @@ items = [
     text: 'Хотите устроить банкет, свадьбу или
     тимбилдинг-вечеринку? Мы с радостью
     организуем для вас любое мероприятие',
-    btn: 'Заказать мероприятие'
+    btn: 'Заказать мероприятие',
+    delay: '0.4s'
   }
 ]  
 %}
 
 <!-- begin section -->
-<section class="section s-delivery bg-cover bg-center-center pt-xl pb-lgl js-lazy" data-background-image="./img/bg-section/bg-delivery.jpg">
+<section class="section s-delivery overflow-hidden bg-cover bg-center-center pt-xl pb-lgl js-lazy" data-background-image="./img/bg-section/bg-delivery.jpg">
   <div class="section__layer">
     <img data-src="./img/bg-layer-02.png" alt="" class="js-lazy">
   </div>
 
-  <div class="section-img is-right is-top-200">
-    <img data-src="./img/pngs/spice-02.png" alt="" class="js-lazy">
+  <div class="section-img is-right is-top-200 js-anim-el js-parallax-scene" data-anim-name="rotateInRight">
+    <img data-depth="0.1" data-src="./img/pngs/spice-02.png" alt="" class="js-lazy">
   </div>
   <div class="container">
-    <div class="section__title section-title section-title--light">
+    <div class="section__title section-title section-title--light js-anim-el" data-anim-name="fadeInLeft">
       <div class="section-title__title">
         <h2 class="title title--white">Уже <em class="accent">готовы</em>
             попробовать?</h2>
@@ -48,7 +50,7 @@ items = [
     <div class="del-items">
       {% for i in items %}
         <!-- begin del-item -->
-        <div class="del-item__wrap">
+        <div class="del-item__wrap js-anim-el" data-anim-name="fadeInLeft" data-anim-delay="{{ i.delay }}">
           <div class="del-item">
             <div class="del-item__img">
               <img data-src="./img/delivery/{{ i.img }}" alt="" class="js-lazy">

@@ -14,6 +14,6 @@ export default function setParralax() {
   };
 
   if(!isTouch) {
-    // initParallaxJs();
+    initParallaxJs();
   };
 };

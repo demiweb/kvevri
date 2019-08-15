@@ -20,7 +20,7 @@ class Tabs {
     this.$items.removeClass(Tabs.classNames.active);
 
     this.$btn.addClass(Tabs.classNames.active);
-    this.$item.addClass(Tabs.classNames.active);    
+    this.$item.addClass(Tabs.classNames.active);
   };
 
   _initTabs() {

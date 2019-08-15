@@ -1,0 +1,39 @@
+<!-- begin section -->
+<section class="section s-menu pb-md">
+  <div class="container">
+    <!-- begin menu -->
+    <div class="menu">
+      <div class="menu__toggle-wrap">
+        <button class="menu__toggle js-burger" data-menu-target="menu_nav">Смотреть все меню</button>
+      </div>
+
+      <div class="menu__aside js-menu" data-menu="menu_nav">
+        <!-- begin menu-nav -->
+        <aside class="menu-nav">
+          {% for i in menuNav %}
+            <div class="menu-nav__item">
+              <img data-src="./img/menu/{{ i.img }}" alt="" class="js-lazy">
+              <a href="#" class="menu-nav__link{% if i.active %} is-active{% endif %}">{{ i.link }}</a>
+            </div>
+          {% endfor %}
+        </aside>
+        <!-- end menu-nav -->
+      </div> 
+
+      <div class="menu__items">
+        {% for i in items %}
+          <div class="menu__item">
+            {{ mixins.item(
+              mod = 'item--transp-white',
+              price = i.price,
+              title = i.title,
+              img = 'lulya3.png'
+            ) }}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+    <!-- end menu -->
+  </div>
+</section>
+<!-- end section -->

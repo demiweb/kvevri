@@ -58,9 +58,10 @@ class Animator {
 };
 
 export default function animateOnScroll() {
-  const $els = $('.js-anim-el');
+  const els = [].slice.call(document.querySelectorAll('.js-anim-el'));
+  if(!els.length) return;
 
-  $els.each((i, el) => {
+  els.forEach(el => {
     const animator = new Animator(el);
     animator.init();
   });

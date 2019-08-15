@@ -1,0 +1,70 @@
+.fadeInLeft
+  animation-name: fadeInLeft
+.bounceInDown
+  animation-name: bounceInDown
+.rotateInRight
+  animation-name: rotateInRight
+.rotateInLeft
+  animation-name: rotateInLeft
+.fadeInLeftCenter
+  animation-name: fadeInLeftCenter
+.fadeInUp
+  animation-name: fadeInUp
+
+@keyframes fadeInLeft
+  0%
+    opacity: 0
+    transform: translate(-30px, 0)
+  100%
+    opacity: 1
+    transform: translate(0, 0)
+
+@keyframes fadeInLeftCenter
+  0%
+    opacity: 0
+    transform: translate(-30px, -50%)
+  100%
+    opacity: 1
+    transform: translate(0, -50%)
+
+@keyframes bounceInDown
+  0% 
+    opacity: 0
+    transform: translate3d(0, -100px, 0)
+  60% 
+    opacity: 1
+    transform: translate3d(0, 15px, 0) 
+  75% 
+    opacity: 1
+    transform: translate3d(0, -10px, 0)
+  90% 
+    opacity: 1
+    transform: translate3d(0, 5px, 0)
+  100%
+    opacity: 1
+    transform: translate3d(0, 0, 0)
+
+@keyframes rotateInRight
+  0%
+    transform: translate(100px, 0) rotate(45deg)
+    opacity: 0
+  100%
+    opacity: 1
+    transform: translate(0, 0) rotate(0)
+
+@keyframes fadeInUp
+  0%
+    opacity: 0
+    transform: translate(0, 30px)
+  100%
+    opacity: 1
+    transform: translate(0, 0)
+
+@keyframes rotateInLeft
+  0%
+    opacity: 0
+    transform: translate(-100px, 0) rotate(-45deg)
+  100%
+    opacity: 1
+    transform: translate(0, 0) rotate(0)      
+    

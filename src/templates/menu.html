@@ -1,0 +1,67 @@
+---
+title: menu
+page: menu
+mainClass: main--noise
+breadcrumbs: {
+  list: [
+    { link: 'Главная' },
+    { item: '-' },
+    { link: 'Меню', modLink: 'is-active' }
+  ]
+}
+menuNav: [
+  { img: '01.png', link: 'Горячие блюда', active: true },
+  { img: '01.png', link: 'Салаты' },
+  { img: '01.png', link: 'Холодные закуски' },
+  { img: '01.png', link: 'Мангал/Гриль' },
+  { img: '01.png', link: 'Первые блюда' },
+  { img: '01.png', link: 'Гарниры' },
+  { img: '01.png', link: 'Выпечка' },
+  { img: '01.png', link: 'Хинкали' },
+  { img: '01.png', link: 'Десерты' },
+  { img: '01.png', link: 'Соусы' },
+  { img: '01.png', link: 'Напитки' }
+]
+items: [
+  {
+    title: 'форель на мангале',
+    price: '<div class="price">95.00<small>грн</small></div> (100 г)'
+  },
+  {
+    title: 'шашлык из курицы',
+    price: '<div class="price">95.00<small>грн</small></div> (100 г)'
+  },
+  {
+    title: 'шашлык из свинины',
+    price: '<div class="price">95.00<small>грн</small></div> (100 г)'
+  },
+  {
+    title: 'люля-кебаб из Говядины',
+    price: '<div class="price">95.00<small>грн</small></div> (100 г)'
+  },
+  {
+    title: 'шашлык из курицы',
+    price: '<div class="price">95.00<small>грн</small></div> (100 г)'
+  },
+  {
+    title: 'форель на мангале',
+    price: '<div class="price">95.00<small>грн</small></div> (100 г)'
+  },
+  {
+    title: 'шашлык из свинины',
+    price: '<div class="price">95.00<small>грн</small></div> (100 г)'
+  },
+  {
+    title: 'люля-кебаб из Говядины',
+    price: '<div class="price">95.00<small>грн</small></div> (100 г)'
+  }
+]
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+  {% include "partials/sections/_s-menu.html" %}
+  {% include "partials/sections/_s-menu-download.html" %}
+{% endblock %}
+
+

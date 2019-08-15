@@ -1,7 +1,7 @@
 <!-- begin section -->
 <section class="section s-about pb-md overflow-hidden">
   <div class="container">
-    <div class="section__title section-title">
+    <div class="section__title section-title js-anim-el" data-anim-name="fadeInLeft">
       <div class="section-title__title">
         <div class="title">Хотите узнать о древней
             истории <span class="accent">Квеври?</span></div>
@@ -18,11 +18,9 @@
     <div class="about">
       <!-- begin about-block -->
       <div class="about-block">
-          <div class="about-block__img">
-            <img data-src="./img/about/1.jpg" alt="" class="js-lazy">
-          </div>
+          <div class="about-block__img js-lazy" data-background-image="./img/about/01.jpg"></div>
 
-          <div class="about-block__text">
+          <div class="about-block__text js-anim-el" data-anim-name="fadeInLeft">
             <h3 class="title title--h3">История <span class="accent">Квеври</span></h3>
 
             <p>Первые Квеври обнаружили еще 5-6 тыс. лет до н.э. 
@@ -41,7 +39,7 @@
 
       <!-- begin about-block -->
       <div class="about-block">
-          <div class="about-block__text">
+          <div class="about-block__text js-anim-el" data-anim-name="fadeInLeftCenter">
             <h3 class="title title--h3">Метод приготовления</h3>
 
             <p>Квеври закапывают в землю по самую горловину и закладывают в него виноград, 
@@ -54,21 +52,16 @@
                 вино снимают с осадка и начинают пить. </p>
           </div>
 
-          <!-- <div class="about-block__img js-lazy" data-background-image="./img/about/2.jpg"></div> -->
+          <div class="about-block__img js-lazy" data-background-image="./img/about/02.jpg"></div>
 
-          <div class="about-block__img">
-              <img data-src="./img/about/2.jpg" alt="" class="js-lazy">
-            </div>
       </div>
       <!-- end about-block -->
 
       <!-- begin about-block -->
       <div class="about-block js-lazy" data-background-image="./img/bg-section/bg-about.png">
-        <div class="about-block__img">
-          <img data-src="./img/pngs/bottle.png" alt="" class="js-lazy">
-        </div>
+        <div class="about-block__img js-lazy" data-background-image="./img/pngs/bottle.png"></div>
 
-        <div class="about-block__quote-fu quote-fu">
+        <div class="about-block__quote-fu quote-fu js-anim-el" data-anim-name="fadeInLeft">
             Настоящее вино Квеври не содержит в себе каких-либо консервантов, благодаря
             методу приготовления они просто не нужны.
             {{ mixins.icon('two-quotes') }}
@@ -78,7 +71,7 @@
 
       <!-- begin about-block -->
       <div class="about-block">
-        <div class="about-block__quote quote">
+        <div class="about-block__quote quote js-anim-el" data-anim-name="fadeInLeftCenter">
           <p>В 1600 году один из зарубежных путешественников, посетивших Грузию писал:
               “Нет такой второй страны, где пьют лучшее вино. Крестьяне выдалбливают
               из толстого дерева середину и используют его как корыто, где давят виноград.
@@ -89,9 +82,7 @@
               напитки таким образом от врагов</p>
         </div>
 
-        <div class="about-block__img">
-          <img data-src="./img/about/3.jpg" alt="" class="js-lazy">
-        </div>
+        <div class="about-block__img js-lazy" data-background-image="./img/about/03.jpg"></div>
       </div>
       <!-- end about-block -->
     </div>

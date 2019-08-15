@@ -1,5 +1,5 @@
 import setLazy from './setLazy';
-import Swiper from 'swiper';
+import Swiper from 'swiper/dist/js/swiper';
 
 export default function setSliders() {
   const $sliders = $('.js-slider');
@@ -61,10 +61,14 @@ export default function setSliders() {
         spaceBetween: 30,
         grabCursor: true,
         centeredSlides: true,
+        loop: true,
         breakpoints: {
           568: {
             spaceBetween: 20
           }
+        },
+        on: {
+          init: setLazy
         }
       }
     };

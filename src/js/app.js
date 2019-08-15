@@ -9,6 +9,7 @@ import toggleMenu from './components/toggleMenu';
 import setGallery from './components/setGallery';
 import setParrallax from './components/setParralax';
 import animateOnScroll from './components/animateOnScroll';
+// import './components/animations';
 
 
 $(function() {

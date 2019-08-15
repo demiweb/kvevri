@@ -3,7 +3,7 @@ body
   line-height: 1.4
   font-size: $fz
   min-width: 320px
-  +reg
+  +light
   color: $c-text
   +no-scroll
   +sm
@@ -41,6 +41,24 @@ button
 [data-loaded="true"]  
   animation: fadeIn 1s
 
+.main  
+  &__breadcrumbs
+    padding-top: 25px
+    padding-bottom: 25px
+    +md
+      padding-top: 70px
+    +sm
+      padding-top: 60px
+    +xs
+      padding-top: 40px
+    +xss
+      padding-bottom: 10px
+  &--noise
+    +image('noisy.png')
+    background-color: $black
+    background-repeat: repeat
+    background-size: auto
+
 .container
   max-width: 1440px
   padding-left: 15px
@@ -60,8 +78,7 @@ button
   background-size: cover !important
 .bg-center-center
   background-position: 50% 50%
-
-
+  
 .price
   +bold
   color: $white-dark
@@ -75,6 +92,12 @@ button
     color: $gray-dark
   &--sm
     font-size: 14px
+  &--md
+    font-size: 36px
+    +lg
+      font-size: 30px
+    +md
+      font-size: 26px
   &--old
     position: relative
     +after
@@ -129,6 +152,8 @@ button
   background-size: 100%
   &--sm-dark
     +image('border-sm-dark.png')
+  &--inl-block
+    display: inline-block
 
 .quote-fu
   position: relative

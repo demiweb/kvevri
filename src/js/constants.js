@@ -16,7 +16,8 @@ export const {
   HAS_ERROR,
   HAS_TEXT,
   IS_VALID,
-  IS_FIXED
+  IS_FIXED,
+  HAS_OPEN_MENU
 } = {
   $DOC: $(document),
   $WIN: $(window),
@@ -35,5 +36,6 @@ export const {
   HAS_ERROR: 'has-error',
   HAS_TEXT: 'has-text',
   IS_VALID: 'is-valid',
-  IS_FIXED: 'is-fixed'
+  IS_FIXED: 'is-fixed',
+  HAS_OPEN_MENU: 'has-open-menu'
 };

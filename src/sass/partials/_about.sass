@@ -14,6 +14,12 @@
       top: 10%
       left: 15%
       max-width: 595px
+    #{$this}__img
+      width: 330px
+      // padding-top: 37%
+      height: 490px
+      +r(374)
+        width: 100%
   &:nth-child(2)
     margin-top: -20px
     +flex(flex-end)
@@ -34,35 +40,38 @@
         bottom: -40px
         width: 90%
     #{$this}__img
-      img[data-loaded="true"]
+      width: 742px
+      // padding-top: 40%
+      height: 520px
+      +sm
+        width: 100%
+        height: 420px
+      &[data-loaded="true"]
+        right: -15%
         position: relative
-        right: -20%
         +md
           right: 0
-      +xs
-        height: 400px
-        img
-          object-fit: cover
-          width: 100%
-          height: 100%
   &:nth-child(3)
     +flex(flex-start, center)
     #{$this}__img
       width: percentage(5/12)
-      text-align: center
-      img
-        display: inline-block
+      border-radius: 0
+      padding-top: 40%
+      background-size: contain
+      // text-align: center
+      // img
+      //   display: inline-block
     #{$this}__qoute-fu
       width: percentage(7/12)
   &:nth-child(4)
     +flex(flex-end)
     margin-top: -100px
     +xl
-      margin-top: -80px
+      margin-top: -70px
     +lg
-      margin-top: -60px
-    +md
       margin-top: -50px
+    +md
+      margin-top: -30px
     +sm
       margin-top: 0
       margin-bottom: 40px
@@ -82,20 +91,26 @@
         bottom: -40px
         width: 90%
     #{$this}__img
-      +xs
+      width: 930px
+      // padding-top: 43%
+      height: 610px
+      +md
+        width: 100%
+      +sm
         height: 400px
-        img
-          height: 100%
-          width: 100%
-          object-fit: cover
+      &[data-loaded="true"]
+        position: relative
+        right: -10%
+        +md
+          left: 0
   &__img
-    // +cover
+    +cover
     // pt
     border-radius: 15px
     position: relative
     z-index: 1
-    img
-      border-radius: 15px
+    // img
+      // border-radius: 15px
   &__img-right
     position: absolute
     z-index: 0
@@ -111,6 +126,7 @@
     background-color: $white
     border-radius: 15px
     padding: 45px 15px 40px 50px
+    opacity: 0
     +xl
       padding: 35px 15px 35px 35px
     +lg
@@ -130,5 +146,7 @@
     max-width: 730px
     position: relative
     z-index: 2
+    opacity: 0
   &__quote-fu
     max-width: 770px
+    opacity: 0

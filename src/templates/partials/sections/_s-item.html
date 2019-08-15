@@ -1,0 +1,80 @@
+<!-- begin section  -->
+<section class="section s-item pb-md">
+  <div class="container">
+    <div class="s-item__item">
+      <!-- begin item-lg -->
+      <div class="item-lg">
+        <div class="item-lg__left">
+          <div class="item-lg__item">
+            {{ mixins.item(
+              mod = 'item--transp', 
+              price = '<div class="price price--md">95.00<small>грн</small></div> (170 г)',
+              img = 'lg-01.png'
+            ) }}
+          </div>
+        </div>
+
+        <div class="item-lg__rigth">
+          <div class="item-lg__block">
+            <div class="item-lg__title-lg">Люля-кебаб из баранины</div>
+
+            <div class="item-lg__text">Представляет собой мясной фарш из рубленной баранины,<br> нанизанный на шампур и зажаренный на мангале, с добавлением <br> лука (без использования хлеба и яиц). </div>
+          </div>
+
+          <div class="item-lg__block">
+            <div class="item-lg__title">ингридиенты:</div>
+
+            <div class="item-lg__text">Баранина, оливковое масло, чеснок, уксус винный, лук репчатый, кинза, соль, перец, петрушка, гранат, хмели сунели, болгарский перец.</div>
+          </div>
+
+          <div class="item-lg__block item-lg__block-auto">
+            <div class="item-lg__title">калорийность</div>
+
+            <div class="item-lg__text">250 ккал / 100 г</div>
+          </div>
+
+          <div class="item-lg__block item-lg__block-auto">
+            <div class="item-lg__title">Вес порции:</div>
+
+            <div class="item-lg__text">170 г</div>
+          </div>
+        </div>
+      </div>
+      <!-- end item-lg -->
+    </div>
+  </div>
+
+  <div class="s-item__slider">
+    <div class="s-item__title section__title section-title section-title--light section-title--auto">
+      <div class="section-title__title">
+        <h2 class="title title--white">Также <em class="accent">попробуйте</em></h2>
+      </div>
+    </div>
+    <!-- begin slider -->
+    <div class="slider__wrap slider--items__wrap js-tabs">
+      <div class="swiper-container js-slider" data-slider="items">
+        <div class="swiper-wrapper">
+          {% for i in slider.slider %}
+          <div class="swiper-slide">
+            {{ mixins.item(
+              mod = 'item--transp-white',
+              price = i.price,
+              title = i.title,
+              img = 'lulya3.png'
+            ) }}
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="slider__btns">
+        <button class="slider__prev prev prev--transp-white js-prev"></button>
+        <button class="slider__next next next--transp-white js-next"></button>
+      </div>
+
+    </div>
+    <!-- end slider -->
+  </div>
+  
+</section>
+<!-- end section  -->
