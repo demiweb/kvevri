@@ -5,6 +5,9 @@
   background-position: 0 100%
   +md
     background-size: 60%
+  .container
+    position: relative
+    z-index: 1
   &__title
     text-align: center
     +lg
@@ -12,6 +15,9 @@
   &__title-left
     max-width: 515px
     margin-right: percentage(1/12)
+  &__slider
+    position: relative
+    z-index: 1
   &__layer
     position: absolute
     z-index: 0
@@ -150,6 +156,8 @@
       +lg
         img
           max-width: 70%
+      +md
+        display: none
 
 .s-about
 
@@ -205,6 +213,10 @@
     margin-left: auto
     margin: auto
     margin-bottom: 30px
+  .section-img
+    &.is-top-100.is-right
+      +md
+        display: none
 
 .s-item
   &__title
