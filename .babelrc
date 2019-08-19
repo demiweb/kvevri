@@ -1,12 +1,9 @@
 {
   "presets": [
-    ["env", {
+    ["@babel/preset-env", {
       "targets": {
         "browsers": ["last 2 versions"]
       }
     }]
-  ],
-  "parserOpts": {
-  	"plugins": ["transform-object-rest-spread", "transform-es2015-spread", "transform-es2015-destructuring"]
-  }
+  ]
 }

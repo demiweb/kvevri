@@ -1,7 +1,8 @@
+import $ from 'jquery';
 import 'intersection-observer';
 
 import sayHello from './lib/sayHello';
-import { setTouch } from './components/setHTMLClassNames';
+import setTouch from './components/setHTMLClassNames';
 import setLazy from './components/setLazy';
 import setSliders from './components/setSliders';
 import setTabs from './components/setTabs';
@@ -12,7 +13,7 @@ import animateOnScroll from './components/animateOnScroll';
 // import './components/animations';
 
 
-$(function() {
+$(() => {
   sayHello();
   setTouch();
   setLazy();

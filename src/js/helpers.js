@@ -10,7 +10,7 @@ export const {
   isIE,
   isIOS,
   isOpera,
-  isSafari
+  isSafari,
 } = {
   isAndroid: /Android/.test(navigator.userAgent),
   isCordova: !!window.cordova,
@@ -22,10 +22,15 @@ export const {
   isIE: /Trident/.test(navigator.userAgent),
   isIOS: /(iPhone|iPad|iPod)/.test(navigator.platform),
   isOpera: /OPR/.test(navigator.userAgent),
-  isSafari: /Safari/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent)
+  isSafari: /Safari/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent),
 };
 
-export const isWebkit = isChrome || isChromiumBased || isChromeIOS || isSafari || isAndroid || isIOS;
+export const isWebkit = isChrome
+|| isChromiumBased
+|| isChromeIOS
+|| isSafari
+|| isAndroid
+|| isIOS;
 
 // detect touchevents
 export const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints;

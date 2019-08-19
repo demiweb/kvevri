@@ -1,9 +1,10 @@
+import $ from 'jquery';
+import Swiper from '../../../node_modules/swiper/dist/js/swiper';
 import setLazy from './setLazy';
-import Swiper from 'swiper/dist/js/swiper';
 
 export default function setSliders() {
   const $sliders = $('.js-slider');
-  if(!$sliders.length) return;
+  if (!$sliders.length) return;
 
   $sliders.each((i, slider) => {
     const name = slider.dataset.slider;
@@ -23,12 +24,12 @@ export default function setSliders() {
             pagination: {
               el: pagination,
               type: 'bullets',
-            }
-          }
+            },
+          },
         },
         on: {
-          init: setLazy
-        }
+          init: setLazy,
+        },
       },
       items: {
         navigation: {
@@ -40,21 +41,21 @@ export default function setSliders() {
         loop: true,
         breakpoints: {
           768: {
-            slidesPerView: 1
+            slidesPerView: 1,
           },
           992: {
-            slidesPerView: 2
+            slidesPerView: 2,
           },
           1200: {
-            slidesPerView: 3
+            slidesPerView: 3,
           },
           1400: {
-            spaceBetween: 20
-          }
+            spaceBetween: 20,
+          },
         },
         on: {
-          init: setLazy
-        }
+          init: setLazy,
+        },
       },
       gallery: {
         slidesPerView: 'auto',
@@ -64,15 +65,15 @@ export default function setSliders() {
         loop: true,
         breakpoints: {
           568: {
-            spaceBetween: 20
-          }
+            spaceBetween: 20,
+          },
         },
         on: {
-          init: setLazy
-        }
-      }
+          init: setLazy,
+        },
+      },
     };
 
     const mySlider = new Swiper(slider, options[name]);
   });
-}; 
+}

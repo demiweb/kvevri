@@ -1,3 +1,5 @@
+import $ from 'jquery';
+
 export const {
   $DOC,
   $WIN,
@@ -8,6 +10,9 @@ export const {
   IS_ACTIVE,
   IS_OPEN,
   IS_VISIBLE,
+  IS_READY,
+  IS_LOADING,
+  IS_LOADED,
   HAS_FOCUS,
   IS_ANIMATE,
   IS_HIDDEN,
@@ -17,7 +22,7 @@ export const {
   HAS_TEXT,
   IS_VALID,
   IS_FIXED,
-  HAS_OPEN_MENU
+  HAS_OPEN_MENU,
 } = {
   $DOC: $(document),
   $WIN: $(window),
@@ -28,6 +33,9 @@ export const {
   IS_ACTIVE: 'is-active',
   IS_OPEN: 'is-open',
   IS_VISIBLE: 'is-visible',
+  IS_READY: 'is-ready',
+  IS_LOADING: 'is-loading',
+  IS_LOADED: 'is-loaded',
   HAS_FOCUS: 'has-focus',
   IS_ANIMATE: 'is-animate',
   IS_HIDDEN: 'is-hidden',
@@ -37,5 +45,5 @@ export const {
   HAS_TEXT: 'has-text',
   IS_VALID: 'is-valid',
   IS_FIXED: 'is-fixed',
-  HAS_OPEN_MENU: 'has-open-menu'
+  HAS_OPEN_MENU: 'has-open-menu',
 };

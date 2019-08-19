@@ -2,13 +2,13 @@ class Animator {
   constructor(el, options) {
     this.el = el;
     this.observerOptions = options ? options.observer : {};
-    this.options = options ? options : {};
+    this.options = options || {};
     this.counter = 0;
-  };
+  }
 
   init() {
-    this._animate();
-  };
+    this.animate();
+  }
 
   animateEls(entries, observer) {
     entries.forEach((entry) => {
@@ -28,41 +28,40 @@ class Animator {
         el.style.animationDuration = animationDuration;
         el.style.animationDelay = animationDelay;
 
-        const DELAY = 1000*((+animationDuration.slice(0, -1)) + (+animationDelay.slice(0, -1)));
+        const DELAY = 1000 * ((+animationDuration.slice(0, -1)) + (+animationDelay.slice(0, -1)));
 
         setTimeout(() => {
           el.style.opacity = '1';
-          this.counter++;
+          this.counter += 1;
 
           if (animationIterations) {
             if (animationIterations === this.counter) {
               observer.unobserve(el);
-            };            
+            }
           } else if (!this.options.infinite) {
             observer.unobserve(el);
-          };
-          
+          }
         }, DELAY);
       } else {
         el.classList.remove(animationName);
         el.style.animationDuration = '';
         el.style.animationDelay = '';
-      };
+      }
     });
-  };
+  }
 
-  _animate() {
+  animate() {
     const observer = new IntersectionObserver(this.animateEls.bind(this), this.observerOptions);
     observer.observe(this.el);
-  };
-};
+  }
+}
 
 export default function animateOnScroll() {
   const els = [].slice.call(document.querySelectorAll('.js-anim-el'));
-  if(!els.length) return;
+  if (!els.length) return;
 
-  els.forEach(el => {
+  els.forEach((el) => {
     const animator = new Animator(el);
     animator.init();
   });
-};
+}
