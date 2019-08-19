@@ -1,8 +1,11 @@
 <!-- begin section -->
 <section class="section s-gallery overflow-hidden bg-cover bg-center-center js-lazy" data-background-image="./img/bg-section/bg-gallery.jpg">
+  {% if sectionGallery.img %}
   <div class="section-img is-right is-top js-anim-el js-parallax-scene" data-anim-name="rotateInRight">
     <img data-depth="0.1" data-src="./img/pngs/spice-03.png" alt="" class="js-lazy">
   </div>
+  {% endif %}
+  
   <div class="container">
     <div class="section__title js-anim-el" data-anim-name="fadeInLeft">
       <h2 class="title title--white">Посмотрите на нашу фотогалерею</h2>

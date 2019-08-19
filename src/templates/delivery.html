@@ -1,0 +1,33 @@
+---
+title: about
+page: about
+
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+  {%set
+  hero = {
+    bg: 'hero-delivery.jpg',
+    title: 'Доставка и оплата' ,
+    subttl: 'Нет сил и времени идти в ресторан? Закажите доставку наших блюд к себе 
+  домой или в офис. Среднее время доставки заказа:  45 – 60 минут',
+    btns: [
+      { title: 'Заказать доставку', mod: '', wrapMod: 'border'}
+    ],
+    breadcrumbs: {
+      list: [
+        { link: 'Главная' },
+        { item: '-' },
+        { link: 'Доставка и оплата', modLink: 'is-active' }
+      ]
+    },
+    text: mixins.icon('delivery-truck') + 'Бесплатная доставка при заказе <strong>от 1000 грн!</strong> (с 10:00 до 22:00)'
+  }
+  %}
+  
+  {% include "partials/_hero.html" %}
+  {% include "partials/sections/_s-zone.html" %}
+{% endblock %}
+
+

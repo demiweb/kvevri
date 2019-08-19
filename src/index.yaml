@@ -4,3 +4,5 @@ PageList:
 - file: home.html
 - file: one-item.html
 - file: menu.html
+- file: about.html
+- file: delivery.html

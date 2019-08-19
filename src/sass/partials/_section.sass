@@ -15,6 +15,28 @@
   &__title-left
     max-width: 515px
     margin-right: percentage(1/12)
+  &__title-mb
+    margin-bottom: 65px
+    +xl
+      margin-bottom: 50px
+    +lg
+      margin-bottom: 40px
+    +md
+      margin-bottom: 30px
+    +sm
+      margin-bottom: 20px
+  &__title-mb-lg
+    margin-bottom: 90px
+    +xl
+      margin-bottom: 70px
+    +lg
+      margin-bottom: 50px
+    +md
+      margin-bottom: 30px
+    +sm
+      margin-bottom: 15px
+  &__title-mb-sm
+    margin-bottom: 30px
   &__slider
     position: relative
     z-index: 1
@@ -34,6 +56,14 @@
       right: 0
       top: 0
       bottom: 45px
+  &__layer-bottom
+    top: auto
+    bottom: 0
+    img
+      transform: scaleY(-1)
+    +before
+      top: 45px
+      bottom: 0
   &--black
     background-color: $black
   &--noisy-white
@@ -104,7 +134,7 @@
     transform: translate(0, -50%)
     +lg
       transform: translate(0, 0)
-      margin-top: -1em
+      // margin-top: -1em
   
   &--light
     #{$this}__title
@@ -120,27 +150,10 @@
     +before
       +css-lock(5, 45, 320, 1499, bottom)
   .section__title
-    margin-bottom: 65px
-    +xl
-      margin-bottom: 50px
-    +lg
-      margin-bottom: 40px
-    +md
-      margin-bottom: 30px
-    +sm
-      margin-bottom: 20px
+    
 
 .s-vine
-  .section-title
-    margin-bottom: 90px
-    +xl
-      margin-bottom: 70px
-    +lg
-      margin-bottom: 50px
-    +md
-      margin-bottom: 30px
-    +sm
-      margin-bottom: 15px
+  
   .section-img
     &.is-top-100.is-right
       +xl
@@ -239,3 +252,86 @@
   z-index: 2
   box-shadow: 0px 6px 7px 0px rgba(0, 0, 0, 0.75)
   z-index: 9
+
+.s-features-about
+  .section__title
+    max-width: 690px
+    margin-left: auto
+    margin-right: auto
+  .section-img
+    &.is-top-100.is-right
+      +lg
+        display: none
+    &.is-top-100.is-left
+      +md
+        display: none
+
+.s-history
+  &__inner
+    +flex(flex-start, normal, row, wrap)
+    +xs
+      display: block
+  &__left
+    width: 50%
+    position: relative
+    +xs
+      width: auto
+      margin-left: -10px
+      margin-right: -10px
+      +flex()
+  &__right
+    width: 50%
+    padding-left: 60px
+    +md
+      padding-left: 15px
+    +xs
+      width: 100%
+      padding-left: 0
+  &__text-block
+    margin-bottom: 40px
+    max-width: 550px
+    +lg
+      margin-bottom: 30px
+    +md
+      margin-bottom: 15px
+    &:nth-child(2)
+      margin-left: percentage(1/12)
+      +md
+        margin-left: 0
+  &__img
+    +cover
+    padding-top: 65%
+    border-radius: 15px
+    width: 100%
+    +lg
+      width: 60%
+    +xs
+      width: calc(50% - 20px)
+      margin-left: 10px
+      margin-right: 10px
+      padding-top: 40%
+      margin-bottom: 10px
+  &__img-absolute
+    position: absolute
+    left: percentage(4/6)
+    top: 70%
+    z-index: 2
+    +lg
+      left: 40%
+      top: 40%
+    +xs
+      position: static
+    
+
+.s-zone
+  position: relative
+  +before
+    position: absolute
+    width: 100%
+    top: 0
+    left: 0
+    z-index: 0
+    background-image: linear-gradient(to bottom, $white, rgba($white, 0))
+    height: 50%
+  &__block
+    width: percentage(9/12)

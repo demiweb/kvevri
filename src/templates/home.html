@@ -1,10 +1,31 @@
 ---
 title: home
 page: home
+header: {
+  marquee: true
+}
+sectionGallery: {
+  img: true
+}
 ---
 {% extends "layouts/_layout.html" %}
-
 {% block content %}
+  {%set
+  hero = {
+    img: true,
+    slider: true,
+    bg: 'hero-home-01.jpg',
+    title: 'Сердце <em class="yellow">грузинской</em> кухни в Киеве',
+    subttl: 'Лучшая грузинская кухня в Киеве, главной приправой которой является
+            наша любовь. Приходите к нам в ресторан или закажите кусочек
+            настоящей грузинской заботы прямо к себе в дом!',
+    btns: [
+      { title: 'Заказать доставку' },
+      { title: 'Хочу к вам в ресторан', mod: 'btn--transp btn--white-dark' }
+    ],
+    text: mixins.icon('delivery-truck') + 'Бесплатная доставка при заказе <strong>от 1000 грн!</strong> (с 10:00 до 22:00)'
+  }
+  %}
   
   {% include "partials/_hero.html" %}
   {% include "partials/sections/_s-hits.html" %}
@@ -14,8 +35,7 @@ page: home
   {% include "partials/sections/_s-features-item.html" %}
   {% include "partials/sections/_s-delivery.html" %}
   {% include "partials/sections/_s-gallery.html" %}
-  {% include "partials/sections/_s-contacts.html" %}
-  
+  {% include "partials/sections/_s-contacts.html" %}  
 {% endblock %}
 
 

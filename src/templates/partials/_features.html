@@ -1,0 +1,27 @@
+<!-- begin features -->
+<div class="features{% if features.mod %} {{ features.mod}}{% endif %}">
+  {% for i in features.items %}
+  <!-- begin feature -->
+  <div class="feature{% if i.mod %} {{ i.mod }}{% endif %} js-anim-el" data-anim-name="fadeInLeft" data-anim-delay="{{ i.delay }}">
+    <div class="feature__img">
+      <img data-src="./img/features/{{ i.img }}" alt="" class="js-lazy">
+    </div>
+
+    <div class="feature__content">
+      <div class="feature__title">
+        <h3 class="title title--h3">{{ i.title | safe  }}</h3>
+      </div>
+
+      <div class="feature__text">{{ i.text | safe }}</div>
+
+      {% if i.imgContent %}
+      <div class="feature__img-content">
+        <img data-src="./img/features/{{ i.imgContent }}" alt="" class="js-lazy">
+      </div>
+      {% endif %}
+    </div>
+  </div>
+  <!-- end feature -->
+  {% endfor %}
+</div>
+<!-- end features -->

@@ -1,6 +1,58 @@
 .features
   // +clr
   +flex(flex-start, normal, row, wrap)
+  &--simple
+    .feature
+      padding-left: 120px
+      +md
+        padding-left: 90px
+      +sm
+        padding-left: 70px
+      +xss
+        padding-left: 0
+      
+      &:nth-child(odd)
+        width: 50%
+        padding-left: 120px
+        +md
+          padding-left: 90px
+        +sm
+          padding-left: 70px
+          width: 100%
+        +xss
+          padding-left: 0
+        .feature__img
+          +xs
+            position: absolute
+          +xss
+            position: static
+      &:nth-child(even)
+        width: 50%
+        +sm
+          width: 100%
+      &:nth-child(3)
+        .feature__img
+          img[data-loaded="true"]
+            left: auto
+      &__img
+        position: absolute
+        top: 0
+        left: 0
+        width: 100px
+        +xll
+          width: 100px
+        +xl
+          width: 100px
+        +lg
+          width: 100px
+        +md
+          width: 80px
+        +sm 
+          width: 70px
+        +xss
+          position: static
+      &__title
+        margin-bottom: 20px
 
 .feature
   $this: &

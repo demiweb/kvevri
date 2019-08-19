@@ -1,0 +1,68 @@
+{%set
+features = {
+  mod: 'features--simple',
+  items: [
+    {
+      img: '05.png',
+      title: 'Только <em class="accent">свежее</em>',
+      text: 'Только свежие продукты, которые лично проверяем
+и не позволим ни одному сомнительному
+ингридиенту попасть в вашу тарелку'
+    },
+    {
+      mod: '',
+      img: '06.png',
+      title: 'Без<em class="accent">полуфабрикатов</em>',
+      text: 'Не используем полуфабрикаты, а лепим и замешиваем сами, 
+чтобы наши хинкали и хачапури всегда превосходили
+ваши ожидания',
+      imgContent: '',
+      delay: '0.2s'
+    },
+    {
+      img: '07.png',
+      title: 'Еда всегда<em class="accent">горячая</em>',
+      text: 'Используем последние технологии для того, чтобы еда,
+которую мы доставляем, всегда оставлась 
+горячей и вкусной, как из печи',
+      delay: '0.4s'
+    },
+    {
+      mod: '',
+      img: '08.png',
+      title: 'Забота<em class="accent">о гостях</em>',
+      text: 'Заботимся о своих гостях и всегда предоставляем наилучший
+сервис, а постоянным посетителям предлагаем скидки и подарки, 
+чтобы ходить к нам стало еще приятнее',
+      delay: '0.6s'
+    }
+  ]
+}
+ %}
+
+<!-- begin section -->
+<section class="section overflow-hidden s-features-about pt-sml pb-md">
+  <div class="section-img is-left is-top-100 js-anim-el js-parallax-scene" data-anim-name="rotateInLeft">
+    <img data-depth="0.1" data-src="./img/pngs/spice-06.png" alt="" class="js-lazy">
+  </div>
+  <div class="section-img is-right is-top-100 js-anim-el js-parallax-scene" data-anim-name="rotateInRight">
+    <img data-depth="0.1" data-src="./img/pngs/spice-bowles.png" alt="" class="js-lazy">
+  </div>
+
+  <div class="container">
+    <div class="section__title section__title-mb-lg section-title js-anim-el" data-anim-name="fadeInLeft">
+      <div class="section-title__title">
+        <h2 class="title">Мы ценим свою <em class="accent">репутацию</em></h2>
+      </div>
+
+      <div class="section-title__text">
+        Каждый гость для нас - это ценнейший подарок судьбы,<br>
+        который может быть уверен в том, что мы <br>
+        всегда придерживаемся своих принципов: 
+      </div>
+    </div>
+
+     {% include "partials/_features.html" %}
+  </div>
+</section>
+<!-- end section -->

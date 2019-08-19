@@ -1,0 +1,71 @@
+{%set
+testimonials = [
+  {
+    title: 'Роман Романов',
+    text: 'После того как ездили с женой в Грузию влюбились грузинскую кухню. По приезду искали место в Киеве где можно попробовать оригинальные Грузинские блюда. Это место мы нашли, спасибо "Квеври" за оригинальное приготовление Грузинских блюд, часто посещаем вас всей семьей. Держите марку...'
+  },
+  {
+    title: 'Юрий Компанец',
+    text: 'Позавера отмечали День Рождения мамы в ресторане Квеври на Л. Руденко 6а.Если честно, специально через весь город я бы туда не ехал, а вот, как частый гость родительского дома на Осокорках, могу сказать, что этот ресторан заслуживает внимания жителей Осокорков и Позняков...'
+  },
+  {
+    title: 'Кирилл Пантелеев',
+    text: 'Был в командировке в Киеве и коллеги пригласили на небольшой корпоратив. Был в этом заведении впервые и хочу сказать что мне очень понравилось. Уютная атмосфера, отличная грузинская кухня, внимательное не навязчивое обслуживание. С удовольствием провел время...'
+  }
+]
+%}
+
+<!-- begin section -->
+<section class="section s-testimonials section--noisy-white pt-xll pb-lg">
+  <div class="section__layer section__layer-bottom">
+    <img alt="" class="js-lazy lazy is-loaded" src="./img/bg-layer.png" data-loaded="true">
+  </div>
+
+  <div class="container">
+    <div class="section__title section__title-mb section-title js-anim-el" data-anim-name="fadeInLeft">
+      <div class="section-title__title">
+        <h2 class="title">Мы гордимся отзывами <br><span class="accent">о нашей работе</span></h2>
+      </div>
+    </div>
+
+    <!-- begin slider -->
+    <div class="slider__wrap js-anim-el" data-anim-name="fadeInLeft" data-anim-delay="0.2s">
+      <div class="swiper-container js-slider" data-slider="testimonials">
+        <div class="swiper-wrapper">
+          {% for i in testimonials %}
+          <div class="swiper-slide">
+            <!-- begin testimonial -->
+            <div class="testimonial">
+              <div class="testimonial__top">
+                <div class="testimonial__img js-lazy" data-background-image="./img/user.jpg"></div>
+
+                <div class="testimonial__name">
+                  <div class="testimonial__quote">{{ mixins.icon('two-quotes') }}</div>
+                  <div class="testimonial__title">
+                    <div class="title title--h4">{{ i.title }}</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="testimonial__content">
+                <div class="testimonial__text">{{ i.text | safe }}</div>
+                <div class="testimonial__btn border border--sm-dark">
+                  {{ mixins.btn(
+                    title = 'Читать на Facebook' + mixins.icon('facebook-circle'),
+                    mod = 'btn--transp btn--gray-dark btn--full'
+                  ) }}
+                </div>
+              </div>
+            </div>
+            <!-- end testimonial -->
+          </div>
+          {% endfor %}
+        </div>
+
+        <div class="slider__pagination js-pagination"></div>
+      </div>
+    </div>
+    <!-- end slider -->
+  </div>
+</section>
+<!-- end section -->

@@ -1,0 +1,50 @@
+<!-- begin hero-inner -->
+<div class="hero-inner js-lazy" data-background-image="./img/hero/{{ hero.bg }}">
+  {% if hero.breadcrumbs %}
+    <div class="hero__breadcrumbs">
+      <div class="container">
+        {{ mixins.list(
+          name = 'breadcrumbs',
+          modifications = { wrap: hero.breadcrumbs.mod, item: '', link: '' },
+          list = hero.breadcrumbs.list
+        ) }}
+      </div>
+    </div>
+  {% endif %}
+  <div class="container">
+    <div class="hero-inner__inner">
+      <div class="hero__content">
+        {% if hero.title %}
+          <div class="hero__title js-anim-el" data-anim-name="fadeInLeft">
+            <div class="title title--white">{{ hero.title | safe }}</div>
+          </div>
+        {% endif %}
+        
+        {% if hero.subttl %}
+        <div class="hero__text js-anim-el" data-anim-name="fadeInLeft" data-anim-delay="0.1s">{{ hero.subttl }}</div>
+        {% endif %}
+        
+        {% if hero.btns %}
+        <div class="hero__btns js-anim-el" data-anim-name="fadeInLeft" data-anim-delay="0.2s">
+          {% for i in hero.btns %}
+            <div class="hero__btn{% if i.wrapMod %} {{ i.wrapMod }}{% endif %}">
+              {{ mixins.btn(
+                title = i.title | safe,
+                mod = i.mod | safe
+              ) }}
+            </div>
+          {% endfor %}
+        </div>
+        {% endif %}
+        
+        {% if hero.text %}
+          <div class="hero__del js-anim-el" data-anim-name="fadeInLeft" data-anim-delay="0.3s">
+            {{ hero.text | safe }}
+          </div>
+        {% endif %}
+        
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end hero-inner -->

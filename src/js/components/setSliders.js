@@ -23,7 +23,7 @@ export default function setSliders() {
           568: {
             pagination: {
               el: pagination,
-              type: 'bullets',
+              clickable: true,
             },
           },
         },
@@ -65,6 +65,32 @@ export default function setSliders() {
         loop: true,
         breakpoints: {
           568: {
+            spaceBetween: 20,
+          },
+        },
+        on: {
+          init: setLazy,
+        },
+      },
+      testimonials: {
+        slidesPerView: 3,
+        spaceBetween: 30,
+        loop: true,
+        pagination: {
+          el: pagination,
+          clickable: true,
+        },
+        breakpoints: {
+          768: {
+            slidesPerView: 1,
+          },
+          992: {
+            slidesPerView: 2,
+          },
+          1200: {
+            slidesPerView: 3,
+          },
+          1400: {
             spaceBetween: 20,
           },
         },

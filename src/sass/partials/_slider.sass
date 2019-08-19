@@ -37,9 +37,14 @@
     right: 0
   &__pagination
     text-align: center
+    padding-top: 45px
+    +xs
+      padding-top: 20px
     .swiper-pagination-bullet
       width: 14px
       height: 14px
+      opacity: 1
+      background-color: $gray
       &.swiper-pagination-bullet-active
         background-color: $accent
 
@@ -63,6 +68,7 @@
           z-index: 1
           left: 0
           bottom: 10%
+          padding: 0 !important
   &--items
     &__wrap
       margin-left: auto
@@ -104,7 +110,7 @@
             padding-right: 40px
   &--gallery
     &__wrap
-      .swiper-slide
+      .gallery-slide
         width: 40%
         &:not(.swiper-slide-active)
           opacity: 0.3

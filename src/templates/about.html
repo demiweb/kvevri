@@ -1,0 +1,33 @@
+---
+title: about
+page: about
+hero: {
+  bg: hero-about.jpg,
+  title: О <em class="yellow">Ресторане</em> ,
+  subttl: 'Мы позиционируем себя, как самый атмосферный и гостеприимный
+грузинский ресторан в Киеве. И готовы принять всех, кто хочет
+познакомиться с грузинской кухней и культурой поближе!',
+  btns: [
+    { title: 'Хочу к вам в ресторан', mod: 'btn--transp btn--white-dark', wrapMod: 'border'}
+  ],
+  breadcrumbs: {
+    list: [
+      { link: 'Главная' },
+      { item: '-' },
+      { link: 'О ресторане', modLink: 'is-active' }
+    ]
+  }
+}
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}  
+  {% include "partials/_hero.html" %}
+  {% include "partials/sections/_s-features-about.html" %}
+  {% include "partials/sections/_s-history.html" %}
+  {% include "partials/sections/_s-testimonials.html" %}
+  {% include "partials/sections/_s-gallery.html" %}
+  {% include "partials/sections/_s-contacts.html" %}
+{% endblock %}
+
+
