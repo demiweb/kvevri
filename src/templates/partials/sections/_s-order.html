@@ -1,0 +1,123 @@
+{%set
+inputs = [
+  { name: 'input', type: 'text', placeholder: 'Введите ваше имя' },
+  { name: 'input', type: 'tel', placeholder: 'Введите ваш телефон' },
+  { name: 'input', type: 'text', placeholder: 'Укажите улицу' },
+  { name: 'input', type: 'text', placeholder: 'Укажите дом и квартиру' }
+]
+%}
+{%set
+formBlocks = [
+  {
+    title: 'Выберите способ получения заказа:',
+    radios: [
+      { label: 'Доставка курьером', fieldAttributes: { name: 'delivery', checked: '' } },
+      { label: 'Самовывоз', fieldAttributes: { name: 'delivery' } }
+    ]
+  },
+  {
+    title: 'Выберите способ оплаты:',
+    radios: [
+      { label: 'Наличными курьеру', fieldAttributes: { name: 'payment', checked: '' } },
+      { label: 'Картой Visa/Mastercard', fieldAttributes: { name: 'payment' } }
+    ]
+  }
+]
+%}
+{%set
+banner = {
+  title: 'Ваш заказ:',
+  items: [
+    { title: 'Люля кебаб из баранины', price: '190<small>грн</small>', amount: '2 x 95 грн' },
+    { title: 'Хачапури по-аджарски', price: '300<small>грн</small>', amount: '2 x 150 грн' },
+    { title: 'Люля кебаб из свинины', price: '600<small>грн</small>', amount: '6 x 100грн' },
+    { title: 'Салат по-грузински', price: '120<small>грн</small>', amount: '1 x 120 грн' }
+  ],
+  amount: { price: '1210 <small>грн</small>'},
+  checkbox: true
+}
+%}
+
+<!-- begin order -->
+<section class="order pb-lg">
+  <div class="container">
+    <div class="order__title">
+      <h2 class="title title--white">Оформление <em class="accent">заказа</em></h2>
+    </div>
+    <form>
+      <div class="order__content">
+        <div class="order__left">
+          <div class="order__form">
+            <!-- begin form -->
+            <div class="form">
+                <div class="form__row">
+                 {% for i in inputs %}
+                 <div class="form__col">
+                   {{ mixins.input(
+                     name = i.name,
+                     mod = '',
+                     type = i.type,
+                     placeholder = i.placeholder,
+                     value = '',
+                     fieldClass = ''
+                   ) }}
+                 </div>
+                 {% endfor %}
+                </div>
+                <div class="form__row">
+                 {% for i in formBlocks %}
+                 <div class="form__col">
+                   <!-- begin form-block -->
+                   <div class="form-block">
+                     <div class="form-block__title">{{ i.title }}</div>
+
+                     <div class="form-block__radios">
+                       {% for j in i.radios %}
+                       {{ mixins.input(
+                         name = 'radio',
+                         mod = '',
+                         type = 'radio',
+                         placeholder = '',
+                         value = '',
+                         fieldClass = '',
+                         label = { last: j.label, span: true },
+                         fieldAttributes = j.fieldAttributes
+                       ) }}
+                       {% endfor %}
+                     </div>
+                   </div>
+                   <!-- end form-block -->
+                 </div>
+                 {% endfor %}
+                </div>
+                <div class="form__row">
+                 <div class="form__col form__col-lg">
+                   <!-- begin form-block -->
+                   <div class="form-block">
+                     <div class="form-block__title">комментарии к заказу:</div>
+
+                     {{ mixins.input(
+                       name = 'textarea',
+                       mod = '',
+                       type = 'textarea',
+                       placeholder = 'Введите комментарий',
+                       value = '',
+                       fieldClass = 'js-textarea'
+                     ) }}
+                   </div>
+                   <!-- end form-block -->
+                 </div>
+                </div>
+            </div>
+            <!-- end form -->
+          </div>
+        </div>
+
+        <div class="order__right">
+          {% include "partials/_banner.html" %}
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+<!-- end order -->

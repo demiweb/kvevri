@@ -1,6 +1,6 @@
 {
   "name": "starter-kit",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "scripts": {
     "ghpages": "git subtree push --prefix build origin gh-pages",
     "build": "gulp build --production",
@@ -12,7 +12,10 @@
     ]
   },
   "browserslist": [
-    "last 2 versions"
+    "last 2 versions",
+    "ie >= 11",
+    "Android > 4",
+    "IOS >= 10"
   ],
   "authors": "yurayarosh",
   "devDependencies": {
@@ -74,6 +77,7 @@
     "lightgallery": "^1.6.12",
     "lozad": "^1.9.0",
     "parallax-js": "^3.1.0",
-    "swiper": "^4.5.0"
+    "swiper": "^4.5.0",
+    "throttle-debounce": "^2.1.0"
   }
 }

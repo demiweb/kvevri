@@ -1,0 +1,63 @@
+{%set
+payments = [
+  {
+    img: 'cash.png',
+    title: 'Наличными',
+    text: 'Оплачивайте товар при получении заказа 
+наличными курьеру'
+  },
+  {
+    img: 'card.png',
+    title: 'Картой',
+    text: 'Для желающих оплатить банковской картой 
+возможна оплата через систему LiqPay
+или переводом на карту «Приватбанка».',
+    delay: '0.2s'
+  }
+]
+%}
+
+<!-- begin section -->
+<section class="section s-pay pt-md pb-mdl bg-top-right js-lazy" data-background-image="./img/bg-section/bg-pay.png">
+  <div class="container">
+    <div class="section__title section__title-mb section-title section-title--625 js-anim-el" data-anim-name="fadeInLeft">
+      <div class="section-title__title">
+        <h2 class="title">Способы <span class="accent">оплаты</span></h2>
+      </div>
+
+      <div class="section-title__text">
+        Принимаем к оплате:
+        <img data-src="./img/mastercard.svg" width="38" height="22" alt="" class="js-lazy">
+        <img data-src="./img/visa.svg" width="38" height="22" alt="" class="js-lazy">
+      </div>
+    </div>
+
+    <div class="s-pay__items">
+      <!-- begin pay-methods -->
+      <div class="pay-methods">
+        {% for i in payments %}
+        <!-- begin pay-method -->
+        <div class="pay-method__wrap js-anim-el" data-anim-name="fadeInLeft" data-anim-delay="{{ i.delay }}">
+          <div class="pay-method">
+            <div class="pay-method__img">
+              <img data-src="./img/{{ i.img }}" alt="" class="js-lazy">
+            </div>
+
+            <div class="pay-method__content">
+              <div class="pay-method__title">
+                <h3 class="title title--h3">{{ i.title | safe }}</h3>
+              </div>
+
+              <div class="pay-method__text">{{ i.text | safe }}</div>
+            </div>
+          </div>
+        </div>
+        <!-- end pay-method -->
+        {% endfor %}
+        
+      </div>
+      <!-- end pay-methods -->
+    </div>
+  </div>
+</section>
+<!-- end section -->

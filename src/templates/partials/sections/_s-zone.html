@@ -7,7 +7,7 @@
   <div class="container">
     <div class="section__title section__title-mb section-title js-anim-el" data-anim-name="fadeInLeft">
       <div class="section-title__title">
-        <h2 class="title">У нас обширная <br> <em class="accent">зона доставки</em></h2>
+        <h2 class="title">У нас обширная <br> <span class="accent">зона доставки</span></h2>
       </div>
 
       <div class="section-title__text">Мы доставляем блюда грузинской кухни <br>
@@ -15,9 +15,9 @@
       убедиться, есть ли ваш район в списке:</div>
     </div>
 
-    <div class="s-zone__block">
+    <div class="s-zone__block js-anim-el" data-anim-name="fadeInLeft">
       <!-- begin zone-block -->
-      <div class="zone-block js-lazy" data-background-image="./img/zone-map.jpg">
+      <div class="zone-block pt-lgl pb-lg js-lazy" data-background-image="./img/zone-map.jpg">
         <div class="zone-block__content">
           <div class="zone-block__title">Районы доставки:</div>
 
@@ -29,7 +29,9 @@
           <div class="zone-block__btn border">
             {{ mixins.btn(
               title = 'Посмотреть все районы',
-              mod = 'btn--transp btn--white-dark'
+              mod = 'btn--transp btn--white-dark js-popup-open',
+              href = false,
+              attributes = { 'data-popup-target': 'delivery' }
               ) }}
             </div>
           </div>

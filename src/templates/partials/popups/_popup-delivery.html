@@ -1,0 +1,77 @@
+{%set
+neighborhoods = [
+  {
+    blocks: [
+      {
+        title: 'Голосеевский:',
+        text: 'Новое Строение, Голосеево, Китаево, Мышеловка, Сапёрная слободка, Добрый Путь, Корчеватое, Демиевка, Ширма, Теремки-I, Теремки-II, Чапаевка, Феофания, Покол, Пирогово, Нижняя Теличка, Паньковщина, ВДНХ, Забайковье, Монтажник, Комсомольское, Жовтневое (Багринова гора), промзона «По улице Васильковской», промзона «Пирогово», промзона «Корчеватое», промрайон «Теличка». '
+      }
+    ]
+  },
+  {
+    blocks: [
+      {
+        title: 'Шевченковский:',
+        text: 'Лукьяновка, Кудрявец, Татарка, Сырец, Волейков, Шулявка, Нивки, Солдатская слободка, промзона «По улице Дегтяревской»'
+      },
+      {
+        title: 'Печерский:',
+        text: 'Печерск, Липки, Зверинец, Верхняя Теличка, Чёрная гора, Сапёрное поле, Черепанова Гора.'
+      }
+    ]
+  },
+  {
+    blocks: [
+      {
+        title: 'оСТАЛЬНЫЕ:',
+        text: 'Дарница, Соцгородок, Русановка, Березняки, район М. Левобережная, район 
+М. Черниговская, район М Лесная, Харьковский массив (М Бориспольская, М. Вырлица, М. Харьковская, М. Позняки, М. Осокорки), ДВРЗ. '
+      }
+    ]
+  },
+  {
+    blocks: [
+      {
+        title: 'Подольский:',
+        text: 'Подол, Куренёвка, Цветоводство, Приорка
+, Мостицкий массив, Виноградарь, Ветряные горы, Беличье Поле, Берковец.'
+      }
+    ]
+  }  
+]
+%}
+
+<!-- begin popup -->
+<div class="popup js-popup" data-popup="delivery">
+  <div class="popup__inner">
+    <button class="popup__close js-popup-close"></button>
+
+    <div class="popup__title">
+      <h2 class="title">Полный список <br> <em class="accent">районов доставки:</em></h2>
+    </div>
+
+    <div class="popup__content">
+      <!-- begin neighborhoods -->
+      <div class="neighborhoods">
+        {% for i in neighborhoods %}
+        <div class="neighborhoods__col">
+          {% for j in i.blocks %}
+          <!-- begin neighborhood -->
+          <div class="neighborhood">
+            <div class="neighborhood__title">{{ j.title }}</div>
+
+            <div class="neighborhood__text">
+              {{ j.text }}
+            </div>
+          </div>
+          <!-- end neighborhood -->
+          {% endfor %}
+        </div>
+        
+        {% endfor %}
+      </div>
+      <!-- end neighborhoods -->
+    </div>
+  </div>
+</div>
+<!-- end popup -->

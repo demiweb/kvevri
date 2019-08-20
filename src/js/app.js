@@ -11,7 +11,8 @@ import setGallery from './components/setGallery';
 import setParrallax from './components/setParralax';
 import animateOnScroll from './components/animateOnScroll';
 // import './components/animations';
-
+import setTextareaHeight from './components/setTextareaHeight';
+import setPopups from './components/setPopups';
 
 $(() => {
   sayHello();
@@ -23,4 +24,6 @@ $(() => {
   setGallery();
   setParrallax();
   animateOnScroll();
+  setTextareaHeight();
+  setPopups();
 });

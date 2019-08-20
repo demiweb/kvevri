@@ -1,0 +1,26 @@
+.pay-methods
+  +flex(flex-start, normal, row, wrap)
+  margin-left: -10px
+  margin-right: -10px
+
+.pay-method
+  max-width: 410px
+  &__wrap
+    width: 50%
+    +flex(center, normal)
+    padding-left: 10px
+    padding-right: 10px
+  &__img, &__title
+    margin-bottom: 20px
+    +md
+      margin-bottom: 10px
+  &__img
+    width: 150px
+    height: 150px
+    +vertical
+    +xs
+      width: 100px
+      height: 100px
+    img
+      display: inline-block
+      vertical-align: bottom

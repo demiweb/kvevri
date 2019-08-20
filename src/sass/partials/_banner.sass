@@ -1,0 +1,47 @@
+.banner
+  background-color: rgba($black, .3)
+  border-radius: 15px
+  padding: 40px 30px
+  +lg
+    padding: 30px
+  +md
+    padding: 20px
+  +sm
+    padding: 15px
+  &__title
+    text-transform: uppercase
+    +semi
+    color: $gray
+  &__items
+    padding-top: 40px
+    border-bottom: 1px solid $gray
+    margin-bottom: 30px
+    +lg
+      padding-top: 30px
+    +md
+      padding-top: 15px
+  &__amount
+    +flex(space-between, center)
+    margin-bottom: 30px
+  &__btn
+    max-width: 285px
+    margin-left: auto
+    margin-right: auto
+    +notlast
+      margin-bottom: 30px
+  &__checkbox
+    +flex(center)
+
+.banner-item
+  margin-bottom: 30px
+  +md
+    margin-bottom: 15px
+  &__inner
+    +flex(space-between, center)
+  &__amount    
+    text-align: right
+  &__title
+    text-transform: uppercase
+    +semi
+    color: $white-dark
+    padding-right: 10px

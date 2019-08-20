@@ -47,35 +47,7 @@
   </div>
 
   <div class="s-item__slider">
-    <div class="s-item__title section__title section-title section-title--light section-title--auto">
-      <div class="section-title__title">
-        <h2 class="title title--white">Также <em class="accent">попробуйте</em></h2>
-      </div>
-    </div>
-    <!-- begin slider -->
-    <div class="slider__wrap slider--items__wrap js-tabs">
-      <div class="swiper-container js-slider" data-slider="items">
-        <div class="swiper-wrapper">
-          {% for i in slider.slider %}
-          <div class="swiper-slide">
-            {{ mixins.item(
-              mod = 'item--transp-white',
-              price = i.price,
-              title = i.title,
-              img = 'lulya3.png'
-            ) }}
-          </div>
-          {% endfor %}
-        </div>
-      </div>
-
-      <div class="slider__btns">
-        <button class="slider__prev prev prev--transp-white js-prev"></button>
-        <button class="slider__next next next--transp-white js-next"></button>
-      </div>
-
-    </div>
-    <!-- end slider -->
+    {% include "partials/_slider-reccoment.html" %}    
   </div>
   
 </section>

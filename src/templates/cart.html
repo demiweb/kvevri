@@ -1,0 +1,44 @@
+---
+title: cart
+page: cart
+mainClass: main--noisy
+breadcrumbs: {
+  list: [
+    { link: 'Главная' },
+    { item: '-' },
+    { link: 'Корзина', modLink: 'is-active' }
+  ],
+  link: Добавить еще к заказу
+}
+slider: {
+  slider: [
+    {
+      title: 'форель на мангале',
+      price: '<div class="price">95.00<small>грн</small></div> (100 г)'
+    },
+    {
+      title: 'шашлык из курицы',
+      price: '<div class="price">95.00<small>грн</small></div> (100 г)'
+    },
+    {
+      title: 'шашлык из свинины',
+      price: '<div class="price">95.00<small>грн</small></div> (100 г)'
+    },
+    {
+      title: 'люля-кебаб из Говядины',
+      price: '<div class="price">95.00<small>грн</small></div> (100 г)'
+    },
+    {
+      title: 'форель на мангале',
+      price: '<div class="price">95.00<small>грн</small></div> (100 г)'
+    }
+  ]
+}
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}  
+  {% include "partials/sections/_s-cart.html" %}
+{% endblock %}
+
+

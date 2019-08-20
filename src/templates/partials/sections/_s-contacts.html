@@ -33,9 +33,12 @@ tabs = [
 
 <!-- begin section -->
 <section class="section overflow-hidden s-contacts pt-sm pb-lg">
+  {% if sectionContacts.img %}
   <div class="section-img is-right is-top-100 js-anim-el js-parallax-scene" data-anim-name="rotateInRight">
     <img data-depth="0.1" data-src="./img/pngs/berry-02.png" alt="" class="js-lazy">
   </div>
+  {% endif %}
+
   <div class="container">
     <div class="section__title section-title js-anim-el" data-anim-name="fadeInLeft">
       <div class="section-title__title">

@@ -6,3 +6,5 @@ PageList:
 - file: menu.html
 - file: about.html
 - file: delivery.html
+- file: order.html
+- file: cart.html

@@ -1,0 +1,59 @@
+<!-- begin banner -->
+<div class="banner">
+    <div class="banner__inner">
+      {% if banner.title %}
+      <div class="banner__title">{{ banner.title | safe }}</div>
+      {% endif %}
+
+      {% if banner.items %}
+      <div class="banner__items">
+        {% for i in banner.items %}
+
+        <div class="banner-item">
+          <div class="banner-item__inner">
+            <div class="banner-item__title">{{ i.title | safe }}</div>
+
+            <div class="banner-item__price price">
+             {{ i.price | safe }}
+            </div>
+          </div>
+          <div class="banner-item__amount amount">{{ i.amount | safe }}</div>
+          
+        </div>
+
+        {% endfor %}
+      </div>
+      {% endif %}
+
+      {% if banner.amount %}
+      <div class="banner__amount">
+        <div class="banner__title">Итого:</div>
+        <div class="banner__price price price--lg">{{ banner.amount.price | safe }}</div>
+      </div>
+      {% endif %}
+
+      <div class="banner__btn border">
+        {{ mixins.btn(
+          title = 'Оформить заказ',
+          mod = 'btn--full',
+          href = false
+        ) }}
+      </div>
+
+      {% if banner.checkbox %}
+      <div class="banner__checkbox">
+        {{ mixins.input(
+          name = 'checkbox',
+          mod = '',
+          type = 'checkbox',
+          placeholder = '',
+          value = '',
+          fieldClass = '',
+          label = { span: true, last: 'Я ознакомился с <a href="#">зонами доставки</a>' },
+          fieldAttributes = { checked: '' }
+        ) }}
+      </div>
+      {% endif %}
+    </div>
+</div>
+<!-- end banner -->

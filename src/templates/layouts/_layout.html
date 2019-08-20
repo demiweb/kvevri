@@ -28,7 +28,7 @@
             ) }}
             {% if breadcrumbs.link %}
             <div class="main__back">
-              <a href="#" class="back-link">К меню</a>
+              <a href="#" class="back-link">{{ breadcrumbs.link }}</a>
             </div>  
             {% endif %}
           </div>
@@ -41,6 +41,10 @@
       {% include "partials/_footer.html" %}
     </div>
     <!-- END content -->
+
+    <!-- begin popups -->
+    {% include "partials/popups/_popups.html" %}
+    <!-- end popups -->
 
     <!-- BEGIN scripts -->
     <script type="text/javascript" src="js/app.js"></script>

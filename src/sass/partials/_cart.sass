@@ -1,0 +1,47 @@
+.cart-item
+  +flex(flex-start, center)
+  position: relative
+  border-bottom: 1px solid  $gray
+  padding-top: 20px
+  padding-bottom: 20px
+  +xs
+    flex-wrap: wrap
+  &__img
+    max-width: 20%
+  &__title
+    flex-grow: 1
+    text-transform: uppercase
+    color: $white-dark
+    +semi
+    padding-left: 30px
+    padding-right: 10px
+    +lg
+      padding-left: 15px
+    small
+      display: block
+      +light
+      font-size: 13px
+      color: $c-text
+  &__price
+    padding-left: 70px
+    +xl
+      padding-left: 50px
+    +lg
+      padding-left: 40px
+    +xl
+      width: 50%
+      margin-top: 15px
+      padding-left: 0
+      text-align: right
+  &__counter
+    +xs
+      width: 50%
+      margin-top: 15px
+      +flex
+    
+  &__close
+    +icon-close(20, 1, currentColor)
+    position: absolute
+    top: 15px
+    right: 0
+    z-index: 1

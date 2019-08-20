@@ -1,0 +1,71 @@
+{%set
+cart = [
+  { title: 'шашлык из курицы <small>(100 г)</small>', price: '190<small>грн</small>', amount: '2 x 95 грн' },
+  { title: 'форель на мангале<small>(100 г)</small>', price: '475<small>грн</small>', amount: '5 x 95 грн' },
+  { title: 'шашлык из свинины<small>(100 г)</small>', price: '285<small>грн</small>', amount: '3 x 95 грн' }
+]
+%}
+{%set
+banner = {
+  amount: { price: '950<small>грн</small>' }
+}
+%}
+
+<!-- begin order -->
+<section class="order pb-lg">
+  <div class="container">
+    <div class="order__title">
+      <h2 class="title title--white">Корзина</h2>
+    </div>
+
+    <form>
+      <div class="order__content">
+        <div class="order__left">
+          <!-- begin cart -->
+          <div class="cart">
+            {% for i in cart %}
+            <!-- begin cart-item -->
+            <div class="cart-item">
+              <div class="cart-item__img">
+                <img class="js-lazy" alt="" data-src="./img/items/lulya3.png"/>
+              </div>
+
+              <div class="cart-item__title">{{ i.title | safe }}</div>
+
+              <div class="cart-item__counter">
+                <!-- begin counter -->
+                <div class="counter">
+                  <div class="counter__inner">
+                    <button>-</button>
+                    <input type="text" value="1">
+                    <button>+</button>
+                  </div>
+                </div>
+                <!-- end counter -->
+              </div>
+
+              <div class="cart-item__price">
+                <div class="price">{{ i.price | safe }}</div>
+                <div class="amount">{{ i.amount | safe }}</div>
+              </div>
+
+              <button class="cart-item__close"></button>
+            </div>
+            <!-- end cart-item -->
+            {% endfor %}
+          </div>
+          <!-- end cart -->
+        </div>
+
+        <div class="order__right">
+          {% include "partials/_banner.html" %}
+        </div>
+      </div>
+    </form>
+
+    <div class="order__slider">
+      {% include "partials/_slider-reccoment.html" %}
+    </div>
+  </div>
+</section>
+<!-- end order -->
