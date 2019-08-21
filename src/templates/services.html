@@ -1,0 +1,37 @@
+---
+title: services
+page: services
+hero: {
+  bg: hero-services.jpg,
+  title: <em class="yellow">Услуги</em> ,
+  subttl: 'Вы уже влюбились в наш ресторан и хотите заказать мероприятие?
+Кулинарные тимбилдинги, десткие праздники, свадьбы, 
+и банкеты  - мы организуем для вас всё!',
+  btns: [
+    { title: 'Заказать мероприятие', mod: 'btn--transp btn--white-dark', wrapMod: 'border'}
+  ],
+  breadcrumbs: {
+    list: [
+      { link: 'Главная' },
+      { item: '-' },
+      { link: 'Услуги', modLink: 'is-active' }
+    ]
+  }
+}
+sectionGallery: {
+  title: 'Мероприятия, которые <br>
+    мы уже провели',
+  subttl: 'На нашем счету более 300 мероприятий, самые яркие моменты <br>
+  которых мы показываем в нашей галерее'
+}
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}  
+  {% include "partials/_hero.html" %}
+  {% include "partials/sections/_s-services.html" %}
+  {% include "partials/sections/_s-gallery.html" %}
+  {% include "partials/sections/_s-contacts.html" %}
+{% endblock %}
+
+

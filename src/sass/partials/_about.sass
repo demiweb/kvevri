@@ -1,4 +1,72 @@
 .about
+  &--compl
+    .about-block
+      margin-bottom: 0
+      &:nth-child(1)
+        .about-block__text
+          top: 10%
+          left: 15%
+          max-width: 595px
+        .about-block__img
+          width: 330px
+          // padding-top: 37%
+          height: 490px
+          +r(374)
+            width: 100%
+      &:nth-child(2)
+        margin-top: -20px
+        +flex(flex-end)
+        +md
+          margin-top: 0
+        +sm
+          margin-bottom: 55px
+        .about-block__text
+          max-width: 835px
+          top: 50%
+          transform: translate(0, -50%)
+          right: 30%
+          +sm
+            right: auto
+            left: 50%
+            transform: translate(-50%, 0)
+            top: auto
+            bottom: -40px
+            width: 90%
+        .about-block__img
+          width: 742px
+          // padding-top: 40%
+          height: 520px
+          +sm
+            width: 100%
+            height: 420px
+          &[data-loaded="true"]
+            right: -15%
+            position: relative
+            +md
+              right: 0
+      &:nth-child(3)
+        +flex(flex-start, center)
+        .about-block__img
+          width: percentage(5/12)
+          border-radius: 0
+          padding-top: 40%
+          background-size: contain
+          // text-align: center
+          // img
+          //   display: inline-block
+        .about-block__qoute-fu
+          width: percentage(7/12)
+      &:nth-child(4)
+        margin-top: -100px
+        +xl
+          margin-top: -70px
+        +lg
+          margin-top: -50px
+        +md
+          margin-top: -30px
+        +sm
+          margin-top: 0
+          margin-bottom: 40px
 
 .about-block
   $this: &
@@ -6,103 +74,11 @@
   +cover
   background-size: auto
   background-position: 0 100%
+  margin-bottom: 95px
   +md
     margin-bottom: 15px
     background-size: 60%
-  &:nth-child(1)
-    #{$this}__text
-      top: 10%
-      left: 15%
-      max-width: 595px
-    #{$this}__img
-      width: 330px
-      // padding-top: 37%
-      height: 490px
-      +r(374)
-        width: 100%
-  &:nth-child(2)
-    margin-top: -20px
-    +flex(flex-end)
-    +md
-      margin-top: 0
-    +sm
-      margin-bottom: 55px
-    #{$this}__text
-      max-width: 835px
-      top: 50%
-      transform: translate(0, -50%)
-      right: 30%
-      +sm
-        right: auto
-        left: 50%
-        transform: translate(-50%, 0)
-        top: auto
-        bottom: -40px
-        width: 90%
-    #{$this}__img
-      width: 742px
-      // padding-top: 40%
-      height: 520px
-      +sm
-        width: 100%
-        height: 420px
-      &[data-loaded="true"]
-        right: -15%
-        position: relative
-        +md
-          right: 0
-  &:nth-child(3)
-    +flex(flex-start, center)
-    #{$this}__img
-      width: percentage(5/12)
-      border-radius: 0
-      padding-top: 40%
-      background-size: contain
-      // text-align: center
-      // img
-      //   display: inline-block
-    #{$this}__qoute-fu
-      width: percentage(7/12)
-  &:nth-child(4)
-    +flex(flex-end)
-    margin-top: -100px
-    +xl
-      margin-top: -70px
-    +lg
-      margin-top: -50px
-    +md
-      margin-top: -30px
-    +sm
-      margin-top: 0
-      margin-bottom: 40px
-    #{$this}__quote
-      position: absolute
-      top: 50%
-      transform: translate(0, -50%)
-      right: 40%
-      +md
-        right: auto
-        left: 0
-        max-width: 90%
-      +sm
-        top: auto
-        left: 50%
-        transform: translate(-50%, 0)
-        bottom: -40px
-        width: 90%
-    #{$this}__img
-      width: 930px
-      // padding-top: 43%
-      height: 610px
-      +md
-        width: 100%
-      +sm
-        height: 400px
-      &[data-loaded="true"]
-        position: relative
-        right: -10%
-        +md
-          left: 0
+  
   &__img
     +cover
     // pt
@@ -150,3 +126,54 @@
   &__quote-fu
     max-width: 770px
     opacity: 0
+
+  &--quote
+    +flex(flex-end)    
+    .about-block__quote
+      position: absolute
+      top: 50%
+      transform: translate(0, -50%)
+      right: 40%
+      +md
+        right: auto
+        left: 0
+        max-width: 90%
+      +sm
+        top: auto
+        left: 50%
+        transform: translate(-50%, 0)
+        bottom: -40px
+        width: 90%
+    .about-block__img
+      width: 930px
+      // padding-top: 43%
+      height: 610px
+      +md
+        width: 100%
+      +sm
+        height: 400px
+      &[data-loaded="true"]
+        position: relative
+        right: -10%
+        +md
+          left: 0
+  &--simple
+    margin-left: -15px
+    margin-right: -15px
+    +flex(flex-start, normal, row, wrap)
+    #{$this}__img
+      padding-top: 30%
+      width: calc(50% - 30px)
+      margin-left: 15px
+      margin-right: 15px
+      position: relative
+    #{$this}__text
+      width: calc(50% - 30px)
+      margin-left: 15px
+      margin-right: 15px
+      position: relative
+      background-color: transparent
+      box-shadow: none
+      +flex(center, normal, column)
+      padding: 0
+      padding-left: 25px

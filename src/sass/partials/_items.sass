@@ -68,12 +68,19 @@
     margin-bottom: 20px
   &__btn
     margin-bottom: -45px
-    padding-left: 15px
-    padding-right: 15px
+    // padding-left: 15px
+    // padding-right: 15px
+    width: 100%
+    max-width: 295px
+    margin-left: auto
+    margin-right: auto
     +sm
       margin-bottom: -40px
     +xs
       margin-bottom: -30px
+  &__text
+    margin-bottom: 10px
+    flex-grow: 1
 
   &--white
     background-color: $white
@@ -87,6 +94,33 @@
       border-color: transparent
   &--transp-white
     background-color: rgba($white, .1)
+  &--descr
+    padding-top: 0
+    box-shadow: 0px 0px 10px 0px rgba(2, 0, 0, 0.26)
+    #{$this}__img
+      +cover
+      padding-top: 50%
+      border-radius: 15px
+      margin-bottom: 60px
+      +lg
+        margin-bottom: 40px
+      +md
+        margin-bottom: 30px
+      +sm
+        margin-bottom: 15px
+      +xs
+        margin-bottom: 10px
+    #{$this}__title,
+    #{$this}__text
+      padding-left: 15px
+      padding-right: 15px
+      +sm
+        padding-left: 10px
+        padding-right: 10px
+    #{$this}__title
+      margin-bottom: 20px
+      +sm
+        margin-bottom: 10px
 
 .item-lg
   +flex(flex-start, normal, row, wrap)

@@ -65,10 +65,10 @@
       top: 30px
       bottom: 0
   &__center
-    max-width: 750px
+    // max-width: 750px
     margin-left: auto
     margin-right: auto
-    +flex
+    +flex(space-between)
     +xs
       display: block
       text-align: center
@@ -76,10 +76,29 @@
         max-width: 50%
   &__center-content
     +flex(center, normal, column)
+    width: 50%
+    padding-left: 15px
+  &__center-text
+    margin-bottom: 15px
+  &__center-img
+    width: 50%
+    text-align: right
+    padding-right: 15px
+    &.lazy
+      padding-top: 35%
+      border-radius: 15px
+      +cover
+      width: calc(50% - 15px)
   &__center-btn
     max-width: 285px
+    width: 100%
     +xs
       max-width: none
+  &__more
+    .border
+      max-width: 285px
+      margin-left: auto
+      margin-right: auto
   &--black
     background-color: $black
   &--noisy-white
@@ -169,6 +188,8 @@
       display: inline-block
   &--625
     max-width: 625px
+  &--sm
+    #{$this}__title
 
 .s-hits
   .section__layer
@@ -176,7 +197,7 @@
     +before
       +css-lock(5, 45, 320, 1499, bottom)
   .section__title
-    
+    +css-lock(5, 30, 320, 1499, padding)
 
 .s-vine
   
@@ -238,10 +259,7 @@
         z-index: 0
         img
           max-width: 50%
-  .section__title
-    max-width: 605px
-    margin-left: auto
-    margin-right: auto
+  .section__title    
     margin-bottom: 70px
     .title
       margin-bottom: 25px
@@ -357,4 +375,35 @@
 .s-pay
   +md
     background-size: 20%
+
+.s-services
+  +md
+    background-size: 40%
+
+.s-contacts-map
+  background-repeat: no-repeat
+  background-size: 100%
+  background-position: 50% 0
+  +xl
+    background-position: 50% -50%
+  +lg
+    background-position: 50% 20vw
+  +md
+    background-size: 100%
+    background-position: 50% 25vw
+  +r(680)
+    background-position: 50% 35vw
+  +xs
+    background-position: 50% 60vw
+  +xss
+    background-position: 50% 70vw
+  +r(400)
+    background-position: 50% 80vw
+  +r(374)
+    background-position: 50% 100vw !important
+  &__contacts
+    max-width: 1170px
+    margin-left: auto
+    margin-right: auto
+
 

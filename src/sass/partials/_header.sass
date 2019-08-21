@@ -110,6 +110,12 @@
     +xs
       left: -15px
   &__cart
+    position: relative
+    width: 175px
+    &:hover
+      .tooltip
+        visibility: visible
+        opacity: 1
     +md
       flex-grow: 1
       padding-left: 15px
@@ -184,6 +190,7 @@
   &__title
     font-size: 13px
     display: block
+    +text-overflow
   &__content
     display: block
     +sm

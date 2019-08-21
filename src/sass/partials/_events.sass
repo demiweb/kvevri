@@ -1,0 +1,95 @@
+.events
+
+.event
+  position: relative
+  +flex
+  margin-bottom: 60px
+  +lg
+    margin-bottom: 40px
+  +md
+    margin-bottom: 30px
+  +sm
+    margin-bottom: 15px
+    flex-wrap: wrap
+  &__img
+    border-radius: 15px
+    +cover
+    padding-top: 37%
+    flex: 0 0 50%
+    position: relative
+    z-index: 0
+    left: -60px
+    +md
+      left: calc(0px - 20% - 60px)
+    +sm
+      left: auto
+      flex: 0 0 100%
+      order: 0
+      padding-top: 50%
+    +xss
+      padding-top: 70%
+  &__content
+    padding-top: 60px
+    padding-bottom: 60px    
+    flex: 0 0 calc(50% + 60px)
+    position: relative
+    z-index: 2
+    +md
+      flex: 0 0 calc(70% + 60px)
+    +sm
+      flex: 0 0 100%
+      padding-top: 0
+      padding-bottom: 0
+      padding-left: 20px
+      padding-right: 20px
+      order: 1
+      margin-top: -70px
+    +xss
+      padding-left: 10px
+      padding-right: 10px
+  &__content-in
+    background-color: $white
+    border-radius: 15px
+    box-shadow: 0px 3px 57px 0px rgba(0, 0, 0, 0.11)
+    padding: 20px 30px 20px 50px
+    height: 100%
+    +flex(center, normal, column)
+    +xl
+      padding: 20px 30px 20px 40px
+    +lg
+      padding-left: 30px
+      padding-right: 30px
+    +md
+      padding-left: 20px
+      padding-right: 20px
+    +sm
+      padding-left: 15px
+      padding-right: 15px
+  &__title
+    margin-bottom: 25px
+    +lg
+      margin-bottom: 20px
+    +md
+      margin-bottom: 15px
+    +sm
+      margin-bottom: 10px
+  &__text
+    margin-bottom: 20px
+    +md
+      margin-bottom: 15px
+    +sm
+      margin-bottom: 10px
+  &__bottom
+    +flex(space-between, cnenter)
+    +xss
+      flex-wrap: wrap
+  &__btn
+    max-width: 285px
+    width: 100%
+    +xss
+      order: 1
+  &__date
+    +flex(flex-start, center)
+    +xss
+      order: 0
+      margin-bottom: 20px

@@ -1,5 +1,6 @@
 import $ from 'jquery';
 import 'intersection-observer';
+import './lib/polyfill';
 
 import sayHello from './lib/sayHello';
 import setTouch from './components/setHTMLClassNames';
@@ -13,6 +14,7 @@ import animateOnScroll from './components/animateOnScroll';
 // import './components/animations';
 import setTextareaHeight from './components/setTextareaHeight';
 import setPopups from './components/setPopups';
+import setScrollbar from './components/setScrollbar';
 
 $(() => {
   sayHello();
@@ -26,4 +28,5 @@ $(() => {
   animateOnScroll();
   setTextareaHeight();
   setPopups();
+  setScrollbar();
 });

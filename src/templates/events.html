@@ -1,0 +1,36 @@
+---
+title: events
+page: events
+hero: {
+  bg: hero-events.jpg,
+  title: <em class="yellow">События</em> ,
+  subttl: 'Мы провели уже немыслимое количество мероприятий
+в нашем ресторане и хотим поделиться с вами
+нашими впечатлениями!',
+  btns: [
+    { title: 'Заказать мероприятие', mod: 'btn--transp btn--white-dark', wrapMod: 'border'}
+  ],
+  breadcrumbs: {
+    list: [
+      { link: 'Главная' },
+      { item: '-' },
+      { link: 'События', modLink: 'is-active' }
+    ]
+  }
+}
+sectionGallery: {
+  title: 'Мероприятия, которые <br>
+    мы уже провели',
+  subttl: 'На нашем счету более 300 мероприятий, самые яркие моменты <br>
+  которых мы показываем в нашей галерее'
+}
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}  
+  {% include "partials/_hero.html" %}
+  
+  {% include "partials/sections/_s-events.html" %}
+{% endblock %}
+
+

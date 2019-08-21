@@ -1,0 +1,22 @@
+.gallery
+  +flex(flex-start, normal, row, wrap)
+  margin-left: -15px
+  margin-right: -15px
+  .gallery-slide
+    margin-left: 15px
+    margin-right: 15px
+    width: calc(50% - 30px)
+    margin-bottom: 30px
+    padding-top: 25%
+
+.gallery-slide
+  +cover
+  border-radius: 15px
+  padding-top: 20%
+  display: block
+  +md
+    padding-top: 30%
+  +sm
+    padding-top: 40%
+  +xs
+    padding-top: 40%

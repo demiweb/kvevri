@@ -1,0 +1,78 @@
+{%set
+events = [
+  { title: 'Свадьба на Гидропарке' },
+  { title: 'Кулинарный тимбилдинг для «Okko»' },
+  { title: 'День Рождения Василисы и Димы' },
+  { title: 'Корпоратив для «Сильпо»' }
+]
+%}
+
+<!-- begin section -->
+<section class="section pt-sml pb-sml">
+  <div class="container">
+    <div class="section__title section__title-mb-lg section-title js-anim-el" data-anim-name="fadeInLeft">
+      <div class="section-title__title">
+        <h2 class="title">Узнавайте первыми <br>
+о <span class="accent">наших мероприятиях</span></h2>
+      </div>
+
+      <div class="section-title__text">Каждый слышал о легендарных грузинских застольях,<br>
+атмофсферу которых вы сможете ощутить <br>
+в нашем ресторане</div>
+    </div>
+
+    <!-- begin events -->
+    <div class="events">
+      {% for i in events %}
+      <!-- begin event -->
+      <div class="event js-anim-el" data-anim-name="fadeInLeft">
+        <div class="event__content">
+          <div class="event__content-in">
+            <div class="event__title">
+              <h3 class="title title--h3">{{ i.title | safe }}</h3>
+            </div>
+
+            <div class="event__text">Свадьба это начало новой семьи, поэтому решение о вступлении в брак должно 
+              быть обдуманным и здравым. Не забывайте, что этот день очень знаменательный
+              для вас обоих, так пусть ваш партнер - ресторан “Квеври” будет вашим
+            незаменимым помощником в ее планировании.</div>
+
+            <div class="event__bottom">
+              <div class="event__btn border border--sm-dark">
+                {{ mixins.btn(
+                  title = 'Смотреть больше',
+                  mod = 'btn--full'
+                ) }}
+              </div>
+
+              <div class="event__date">
+                <!-- begin date -->
+                <div class="date">
+                  <div class="date__icon">{{ mixins.icon('calendar') }}</div>
+                  <div class="date__title">16.03.2018</div>
+                </div>
+                <!-- end date -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="event__img js-lazy" data-background-image="./img/events/01.jpg"></div>
+      </div>
+      <!-- end event -->
+      {% endfor %}
+    </div>
+    <!-- end events -->
+
+    <div class="section__more">
+      <div class="border border--sm-dark">
+        {{ mixins.btn(
+          title = 'Загрузить еще' + mixins.icon('refresh'),
+          mod = 'btn--transp btn--gray-dark',
+          href = false
+        ) }}
+      </div>
+    </div>
+  </div>
+</section>
+<!-- end section -->

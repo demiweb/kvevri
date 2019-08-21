@@ -17,11 +17,13 @@ class Tabs {
     this.$items = this.$wrap.find(`.${Tabs.classNames.item}`);
     this.tabName = this.$btn.data('target-tab');
     this.$item = this.$wrap.find(`[data-tab="${this.tabName}"]`);
+    this.$targetBtns = this.$wrap.find(`[data-target-tab="${this.tabName}"]`);
 
     this.$tabs.removeClass(Tabs.classNames.active);
     this.$items.removeClass(Tabs.classNames.active);
 
     this.$btn.addClass(Tabs.classNames.active);
+    this.$targetBtns.addClass(Tabs.classNames.active);
     this.$item.addClass(Tabs.classNames.active);
   }
 

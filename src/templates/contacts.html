@@ -1,0 +1,35 @@
+---
+title: contacts
+page: contacts
+hero: {
+  bg: hero-contacts.jpg,
+  title: Контакты ,
+  subttl: 'Мы всегда ждем вашего звонка или визита. Заезжайте к нам в гости,
+звоните нам и следите за нами в социальных сетях!',
+  btns: [
+    { title: 'Посмотреть адреса', mod: 'btn--transp btn--white-dark', wrapMod: 'border'}
+  ],
+  breadcrumbs: {
+    list: [
+      { link: 'Главная' },
+      { item: '-' },
+      { link: 'Контакты', modLink: 'is-active' }
+    ]
+  }
+}
+sectionGallery: {
+  title: 'Мероприятия, которые <br>
+    мы уже провели',
+  subttl: 'На нашем счету более 300 мероприятий, самые яркие моменты <br>
+  которых мы показываем в нашей галерее'
+}
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}  
+  {% include "partials/_hero.html" %}
+  
+  {% include "partials/sections/_s-contacts-map.html" %}
+{% endblock %}
+
+

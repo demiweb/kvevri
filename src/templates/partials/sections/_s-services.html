@@ -1,0 +1,91 @@
+{%set
+services = [
+  {
+    img: 'servises-01.jpg',
+    title: '<h3 class="title title--h3 title--ttn">Банкеты</h3>',
+    text: 'Дни рождения, свадьбы, семейные праздники,
+корпоративы, выпускные вечера – в ресторанах 
+грузинской кухни «Квеври»! '
+  },
+  {
+    delay: '0.2s',
+    img: 'servises-02.jpg',
+    title: '<h3 class="title title--h3 title--ttn">Десткие праздники</h3>',
+    text: 'Яркое убранство залов, специально 
+адаптированное меню, приглашенные 
+профессиональные аниматоры'
+  },
+  {
+    delay: '0.4s',
+    img: 'servises-01.jpg',
+    title: '<h3 class="title title--h3 title--ttn">Банкеты</h3>',
+    text: 'Дни рождения, свадьбы, семейные праздники,
+корпоративы, выпускные вечера – в ресторанах 
+грузинской кухни «Квеври»! '
+  },
+  {
+    img: 'servises-01.jpg',
+    title: '<h3 class="title title--h3 title--ttn">Банкеты</h3>',
+    text: 'Дни рождения, свадьбы, семейные праздники,
+корпоративы, выпускные вечера – в ресторанах 
+грузинской кухни «Квеври»! '
+  },
+  {
+    delay: '0.2s',
+    img: 'servises-02.jpg',
+    title: '<h3 class="title title--h3 title--ttn">Десткие праздники</h3>',
+    text: 'Яркое убранство залов, специально 
+адаптированное меню, приглашенные 
+профессиональные аниматоры'
+  },
+  {
+    delay: '0.4s',
+    img: 'servises-01.jpg',
+    title: '<h3 class="title title--h3 title--ttn">Банкеты</h3>',
+    text: 'Дни рождения, свадьбы, семейные праздники,
+корпоративы, выпускные вечера – в ресторанах 
+грузинской кухни «Квеври»! '
+  },
+  {
+    img: 'servises-01.jpg',
+    title: '<h3 class="title title--h3 title--ttn">Банкеты</h3>',
+    text: 'Дни рождения, свадьбы, семейные праздники,
+корпоративы, выпускные вечера – в ресторанах 
+грузинской кухни «Квеври»! '
+  }
+]
+%}
+
+<!-- begin section -->
+<section class="section pt-sml pb-sml s-services bg-top-right js-lazy" data-background-image="./img/bg-section/bg-services.png">
+  <div class="container">
+    <div class="section__title section__title-mb-lg section-title js-anim-el" data-anim-name="fadeInLeft">
+      <div class="section-title__title">
+        <h2 class="title">Устроим для вас <br> <span class="accent">лучшее мероприятие</span></h2>
+      </div>
+
+      <div class="section-title__text">Каждый слышал о легендарных грузинских застольях,<br>
+        атмофсферу которых вы сможете ощутить <br>
+      в нашем ресторане</div>
+    </div>
+
+    <!-- begin services -->
+    <div class="services">
+      {% for i in services %}
+      <div class="services__item js-anim-el" data-anim-name="fadeInLeft" data-anim-delay="{{ i.delay }}">
+        {{ mixins.item(
+          mod = 'item--white item--descr',
+          title = i.title,
+          text = i.text,
+          counter = { notShow: true },
+          img = { bg: i.img },
+          border = { mod: 'border--sm-dark'},
+          button = 'Заказать мероприятие'
+        ) }}
+      </div>
+      {% endfor %}
+    </div>
+    <!-- end services -->
+  </div>
+</section>
+<!-- end section -->

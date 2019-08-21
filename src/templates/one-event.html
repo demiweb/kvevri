@@ -1,0 +1,42 @@
+---
+title: event
+page: event
+hero: {
+  bg: hero-event.jpg,
+  title: <em class="yellow">Свадьба на Гидропарке</em> ,
+  subttl: 'Свадьба это начало новой семьи, поэтому решение о вступлении в брак должно 
+быть обдуманным и здравым. Не забывайте, что этот день очень знаменательный
+для вас обоих, так пусть ваш партнер - ресторан “Квеври” будет вашим
+незаменимым помощником в ее планировании.',
+  btns: [
+    { title: 'Заказать мероприятие', mod: 'btn--transp btn--white-dark', wrapMod: 'border'}
+  ],
+  breadcrumbs: {
+    list: [
+      { link: 'Главная' },
+      { item: '-' },
+      { link: 'События' },
+      { item: '-' },
+      { link: 'Свадьба на Гидропарке', modLink: 'is-active' }
+    ]
+  }
+}
+sectionGallery: {
+  title: 'Мероприятия, которые <br>
+    мы уже провели',
+  subttl: 'На нашем счету более 300 мероприятий, самые яркие моменты <br>
+  которых мы показываем в нашей галерее'
+}
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}  
+  {% include "partials/_hero.html" %}
+  
+  {% include "partials/sections/_s-gallery-simple.html" %}
+  {% include "partials/sections/_s-event.html" %}
+  {% include "partials/sections/_s-order-event.html" %}
+
+{% endblock %}
+
+

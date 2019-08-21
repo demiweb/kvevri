@@ -1,0 +1,99 @@
+{%set
+blocks = [
+  {
+    tab: 'hidropark',
+    title: 'Ресторан на <span class="accent">Гидропарке</span>',
+    btnTitle: 'Гидропарк',
+    contacts: [
+      { title: 'Адрес', text: 'Киев, Княжий Затон, 4' },
+      { title: 'Телефон', text: 'Тел.: +38 (068) 954 5557' },
+      { title: 'Режим работы', text: '11:00 - 23:30' }
+    ]
+  },
+  {
+    tab: 'stroiteley',
+    title: 'Ресторан на<span class="accent">строителей</span>',
+    btnTitle: 'Дарница',
+    contacts: [
+      { title: 'Адрес', text: 'Киев, Княжий Затон, 4' },
+      { title: 'Телефон', text: 'Тел.: +38 (068) 954 5557' },
+      { title: 'Режим работы', text: '11:00 - 23:30' }
+    ]
+  },  
+  {
+    tab: 'poznyaki',
+    active: true,
+    title: 'Грузинское кафе на <span class="accent">Позняках</span>',
+    btnTitle: 'Позняки',
+    contacts: [
+      { title: 'Адрес', text: 'Киев, Княжий Затон, 4' },
+      { title: 'Телефон', text: 'Тел.: +38 (068) 954 5557' },
+      { title: 'Режим работы', text: '11:00 - 23:30' }
+    ]
+  }
+]
+%}
+
+<!-- begin section -->
+<section class="section s-contacts-map pt-md pb-mdl js-lazy" data-background-image="./img/bg-section/bg-contacts.jpg">
+  <div class="container">
+    <div class="section__title section__title-mb-lg section-title js-anim-el" data-anim-name="fadeInLeft">
+      <div class="section-title__title">
+        <h2 class="title">Выбирайте <br>
+ближайший <span class="accent">ресторан</span></h2>
+      </div>
+
+      <div class="section-title__text">Каждый слышал о легендарных грузинских застольях,<br>
+        атмофсферу которых вы сможете ощутить <br>
+      в нашем ресторане</div>
+    </div>
+
+    <div class="s-contacts-map__contacts js-anim-el" data-anim-name="fadeInLeft" data-anim-delay="0.2s">
+      <!-- begin contacts -->
+      <div class="contacts contacts--map js-tabs">
+        <div class="contacts__block">
+          
+          {% for i in blocks %}
+          <div class="contacts__block-in{% if i.active %} is-active{% endif %} js-tabs-item" data-tab="{{ i.tab }}">
+            <div class="section-title section-title--sm">
+              <div class="section-title__title">
+                <h4 class="title title--h4">{{ i.title | safe }}</h4>
+              </div>
+            </div>
+
+            {% for j in i.contacts %}
+              <!-- begin contact -->
+              <div class="contact">
+                <div class="contact__title">{{ j.title }}</div>
+                <div class="contact__text">{{ j.text | safe }}</div>
+              </div>
+              <!-- end contact -->
+            {% endfor %}
+          </div>
+          {% endfor %}
+
+          <div class="contacts__pagination">
+            {% for i in blocks %}
+            <button class="contacts__dot{% if i.active %} is-active{% endif %} js-tab" data-target-tab="{{ i.tab }}"></button>
+            {% endfor %}
+          </div>
+        </div>
+
+        <div class="contacts__content">
+          {% for i in blocks %}
+          <button class="contact-btn{% if i.active %} is-active{% endif %} js-tab" data-target-tab="{{ i.tab }}">
+            <span class="contact-btn__title">{{ i.btnTitle }}</span>
+            <span class="contact-btn__img">
+              <img class="js-lazy" alt="" data-src="./img/logo-sm.png"/>
+            </span>
+            <span class="contact-btn__check"></span>
+          </button>
+          {% endfor %}
+          
+        </div>
+      </div>
+      <!-- end contacts -->
+    </div>
+  </div>
+</section>
+<!-- end section -->

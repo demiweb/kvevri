@@ -105,6 +105,8 @@ button
   // +light
   font-size: 13px
   color: $gray-light
+  &--gray
+    color: $gray
 
 .counter
   $this: &
@@ -196,17 +198,7 @@ button
       +md
         margin-bottom: 15px
   
-.gallery-slide
-  +cover
-  border-radius: 15px
-  padding-top: 20%
-  display: block
-  +md
-    padding-top: 30%
-  +sm
-    padding-top: 40%
-  +xs
-    padding-top: 40%
+
 
 .reccomend
   padding-top: 85px
@@ -222,6 +214,13 @@ button
     padding-top: 20px
   &__title
     margin-bottom: 50px
+
+.date
+  font-size: 13px
+  +inline-flex(flex-start, center)
+  .icon
+    margin-right: 5px
+    font-size: 18px
 
 @keyframes fadeIn
   0%

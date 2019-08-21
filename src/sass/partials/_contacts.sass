@@ -21,11 +21,17 @@
   &__item
     max-height: 0
     overflow: hidden
+    .contacts__content
+      display: none
+    .contacts__block
+      .contact, .contacts__block-btn
+        +tr(opacity .5s)
+        opacity: 0
     &.is-active
       max-height: none
       overflow: visible
       .contacts
-        &__img
+        &__content
           display: block
           opacity: 1
         &__block
@@ -33,18 +39,18 @@
             opacity: 1
 
 .contacts
+  $this: &
   position: relative
   +flex(flex-end)
   +sm
     margin-bottom: 40px
-  &__img
+  &__content
     +cover
     padding-top: 40%
     width: percentage(10/12)
     position: relative
     margin-right: 50px
-    border-radius: 15px
-    display: none
+    border-radius: 15px    
     +md
       padding-top: 50%
       margin-right: 0
@@ -53,6 +59,15 @@
       padding-top: 80%
     +xss
       padding-top: 100%
+  &__block-in
+    opacity: 0
+    visibility: hidden
+    max-height: 0
+    +tr(opacity .3s)
+    &.is-active
+      max-height: none
+      visibility: visible
+      opacity: 1
   &__block
     background-color: $white
     border-radius: 15px
@@ -66,10 +81,7 @@
     top: 30px
     bottom: 30px
     left: 0
-    z-index: 2
-    .contact, .contacts__block-btn
-      +tr(opacity .5s)
-      opacity: 0
+    z-index: 2    
     +lg
       width: percentage(4/12)
     +md
@@ -81,6 +93,81 @@
       left: 50%
       top: auto
       bottom: -40px
+  &__pagination
+    text-align: center
+    margin-top: 20px
+  &__dot
+    display: inline-block
+    margin-left: 4px
+    margin-right: 4px
+    border-radius: 50%
+    background-color: $gray
+    width: 14px
+    height: 14px
+    &.is-active
+      background-color: $accent
+  
+  &--map
+    +xs
+      flex-wrap: wrap
+    #{$this}__block
+      width: 40%
+      position: relative
+      padding-top: 35px
+      padding-bottom: 45px
+      +lg
+        padding-top: 35px
+        padding-bottom: 35px
+      +md
+        padding-top: 25px
+        padding-bottom: 25px
+      +sm
+        padding-top: 15px
+        padding-bottom: 15px
+        transform: translate(0, 0)
+        left: auto
+        bottom: auto
+        max-width: none
+        width: 50%
+      +xs
+        width: 100%
+        +xs
+          order: 1
+    #{$this}__content
+      margin-right: 0
+      padding-top: 0
+      width: 60%
+      +sm
+        width: 50%
+      +xs
+        width: 100%
+        order: 0
+        padding-top: 100%
+      .contact-btn
+        position: absolute
+        &[data-target-tab="hidropark"]
+          top: 20%
+          left: 20%
+          +r(680)
+            left: 15%
+          +xs
+            top: 25%
+            left: 40%
+          +xss
+            left: 30%
+        &[data-target-tab="stroiteley"]
+          top: 30%
+          left: 40%
+          +xs
+            top: 40%
+            left: 55%
+          +xss
+            left: 50%
+        &[data-target-tab="poznyaki"]
+          top: 60%
+          left: 60%
+          +xs
+            left: 70%
 
 .contact
   margin-bottom: 30px
@@ -89,4 +176,49 @@
   &__title
     +semi
     color: $gray-dark
+
+.contact-btn
+  $this: &
+  color: $gray-dark
+  +semi
+  &.is-active
+    #{$this}__img
+      filter: grayscale(0)
+      opacity: 1
+    #{$this}__check
+      opacity: 1
+      +before
+        display: block
+  &__title
+    display: block
+    margin-bottom: 10px
+  &__img
+    display: block
+    margin-bottom: 5px
+    font-size: 0
+    filter: grayscale(100%)
+    opacity: .3
+    margin-left: auto
+    margin-right: auto
+    +sm
+      width: 40px
+    +xss
+      width: 30px
+      
+  &__check
+    position: relative
+    margin-left: auto
+    margin-right: auto
+    width: 20px
+    height: 20px
+    border: 1px solid  $accent
+    border-radius: 50%
+    +flex(center, center)
+    opacity: .3
+    +before
+      width: 8px
+      height: 8px
+      border-radius: 50%
+      background-color: $accent
+      display: none
 

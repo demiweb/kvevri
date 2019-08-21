@@ -1,0 +1,30 @@
+<!-- begin section -->
+<section class="section">
+  <div class="container">
+    <div class="section__title section__title-mb section-title js-anim-el" data-anim-name="fadeInLeft">
+      <div class="section-title__title">
+        <h2 class="title">Фотогалерея <br>
+<span class="accent">мероприятия</span></h2>
+      </div>
+
+      <div class="section-title__text">Ничто и никто не расскажет вам о празднике <br>
+так, как сделают это качественно <br>
+сделанные фотоснимки</div>
+    </div>
+
+    <!-- begin gallery -->
+    <div class="gallery js-lightgallery">
+      {% for i in range(0, 6) %}
+        <!-- begin gallery-slide -->
+            <a
+              href="./img/gallery/01.jpg"
+              class="gallery-slide js-lazy"
+              data-exthumbimage="./img/gallery/01.jpg"
+              data-background-image="./img/gallery/01.jpg"></a>
+            <!-- end gallery-slide -->
+      {% endfor %}
+    </div>
+    <!-- end gallery -->
+  </div>
+</section>
+<!-- end section -->

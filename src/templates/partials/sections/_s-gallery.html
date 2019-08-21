@@ -8,10 +8,19 @@
   
   <div class="container">
     <div class="section__title js-anim-el" data-anim-name="fadeInLeft">
-      <h2 class="title title--white">Посмотрите на нашу фотогалерею</h2>
-
-      <div class="section__subttl">Мы очень гордимся своей сетью ресторанов и показываем
+      {% if sectionGallery.title %}
+      <h2 class="title title--white">{{ sectionGallery.title | safe }}</h2>
+      {% else %}
+      <h2 class="title title--white">Посмотрите на нашу <br> фотогалерею</h2>
+      {% endif %}
+      
+      {% if sectionGallery.subttl %}
+      <div class="section__subttl">{{ sectionGallery.subttl | safe }}</div>
+      {% else %}
+      <div class="section__subttl">Мы очень гордимся своей сетью ресторанов и показываем <br>
           самые лучшие моменты в нашей галерее</div>
+      {% endif %}
+      
     </div>
   </div>
 

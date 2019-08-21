@@ -8,3 +8,7 @@ PageList:
 - file: delivery.html
 - file: order.html
 - file: cart.html
+- file: services.html
+- file: contacts.html
+- file: events.html
+- file: one-event.html

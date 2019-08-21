@@ -1,84 +1,87 @@
-import $ from 'jquery';
-
 export default class Popup {
   constructor() {
-    this.$popups = $(`.${Popup.classNames.target}`);
-    this.$BODY = $('body');
-    this.$DOC = $(document);
-    this.$HTML = $('html');
+    this.popups = [].slice.call(document.querySelectorAll(`.${Popup.classNames.target}`));
   }
 
   init() {
-    // this._detectTouch();
-    this._openPopup();
+    this._detectTouch();
     this._closePopup();
+    this._openPopup();
   }
 
   destroy() {
     this._destroy();
   }
 
-  // get isTouch() {
-  //   return 'ontouchstart' in window || navigator.maxTouchPoints;
-  // }
+  openPopup(e) {
+    this.btn = e.target.closest(`.${Popup.classNames.open}`);
+    if (!this.btn) return;
+    if (e.target.closest(`.${Popup.classNames.btnInOpen}`)) return;
 
-  openFunc(e) {
     e.preventDefault();
-    const $target = $(e.currentTarget);
-    const openData = $target.data('popup-target');
-    const $popup = $(`.${Popup.classNames.target}[data-popup="${openData}"]`);
-    const $openedPopups = $(`.${Popup.classNames.target}:not([data-popup="${openData}"])`);
-    if ($(e.target).closest(`.${Popup.classNames.btnInOpen}`).length > 0) return;
+    this.name = this.btn.dataset.popupTarget;
+    this.popup = document.querySelector(`.${Popup.classNames.target}[data-popup="${this.name}"]`);
+    if (!this.popup) return;
+    this.closeBtn = this.popup.querySelector(`.${Popup.classNames.close}`);
 
-    $openedPopups.removeClass(Popup.classNames.active);
-    $popup.addClass(Popup.classNames.active);
-    this.$BODY.addClass(Popup.classNames.noScroll);
+    const openedPopups = [].slice.call(document.querySelectorAll(`.${Popup.classNames.target}:not([data-popup="${this.name}"])`));
+
+    openedPopups.forEach((popup) => {
+      popup.classList.remove(Popup.classNames.active);
+    });
+
+    this.popup.classList.add(Popup.classNames.active);
+    document.body.classList.add(Popup.classNames.noScroll);
 
     if (this.onOpen) {
-      this.onOpen($target, $popup);
+      this.onOpen(this.btn, this.popup);
     }
   }
 
-  closeFunc(e) {
-    const $popup = $(e.currentTarget);
-    const $close = $(e.target).closest(`.${Popup.classNames.close}`);
+  closePopup(e) {
+    this.closeBtn = e.target.closest(`.${Popup.classNames.close}`);
+    const popup = e.target.classList.contains(Popup.classNames.target) ? e.target : null;
+    const close = this.closeBtn || popup;
+    if (!close) return;
 
-    if ($popup.has(e.target).length === 0 || $close.length > 0) {
-      e.preventDefault();
-      $popup.removeClass(Popup.classNames.active);
-      if (!$close.hasClass(Popup.classNames.open)) {
-        this.$BODY.removeClass(Popup.classNames.noScroll);
-      }
+    e.preventDefault();
+    this.popup = close.closest(`.${Popup.classNames.target}`);
+    this.name = this.popup.dataset.popup;
+    this.btn = document.querySelector(`.${Popup.classNames.open}[data-popup-target="${this.name}"]`);
 
-      if (this.onClose) {
-        const $btns = $(`.${Popup.classNames.open}[data-popup-target="${$popup.data('popup')}"]`);
-        this.onClose($btns, $popup);
-      }
+    this.popup.classList.remove(Popup.classNames.active);
+    document.body.classList.remove(Popup.classNames.noScroll);
+
+    if (this.onClose) {
+      this.onClose(this.btn, this.popup);
     }
   }
 
-  // _detectTouch() {
-  //   if (this.isTouch) {
-  //     this.$HTML.addClass(Popup.classNames.isTouch);
-  //   }
-  // }
+  _detectTouch() {
+    this.isTouch = 'ontouchstart' in window || navigator.maxTouchPoints;
+    if (this.isTouch) {
+      document.documentElement.classList.add(Popup.classNames.isTouch);
+    }
+  }
 
   _openPopup() {
-    this.openFuncBind = this.openFunc.bind(this);
-    this.$DOC.on('click', `.${Popup.classNames.open}`, this.openFuncBind);
+    this.openPopupBinded = this.openPopup.bind(this);
+    document.addEventListener('click', this.openPopupBinded);
   }
 
   _closePopup() {
-    this.closeFuncBind = this.closeFunc.bind(this);
-    this.$DOC.on('click', `.${Popup.classNames.target}`, this.closeFuncBind);
+    this.closePopupBinded = this.closePopup.bind(this);
+    document.addEventListener('click', this.closePopupBinded);
   }
 
   _destroy() {
-    this.$DOC.off('click', `.${Popup.classNames.open}`, this.openFuncBind);
-    this.$DOC.off('click', `.${Popup.classNames.target}`, this.closeFuncBind);
+    document.removeEventListener('click', this.openPopupBinded);
+    document.removeEventListener('click', this.closePopupBinded);
 
-    this.$popups.removeClass(Popup.classNames.active);
-    this.$BODY.removeClass(Popup.classNames.noScroll);
+    this.popups.forEach((popup) => {
+      popup.classList.remove(Popup.classNames.active);
+      document.body.classList.remove(Popup.classNames.noScroll);
+    });
   }
 }
 

@@ -1,28 +1,39 @@
 {% from 'mixins/_btn.html' import btn %}
 {%set btn = btn %}
 
-{% macro item(mod, img, label, title, price, counter, border) %}
+{% macro item(mod, img, label, title, price, counter, border, text, button) %}
   <!-- begin item -->
   <div class="item{% if mod %} {{ mod }}{% endif %}">
     {% if label %}
       <div class="item__label{% if label.mod %} {{ label.mod }}{% endif %}">{{ label.title | safe }}</div>
     {% endif %}
-
-    <!-- <div class="item__img js-lazy" data-background-image="./img/slider/vine.png"> -->
+    
+    {% if img.bg %}
+    <div class="item__img js-lazy" data-background-image="./img/items/{{ img.bg }}"></div>
+    {% else %}
     <div class="item__img">
       <img data-src="./img/items/{{ img }}" alt="" class="js-lazy">
     </div>
+    {% endif %}
 
     {% if title %}
       <div class="item__title">{{ title | safe }}</div>
     {% endif %}
 
+    {% if price %}
     <div class="item__price">
       {% if price %}
         {{ price | safe }}
       {% endif %}
     </div>
+    {% endif %}
 
+    {% if text %}
+    <div class="item__text">{{ text | safe }}</div>
+    {% endif %}
+
+    
+    {% if not counter.notShow %}
     <div class="item__counter">
       <!-- begin counter -->
       <div class="counter{% if counter.mod %} {{ counter.mod }}{% endif %}">
@@ -34,7 +45,22 @@
       </div>
       <!-- end counter -->
     </div>
+    {% endif %}
 
+    
+    {% if button %}
+    <div class="item__btn">
+      <!-- begin border -->
+      <div class="border{% if border.mod %} {{ border.mod }}{% endif %}">
+
+        {{ btn(
+          title = button | safe,
+          mod = 'btn--full'
+        ) }}
+      </div>
+      <!-- end border -->
+    </div>
+    {% else %}
     <div class="item__btn">
       <!-- begin border -->
       <div class="border{% if border.mod %} {{ border.mod }}{% endif %}">
@@ -46,6 +72,9 @@
       </div>
       <!-- end border -->
     </div>
+    {% endif %}
+
+    
   </div>
   <!-- end item -->
 {% endmacro %}

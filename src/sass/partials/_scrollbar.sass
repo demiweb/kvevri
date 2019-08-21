@@ -1,0 +1,41 @@
+=scrollbar($background: $white)
+  &::-webkit-scrollbar
+    width: 12px
+  &::-webkit-scrollbar-track
+    background-color: $white
+    // box-shadow: inset 2px 0 0px $background, inset -2px 0 0px $background
+    box-shadow: inset 0px 2px 8px 0px rgba(0, 0, 0, 0.26)
+    outline: none
+    border-radius: 12px
+  &::-webkit-scrollbar-thumb
+    background-color: $gray-light
+    border-radius: 12px
+    +tr(background-color .3s)
+    +hover
+      background-color: $gray
+
+.scrollbar
+  position: relative
+  +scrollbar
+
+.ps
+  padding-right: 25px
+  &:hover
+    // .ps__rail-y
+    //   opacity: 1 !important
+  &__rail-y
+    opacity: 1 !important
+    background-color: $white
+    width: 12px
+    border-radius: 12px
+    box-shadow: inset 0px 2px 8px 0px rgba(0, 0, 0, 0.26)
+    &:hover
+      background-color: $white !important
+  &__thumb-y
+    width: 100% !important
+    left: 0
+    border-radius: 12px
+    background-color: $gray-light
+    +tr(background-color .3s)
+    &:hover
+      background-color: $gray !important
