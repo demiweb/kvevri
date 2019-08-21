@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>order</title>
+    <title>contacts</title>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#fff" />
@@ -341,194 +341,166 @@
       </header>
       <!-- end header -->
       <!-- begin main -->
-      <main class="main main--noisy">
-        <!-- begin main__breadcrumbs -->
-        <div class="main__breadcrumbs">
-          <div class="container">
-            <!-- begin breadcrumbs -->
-            <div class="breadcrumbs">
-              <ul>
-                <li><a href="#">Главная</a></li>
-                <li>-</li>
-                <li><a href="#">Корзина</a></li>
-                <li>-</li>
-                <li><a href="#" class=" is-active">Оформление заказа</a></li>
-              </ul>
-            </div>
-            <!-- end breadcrumbs -->
-            <div class="main__back">
-              <a href="#" class="back-link">Вернуться в корзину</a>
-            </div>
-          </div>
-        </div>
-        <!-- end main__breadcrumbs -->
-        <!-- begin order -->
-        <section class="order pb-lg">
-          <div class="container">
-            <div class="order__title">
-              <h2 class="title title--white">Оформление <em class="accent">заказа</em></h2>
-            </div>
-            <form>
-              <div class="order__content">
-                <div class="order__left">
-                  <div class="order__form">
-                    <!-- begin form -->
-                    <div class="form">
-                      <div class="form__row">
-                        <div class="form__col">
-                          <!-- begin input -->
-                          <div class="input">
-                            <input type="text" placeholder="Введите ваше имя">
-                          </div>
-                          <!-- end input -->
-                        </div>
-                        <div class="form__col">
-                          <!-- begin input -->
-                          <div class="input">
-                            <input type="tel" placeholder="Введите ваш телефон">
-                          </div>
-                          <!-- end input -->
-                        </div>
-                        <div class="form__col">
-                          <!-- begin input -->
-                          <div class="input">
-                            <input type="text" placeholder="Укажите улицу">
-                          </div>
-                          <!-- end input -->
-                        </div>
-                        <div class="form__col">
-                          <!-- begin input -->
-                          <div class="input">
-                            <input type="text" placeholder="Укажите дом и квартиру">
-                          </div>
-                          <!-- end input -->
-                        </div>
-                      </div>
-                      <div class="form__row">
-                        <div class="form__col">
-                          <!-- begin form-block -->
-                          <div class="form-block">
-                            <div class="form-block__title">Выберите способ получения заказа:</div>
-                            <div class="form-block__radios">
-                              <!-- begin radio -->
-                              <label class="radio">
-                                <input type="radio" name="delivery" checked="">
-                                <span>Доставка курьером</span>
-                              </label>
-                              <!-- end radio -->
-                              <!-- begin radio -->
-                              <label class="radio">
-                                <input type="radio" name="delivery">
-                                <span>Самовывоз</span>
-                              </label>
-                              <!-- end radio -->
-                            </div>
-                          </div>
-                          <!-- end form-block -->
-                        </div>
-                        <div class="form__col">
-                          <!-- begin form-block -->
-                          <div class="form-block">
-                            <div class="form-block__title">Выберите способ оплаты:</div>
-                            <div class="form-block__radios">
-                              <!-- begin radio -->
-                              <label class="radio">
-                                <input type="radio" name="payment" checked="">
-                                <span>Наличными курьеру</span>
-                              </label>
-                              <!-- end radio -->
-                              <!-- begin radio -->
-                              <label class="radio">
-                                <input type="radio" name="payment">
-                                <span>Картой Visa/Mastercard</span>
-                              </label>
-                              <!-- end radio -->
-                            </div>
-                          </div>
-                          <!-- end form-block -->
-                        </div>
-                      </div>
-                      <div class="form__row">
-                        <div class="form__col form__col-lg">
-                          <!-- begin form-block -->
-                          <div class="form-block">
-                            <div class="form-block__title">комментарии к заказу:</div>
-                            <!-- begin textarea -->
-                            <div class="textarea">
-                              <textarea class="js-textarea" placeholder="Введите комментарий"></textarea>
-                            </div>
-                            <!-- end textarea -->
-                          </div>
-                          <!-- end form-block -->
-                        </div>
-                      </div>
-                    </div>
-                    <!-- end form -->
-                  </div>
+      <main class="main">
+        <!-- begin hero -->
+        <section class="hero">
+          <!-- begin hero-inner -->
+          <div class="hero-inner js-lazy" data-background-image="./img/hero/hero-contacts.jpg">
+            <div class="hero__breadcrumbs">
+              <div class="container">
+                <!-- begin breadcrumbs -->
+                <div class="breadcrumbs">
+                  <ul>
+                    <li><a href="#">Главная</a></li>
+                    <li>-</li>
+                    <li><a href="#" class=" is-active">Контакты</a></li>
+                  </ul>
                 </div>
-                <div class="order__right">
-                  <!-- begin banner -->
-                  <div class="banner">
-                    <div class="banner__inner">
-                      <div class="banner__title">Ваш заказ:</div>
-                      <div class="banner__items">
-                        <div class="banner-item">
-                          <div class="banner-item__inner">
-                            <div class="banner-item__title">Люля кебаб из баранины</div>
-                            <div class="banner-item__price price"> 190<small>грн</small>
-                            </div>
-                          </div>
-                          <div class="banner-item__amount amount">2 x 95 грн</div>
-                        </div>
-                        <div class="banner-item">
-                          <div class="banner-item__inner">
-                            <div class="banner-item__title">Хачапури по-аджарски</div>
-                            <div class="banner-item__price price"> 300<small>грн</small>
-                            </div>
-                          </div>
-                          <div class="banner-item__amount amount">2 x 150 грн</div>
-                        </div>
-                        <div class="banner-item">
-                          <div class="banner-item__inner">
-                            <div class="banner-item__title">Люля кебаб из свинины</div>
-                            <div class="banner-item__price price"> 600<small>грн</small>
-                            </div>
-                          </div>
-                          <div class="banner-item__amount amount">6 x 100грн</div>
-                        </div>
-                        <div class="banner-item">
-                          <div class="banner-item__inner">
-                            <div class="banner-item__title">Салат по-грузински</div>
-                            <div class="banner-item__price price"> 120<small>грн</small>
-                            </div>
-                          </div>
-                          <div class="banner-item__amount amount">1 x 120 грн</div>
-                        </div>
-                      </div>
-                      <div class="banner__amount">
-                        <div class="banner__title">Итого:</div>
-                        <div class="banner__price price price--lg">1210 <small>грн</small></div>
-                      </div>
-                      <div class="banner__btn border">
-                        <button class="btn btn--full">Оформить заказ</button>
-                      </div>
-                      <div class="banner__checkbox">
-                        <!-- begin checkbox -->
-                        <label class="checkbox">
-                          <input type="checkbox" checked="">
-                          <span>Я ознакомился с <a href="#">зонами доставки</a></span>
-                        </label>
-                        <!-- end checkbox -->
-                      </div>
+                <!-- end breadcrumbs -->
+              </div>
+            </div>
+            <div class="container">
+              <div class="hero-inner__inner">
+                <div class="hero__content">
+                  <div class="hero__title js-anim-el" data-anim-name="fadeInLeft">
+                    <div class="title title--white">Контакты</div>
+                  </div>
+                  <div class="hero__text js-anim-el" data-anim-name="fadeInLeft" data-anim-delay="0.1s">Мы всегда ждем вашего звонка или визита. Заезжайте к нам в гости, звоните нам и следите за нами в социальных сетях!</div>
+                  <div class="hero__btns js-anim-el" data-anim-name="fadeInLeft" data-anim-delay="0.2s">
+                    <div class="hero__btn border">
+                      <a href="#" class="btn btn--transp btn--white-dark">Посмотреть адреса</a>
                     </div>
                   </div>
-                  <!-- end banner -->
                 </div>
               </div>
-            </form>
+            </div>
+          </div>
+          <!-- end hero-inner -->
+        </section>
+        <!-- end hero -->
+        <!-- begin section -->
+        <section class="section s-contacts-map pt-md pb-mdl js-lazy" data-background-image="./img/bg-section/bg-contacts.jpg">
+          <div class="container">
+            <div class="section__title section__title-mb-lg section-title js-anim-el" data-anim-name="fadeInLeft">
+              <div class="section-title__title">
+                <h2 class="title">Выбирайте <br> ближайший <span class="accent">ресторан</span></h2>
+              </div>
+              <div class="section-title__text">Каждый слышал о легендарных грузинских застольях,<br> атмофсферу которых вы сможете ощутить <br> в нашем ресторане</div>
+            </div>
+            <div class="s-contacts-map__contacts js-anim-el" data-anim-name="fadeInLeft" data-anim-delay="0.2s">
+              <!-- begin contacts -->
+              <div class="contacts contacts--map js-tabs">
+                <div class="contacts__block">
+                  <div class="contacts__block-in js-tabs-item" data-tab="hidropark">
+                    <div class="section-title section-title--sm">
+                      <div class="section-title__title">
+                        <h4 class="title title--h4">Ресторан на <span class="accent">Гидропарке</span></h4>
+                      </div>
+                    </div>
+                    <!-- begin contact -->
+                    <div class="contact">
+                      <div class="contact__title">Адрес</div>
+                      <div class="contact__text">Киев, Княжий Затон, 4</div>
+                    </div>
+                    <!-- end contact -->
+                    <!-- begin contact -->
+                    <div class="contact">
+                      <div class="contact__title">Телефон</div>
+                      <div class="contact__text">Тел.: +38 (068) 954 5557</div>
+                    </div>
+                    <!-- end contact -->
+                    <!-- begin contact -->
+                    <div class="contact">
+                      <div class="contact__title">Режим работы</div>
+                      <div class="contact__text">11:00 - 23:30</div>
+                    </div>
+                    <!-- end contact -->
+                  </div>
+                  <div class="contacts__block-in js-tabs-item" data-tab="stroiteley">
+                    <div class="section-title section-title--sm">
+                      <div class="section-title__title">
+                        <h4 class="title title--h4">Ресторан на<span class="accent">строителей</span></h4>
+                      </div>
+                    </div>
+                    <!-- begin contact -->
+                    <div class="contact">
+                      <div class="contact__title">Адрес</div>
+                      <div class="contact__text">Киев, Княжий Затон, 4</div>
+                    </div>
+                    <!-- end contact -->
+                    <!-- begin contact -->
+                    <div class="contact">
+                      <div class="contact__title">Телефон</div>
+                      <div class="contact__text">Тел.: +38 (068) 954 5557</div>
+                    </div>
+                    <!-- end contact -->
+                    <!-- begin contact -->
+                    <div class="contact">
+                      <div class="contact__title">Режим работы</div>
+                      <div class="contact__text">11:00 - 23:30</div>
+                    </div>
+                    <!-- end contact -->
+                  </div>
+                  <div class="contacts__block-in is-active js-tabs-item" data-tab="poznyaki">
+                    <div class="section-title section-title--sm">
+                      <div class="section-title__title">
+                        <h4 class="title title--h4">Грузинское кафе на <span class="accent">Позняках</span></h4>
+                      </div>
+                    </div>
+                    <!-- begin contact -->
+                    <div class="contact">
+                      <div class="contact__title">Адрес</div>
+                      <div class="contact__text">Киев, Княжий Затон, 4</div>
+                    </div>
+                    <!-- end contact -->
+                    <!-- begin contact -->
+                    <div class="contact">
+                      <div class="contact__title">Телефон</div>
+                      <div class="contact__text">Тел.: +38 (068) 954 5557</div>
+                    </div>
+                    <!-- end contact -->
+                    <!-- begin contact -->
+                    <div class="contact">
+                      <div class="contact__title">Режим работы</div>
+                      <div class="contact__text">11:00 - 23:30</div>
+                    </div>
+                    <!-- end contact -->
+                  </div>
+                  <div class="contacts__pagination">
+                    <button class="contacts__dot js-tab" data-target-tab="hidropark"></button>
+                    <button class="contacts__dot js-tab" data-target-tab="stroiteley"></button>
+                    <button class="contacts__dot is-active js-tab" data-target-tab="poznyaki"></button>
+                  </div>
+                </div>
+                <div class="contacts__content">
+                  <button class="contact-btn js-tab" data-target-tab="hidropark">
+                    <span class="contact-btn__title">Гидропарк</span>
+                    <span class="contact-btn__img">
+                      <img class="js-lazy" alt="" data-src="./img/logo-sm.png" />
+                    </span>
+                    <span class="contact-btn__check"></span>
+                  </button>
+                  <button class="contact-btn js-tab" data-target-tab="stroiteley">
+                    <span class="contact-btn__title">Дарница</span>
+                    <span class="contact-btn__img">
+                      <img class="js-lazy" alt="" data-src="./img/logo-sm.png" />
+                    </span>
+                    <span class="contact-btn__check"></span>
+                  </button>
+                  <button class="contact-btn is-active js-tab" data-target-tab="poznyaki">
+                    <span class="contact-btn__title">Позняки</span>
+                    <span class="contact-btn__img">
+                      <img class="js-lazy" alt="" data-src="./img/logo-sm.png" />
+                    </span>
+                    <span class="contact-btn__check"></span>
+                  </button>
+                </div>
+              </div>
+              <!-- end contacts -->
+            </div>
           </div>
         </section>
-        <!-- end order -->
+        <!-- end section -->
       </main>
       <!-- end main -->
       <!-- begin footer -->
