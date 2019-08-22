@@ -1,4 +1,4 @@
-.radio
+.radio, .checkbox
   position: relative
   padding-left: 1.3em
   user-select: none
@@ -20,8 +20,10 @@
         left: 4px
         position: absolute
         display: block
+        box-shadow: 0 0 10px $accent
 
   span
+    pointer-events: none
     &::before
       content: ''
       border: 1px solid $accent
@@ -35,6 +37,16 @@
   a
     color: $accent
     text-decoration: underline
+  &--gray
+    color: $gray
+  &--sm
+    font-size: 13px
+    padding-left: 1.4em
+    input
+      &:checked + span
+        &::after
+          top: 6px
+    span
+      &::before
+        top: 2px
 
-.checkbox
-  @extend .radio

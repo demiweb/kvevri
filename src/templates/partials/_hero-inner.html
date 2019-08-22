@@ -27,10 +27,12 @@
         {% if hero.btns %}
         <div class="hero__btns js-anim-el" data-anim-name="fadeInLeft" data-anim-delay="0.2s">
           {% for i in hero.btns %}
-            <div class="hero__btn{% if i.wrapMod %} {{ i.wrapMod }}{% endif %}">
+            <div class="hero__btn{% if i.wrapMod %} {{ i.wrapMod }}{% endif %}{% if page !== 'home' %} border{% endif %}">
               {{ mixins.btn(
                 title = i.title | safe,
-                mod = i.mod | safe
+                mod = i.mod | safe,
+                href = i.href,
+                attributes = i.attributes
               ) }}
             </div>
           {% endfor %}

@@ -79,8 +79,8 @@ services = [
           text = i.text,
           counter = { notShow: true },
           img = { bg: i.img },
-          border = { mod: 'border--sm-dark'},
-          button = 'Заказать мероприятие'
+          border = { mod: 'border--sm-dark' },
+          button = { title: 'Заказать мероприятие', mod: 'btn--full js-popup-open', attributes: { 'data-popup-target': 'order' } }
         ) }}
       </div>
       {% endfor %}

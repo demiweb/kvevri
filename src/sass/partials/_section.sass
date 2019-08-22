@@ -78,17 +78,29 @@
     +flex(center, normal, column)
     width: 50%
     padding-left: 15px
+    +xs
+      width: auto
+      padding-left: 0
   &__center-text
     margin-bottom: 15px
+    max-width: 560px
   &__center-img
     width: 50%
     text-align: right
     padding-right: 15px
+    +xs
+      width: auto
+      text-align: center
+      padding-right: 0
+      margin-bottom: 15px
     &.lazy
       padding-top: 35%
       border-radius: 15px
       +cover
       width: calc(50% - 15px)
+      +xs
+        width: auto
+        padding-top: 50%
   &__center-btn
     max-width: 285px
     width: 100%
@@ -244,6 +256,8 @@
 .s-gallery
   padding-top: 15%
   padding-bottom: 15%
+  +xs
+    padding-bottom: 25%
   .container
     position: relative
     z-index: 1

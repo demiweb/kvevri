@@ -1,27 +1,29 @@
 <!-- begin section -->
-<section class="section s-order-event pt-sml pb-md bg-cover bg-center-center js-lazy" data-background-image="./img/bg-section/bg-order-del.jpg">
+<section class="section s-order-event pt-lg pb-md bg-cover bg-center-center js-lazy" data-background-image="./img/bg-section/bg-history.jpg">
+  <div class="section__layer">
+    <img alt="" class="js-lazy lazy is-loaded" src="./img/bg-layer.png" data-loaded="true">
+  </div>
+
   <div class="container">
     <div class="section__title section__title-mb section-title  section-title--light js-anim-el" data-anim-name="fadeInLeft">
       <div class="section-title__title">
         <h2 class="title title--white">Мы оставляем <br> лучшие  <em class="accent">впечатления</em></h2>
       </div>
 
-      <div class="section-title__text">
-        <p>Хотите получить скидку 10% на наши блюда?</p>
-        <p>Забирайте товар у нас в ресторанах лично</p>
-      </div>
     </div>
 
     <div class="section__center js-anim-el" data-anim-name="fadeInLeft" data-anim-delay="0.2s">
       <div class="section__center-img js-lazy" data-background-image="./img/events/05.jpg">
       </div>
       <div class="section__center-content">
-        <div class="section__center__text">После приготовлений наступает этот день, и он должен быть совершенен. Вы встаете рано, так как это было довольно сложно выспаться из-за нервов. Все ваши родственники улыбаются и разделяют ваше счастье. Через несколько часов вы выглядите самой роскошный в вашей жизни и все ваши усилия того стоили.</div>
+        <div class="section__center-text">После приготовлений наступает этот день, и он должен быть совершенен. Вы встаете рано, так как это было довольно сложно выспаться из-за нервов. Все ваши родственники улыбаются и разделяют ваше счастье. Через несколько часов вы выглядите самой роскошный в вашей жизни и все ваши усилия того стоили.</div>
 
         <div class="section__center-btn border">
           {{ mixins.btn(
             title = 'Заказать мероприятие',
-            mod = 'btn--full'
+            mod = 'btn--full js-popup-open',
+            href = false,
+            attributes = { 'data-popup-target': 'order' }
           ) }}
         </div>
       </div>

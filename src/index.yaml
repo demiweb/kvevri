@@ -12,3 +12,5 @@ PageList:
 - file: contacts.html
 - file: events.html
 - file: one-event.html
+- file: popup-thanks.html
+- file: 404.html

@@ -1,7 +1,7 @@
 {% from 'mixins/_btn.html' import btn %}
 {%set btn = btn %}
 
-{% macro item(mod, img, label, title, price, counter, border, text, button) %}
+{% macro item(mod, img, label, title, price, counter, border, text, button, form) %}
   <!-- begin item -->
   <div class="item{% if mod %} {{ mod }}{% endif %}">
     {% if label %}
@@ -20,42 +20,76 @@
       <div class="item__title">{{ title | safe }}</div>
     {% endif %}
 
-    {% if price %}
-    <div class="item__price">
-      {% if price %}
-        {{ price | safe }}
-      {% endif %}
-    </div>
-    {% endif %}
-
-    {% if text %}
-    <div class="item__text">{{ text | safe }}</div>
-    {% endif %}
-
-    
-    {% if not counter.notShow %}
-    <div class="item__counter">
-      <!-- begin counter -->
-      <div class="counter{% if counter.mod %} {{ counter.mod }}{% endif %}">
-        <div class="counter__inner">
-          <button>-</button>
-          <input type="text" value="1">
-          <button>+</button>
+    {% if form %}
+    <div class="item__form">
+      <form>
+        {% if price %}
+        <div class="item__price">
+          {% if price %}
+          {{ price | safe }}
+          {% endif %}
         </div>
-      </div>
-      <!-- end counter -->
-    </div>
-    {% endif %}
+        {% endif %}
 
-    
+        {% if not counter.notShow %}
+        <div class="item__counter">
+          <!-- begin counter -->
+          <div class="counter{% if counter.mod %} {{ counter.mod }}{% endif %}">
+            <div class="counter__inner">
+              <button>-</button>
+              <input type="text" value="1">
+              <button>+</button>
+            </div>
+          </div>
+          <!-- end counter -->
+        </div>
+        {% endif %}
+
+        {% if button %}
+        <div class="item__btn">
+          <!-- begin border -->
+          <div class="border{% if border.mod %} {{ border.mod }}{% endif %}">
+
+            {{ btn(
+              title = button.title | safe,
+              mod = button.mod,
+              href = button.href,
+              attributes = button.attributes
+            ) }}
+          </div>
+          <!-- end border -->
+        </div>
+        {% else %}
+        <div class="item__btn">
+          <!-- begin border -->
+          <div class="border{% if border.mod %} {{ border.mod }}{% endif %}">
+
+            {{ btn(
+              title = 'Заказать доставку',
+              mod = 'btn--full',
+              href = false
+            ) }}
+          </div>
+          <!-- end border -->
+        </div>
+        {% endif %}
+      </form>
+    </div>
+
+    {% else %}
+    {% if text %}
+      <div class="item__text">{{ text | safe }}</div>
+    {% endif %}
     {% if button %}
     <div class="item__btn">
       <!-- begin border -->
       <div class="border{% if border.mod %} {{ border.mod }}{% endif %}">
 
         {{ btn(
-          title = button | safe,
-          mod = 'btn--full'
+          title = button.title | safe,
+          mod = button.mod,
+          href = button.href,
+          attributes = button.attributes
         ) }}
       </div>
       <!-- end border -->
@@ -67,12 +101,23 @@
 
         {{ btn(
           title = 'Заказать доставку',
-          mod = 'btn--full'
+          mod = 'btn--full',
+          href = false
         ) }}
       </div>
       <!-- end border -->
     </div>
     {% endif %}
+
+    {% endif %}
+
+    
+
+       
+    
+
+    
+    
 
     
   </div>

@@ -1,4 +1,19 @@
 .form
+  &__field
+    margin-bottom: 15px
+  &__checkbox
+    .checkbox
+      display: inline-block
+  &__btn
+    padding-top: 10px
+    +notlast
+      margin-bottom: 15px
+    .border
+      max-width: 290px
+      margin-left: auto
+      margin-right: auto
+      +xs
+        max-width: none
   &__row
     +flex(flex-start, normal, row, wrap)
     margin-left: -15px

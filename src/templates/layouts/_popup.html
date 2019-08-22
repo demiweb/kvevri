@@ -1,5 +1,13 @@
+
+
+{% import "mixins/_all.html" as mixins %}
 <!-- begin popup -->
-<div class="popup">
-  
+<div class="popup js-popup{% if popup.mod %} {{ popup.mod }}{% endif %}{% if popup.active %} is-active{% endif %}" data-popup="{{ popup.name }}">
+  <div class="popup__inner">
+    {% if popup.closeBtn %}
+    <button class="popup__close js-popup-close"></button>
+    {% endif %}
+    {% block popup %}{% endblock %}
+  </div>
 </div>
 <!-- end popup -->

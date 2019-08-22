@@ -1,1 +1,9 @@
+{% if page === 'delivery' %}
 {% include "partials/popups/_popup-delivery.html" %}
+{% endif %}
+
+{% if page === 'order' or page === 'popup-thanks' %}
+{% include "partials/popups/_popup-thanks.html" %}
+{% endif %}
+
+{% include "partials/popups/_popup-order.html" %}

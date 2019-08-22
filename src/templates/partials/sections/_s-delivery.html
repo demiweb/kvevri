@@ -6,7 +6,7 @@ items = [
     text: 'Заказывайте доставку лучших грузинских
     блюд в Киеве в офис или на дом.
     Мин. сумма заказа - 500 грн',
-    btn: 'Заказать доставку'
+    btn: { title: 'Заказать доставку', href: '#', mod: 'btn--transp btn--full' }
   },
   {
     title: 'Наши рестораны',
@@ -14,7 +14,7 @@ items = [
     text: 'Посетите наши рестораны находятся
     на ул. Строителей, Позняках и Гидропарке. 
     Мы работаем с 11:00 до 23:30',
-    btn: 'Посетить ресторан',
+    btn: { title: 'Посетить ресторан', href: '#', mod: 'btn--transp btn--full' },
     delay: '0.2s'
   },
   {
@@ -23,7 +23,11 @@ items = [
     text: 'Хотите устроить банкет, свадьбу или
     тимбилдинг-вечеринку? Мы с радостью
     организуем для вас любое мероприятие',
-    btn: 'Заказать мероприятие',
+    btn: {    
+      title: 'Заказать мероприятие',
+      mod: 'btn--transp btn--full',
+      href: '#'
+    },
     delay: '0.4s'
   }
 ]  
@@ -62,8 +66,10 @@ items = [
 
             <div class="del-item__btn border">
               {{ mixins.btn(
-                title = i.btn,
-                mod = 'btn--transp btn--full'
+                title = i.btn.title | safe,
+                mod = i.btn.mod,
+                href = i.btn.href,
+                attributes = i.btn.attributes
               ) }}
             </div>
           </div>

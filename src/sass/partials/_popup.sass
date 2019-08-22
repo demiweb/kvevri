@@ -1,4 +1,5 @@
 .popup
+  $this: &
   position: fixed
   z-index: 20
   width: 100%
@@ -49,6 +50,46 @@
       margin-bottom: 30px
     +sm
       margin-bottom: 15px
+  &__title-sm
+    margin-bottom: 25px
+    +md
+      margin-bottom: 15px
+  &__title-xs
+    margin-bottom: 15px
+    +md
+      margin-bottom: 10px
+  &__subttl
+    margin-bottom: 40px
+    +lg
+      margin-bottom: 30px
+    +md
+      margin-bottom: 15px
+  &__subttl-sm
+    max-width: 320px
+    margin-left: auto
+    margin-right: auto
+    margin-bottom: 30px
+    +md
+      margin-bottom: 15px
+  &__btns
+    margin-bottom: 30px
+    +flex(space-between, center)
+    max-width: 620px
+    margin-left: auto
+    margin-right: auto
+    +md
+      margin-bottom: 15px
+    +xs
+      display: block
+  &__btn
+    max-width: 290px
+    width: 100%
+    +xs
+      margin-left: auto
+      margin-right: auto
+      max-width: none
+      +notlast
+        // margin-bottom: 10px
   &__close
     +icon-close(20, 1, currentColor)
     position: absolute
@@ -61,3 +102,47 @@
     +xs
       top: 10px
       right: 10px
+  &__layer
+    position: absolute
+    z-index: 0
+    top: 0
+    left: 0
+    right: 0
+    border-top-left-radius: 15px
+    border-top-right-radius: 15px
+    overflow: hidden
+    img
+      width: 100%
+  &__social
+    p
+      margin-bottom: 5px
+
+  &--md
+    #{$this}__inner
+      max-width: 930px
+    #{$this}__subttl
+      max-width: 465px
+      margin-left: auto
+      margin-right: auto
+  &--layer
+    #{$this}__inner
+      padding-top: 110px
+      +xl
+        padding-top: 100px
+      +sm
+        padding-top: 60px
+      +xs
+        padding-top: 40px
+  &--noisy-white
+    #{$this}__inner
+      @extend .section--noisy-white
+  &--sm
+    #{$this}__inner
+      max-width: 450px
+      padding: 45px 20px
+      +md
+        padding: 35px 20px 20px
+      +sm
+        padding: 20px
+      +xs
+        padding: 15px

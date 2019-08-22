@@ -9,7 +9,7 @@ hero: {
 для вас обоих, так пусть ваш партнер - ресторан “Квеври” будет вашим
 незаменимым помощником в ее планировании.',
   btns: [
-    { title: 'Заказать мероприятие', mod: 'btn--transp btn--white-dark', wrapMod: 'border'}
+    { href: false, title: 'Заказать мероприятие', mod: 'btn--full btn--transp btn--white-dark js-popup-open', wrapMod: 'border', attributes: { 'data-popup-target': 'order' } }
   ],
   breadcrumbs: {
     list: [
@@ -31,12 +31,10 @@ sectionGallery: {
 {% extends "layouts/_layout.html" %}
 
 {% block content %}  
-  {% include "partials/_hero.html" %}
-  
+  {% include "partials/_hero.html" %}  
   {% include "partials/sections/_s-gallery-simple.html" %}
   {% include "partials/sections/_s-event.html" %}
   {% include "partials/sections/_s-order-event.html" %}
-
 {% endblock %}
 
 

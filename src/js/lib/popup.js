@@ -39,21 +39,44 @@ export default class Popup {
   }
 
   closePopup(e) {
-    this.closeBtn = e.target.closest(`.${Popup.classNames.close}`);
-    const popup = e.target.classList.contains(Popup.classNames.target) ? e.target : null;
-    const close = this.closeBtn || popup;
-    if (!close) return;
+    if (e && e.type === 'keydown') {
+      if (e.keyCode && e.keyCode === 27) {
+        this.openPopups = this.popups.filter((popup) => {
+          if (popup.classList.contains(Popup.classNames.active)) {
+            return popup;
+          }
+          return null;
+        });
 
-    e.preventDefault();
-    this.popup = close.closest(`.${Popup.classNames.target}`);
-    this.name = this.popup.dataset.popup;
-    this.btn = document.querySelector(`.${Popup.classNames.open}[data-popup-target="${this.name}"]`);
+        if (!this.openPopups.length) return;
+        this.openPopups.forEach((popup) => {
+          popup.classList.remove(Popup.classNames.active);
+        });
+        document.body.classList.remove(Popup.classNames.noScroll);
 
-    this.popup.classList.remove(Popup.classNames.active);
-    document.body.classList.remove(Popup.classNames.noScroll);
+        if (this.onClose) {
+          this.onClose();
+        }
+      }
+    }
 
-    if (this.onClose) {
-      this.onClose(this.btn, this.popup);
+    if (e && e.type === 'click') {
+      this.closeBtn = e.target.closest(`.${Popup.classNames.close}`);
+      const popup = e.target.classList.contains(Popup.classNames.target) ? e.target : null;
+      const close = this.closeBtn || popup;
+      if (!close) return;
+
+      e.preventDefault();
+      this.popup = close.closest(`.${Popup.classNames.target}`);
+      this.name = this.popup.dataset.popup;
+      this.btn = document.querySelector(`.${Popup.classNames.open}[data-popup-target="${this.name}"]`);
+
+      this.popup.classList.remove(Popup.classNames.active);
+      document.body.classList.remove(Popup.classNames.noScroll);
+
+      if (this.onClose) {
+        this.onClose();
+      }
     }
   }
 
@@ -72,6 +95,7 @@ export default class Popup {
   _closePopup() {
     this.closePopupBinded = this.closePopup.bind(this);
     document.addEventListener('click', this.closePopupBinded);
+    document.addEventListener('keydown', this.closePopupBinded);
   }
 
   _destroy() {
@@ -80,8 +104,8 @@ export default class Popup {
 
     this.popups.forEach((popup) => {
       popup.classList.remove(Popup.classNames.active);
-      document.body.classList.remove(Popup.classNames.noScroll);
     });
+    document.body.classList.remove(Popup.classNames.noScroll);
   }
 }
 

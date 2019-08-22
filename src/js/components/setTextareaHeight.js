@@ -56,12 +56,12 @@ TextareaHeight.constants = {
 };
 
 export default function setTextareaHeight() {
-  const elems = [].slice.call(document.querySelectorAll('.js-textarea'));
+  const textareas = [].slice.call(document.querySelectorAll('.js-textarea'));
 
-  if (!elems.length) return;
+  if (!textareas.length) return;
 
-  elems.forEach((elem) => {
-    const taHeight = new TextareaHeight(elem);
+  textareas.forEach((textarea) => {
+    const taHeight = new TextareaHeight(textarea);
     taHeight.init();
   });
 }

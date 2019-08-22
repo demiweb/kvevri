@@ -1,7 +1,7 @@
 .fadeInLeft
   animation-name: fadeInLeft
-.bounceInDown
-  animation-name: bounceInDown
+.bounceInUp
+  animation-name: bounceInUp
 .rotateInRight
   animation-name: rotateInRight
 .rotateInLeft
@@ -10,6 +10,12 @@
   animation-name: fadeInLeftCenter
 .fadeInUp
   animation-name: fadeInUp
+
+@keyframes fadeIn
+  0%
+    opacity: 0
+  100%
+    opacity: 1
 
 @keyframes fadeInLeft
   0%
@@ -27,7 +33,7 @@
     opacity: 1
     transform: translate(0, -50%)
 
-@keyframes bounceInDown
+@keyframes bounceInUp
   0% 
     opacity: 0
     transform: translate3d(0, -100px, 0)

@@ -1,0 +1,62 @@
+{%set
+popup = {
+  name: 'thanks',
+  mod: 'popup--md popup--layer'
+}
+%}
+
+{% if page === 'popup-thanks' %}
+{% set 
+popup = {
+  name: 'thanks',
+  mod: 'popup--md popup--layer',
+  active: true
+}
+%}
+{% endif %}
+
+{% extends "layouts/_popup.html" %}
+
+{% block popup %}
+  <div class="popup__layer">
+    <img class="js-lazy" alt="" data-src="./img/bg-layer-popup.jpg"/>
+  </div>
+
+  <div class="popup__title-sm">
+    <h2 class="title">Спасибо за ваш <em class="accent">заказ!</em></h2>
+  </div>
+
+  <div class="popup__subttl">
+    Наши менеджеры обрабатывают ваш заказ и свяжутся
+с вами как можно скорее.
+  </div>
+
+  <div class="popup__btns">
+    <div class="popup__btn border border--sm-dark">
+      {{ mixins.btn(
+        title = 'На главную',
+        mod = 'btn--full'
+      ) }}
+    </div>
+
+    <div class="popup__btn border border--sm-dark">
+      {{ mixins.btn(
+        title = 'Продолжить покупки',
+        mod = 'btn--full btn--transp btn--gray-dark'
+      ) }}
+    </div>    
+  </div>
+
+  <div class="popup__social">
+      <p>Мы в соцсетях:</p>
+      {{ mixins.list(
+        name = 'social',
+        modifications = { wrap: '', item: '', link: '' },
+        list = [
+          { link: mixins.icon('instagram') },
+          { link: mixins.icon('google-plus') },
+          { link: mixins.icon('facebook') }
+        ]
+      ) }}
+    </div>
+{% endblock %}

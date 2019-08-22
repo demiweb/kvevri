@@ -112,11 +112,14 @@
     &__wrap
       .gallery-slide
         width: 40%
-        &:not(.swiper-slide-active)
+        position: relative
+        left: 8vw
+        &:not(.is-visible)
           opacity: 0.3
           pointer-events: none
         +sm
           width: 60%
+          left: auto
 
 .prev,
 .next

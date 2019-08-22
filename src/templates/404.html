@@ -1,0 +1,25 @@
+---
+title: 404
+page: 404
+hero: {
+  bg: hero-404.jpg,
+  title: <em class="yellow">404</em> ,
+  subttl: 'К сожалению, что-то пошло не так. Такой страницы не существует.
+Но вы можете начать все сначала:',
+  btns: [
+    { title: 'На главную', href: '#', mod: 'btn--full' },
+    { title: 'Посмотреть меню', mod: 'btn--full btn--transp btn--white-dark' }
+  ],
+  breadcrumbs: {
+    list: [
+      { link: 'Главная' },
+      { item: '-' },
+      { link: 'События', modLink: 'is-active' }
+    ]
+  }
+}
+---
+{% extends "layouts/_layout.html" %}
+{% block content %}  
+  {% include "partials/_hero.html" %}
+{% endblock %}

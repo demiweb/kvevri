@@ -23,8 +23,8 @@ sectionContacts: {
             наша любовь. Приходите к нам в ресторан или закажите кусочек
             настоящей грузинской заботы прямо к себе в дом!',
     btns: [
-      { title: 'Заказать доставку' },
-      { title: 'Хочу к вам в ресторан', mod: 'btn--transp btn--white-dark' }
+      { title: 'Заказать доставку', href: '#' },
+      { title: 'Хочу к вам в ресторан', mod: 'btn--transp btn--white-dark', href: '#' }
     ],
     text: mixins.icon('delivery-truck') + 'Бесплатная доставка при заказе <strong>от 1000 грн!</strong> (с 10:00 до 22:00)'
   }
@@ -40,5 +40,3 @@ sectionContacts: {
   {% include "partials/sections/_s-gallery.html" %}
   {% include "partials/sections/_s-contacts.html" %}  
 {% endblock %}
-
-

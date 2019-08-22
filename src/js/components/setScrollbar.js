@@ -6,7 +6,6 @@ export default function setScrollbar() {
 
   if (!containers.length) return;
 
-
   if (!isWebkit) {
     containers.forEach((container) => {
       const ps = new PerfectScrollbar(container, {

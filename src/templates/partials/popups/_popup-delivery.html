@@ -40,38 +40,41 @@ neighborhoods = [
   }  
 ]
 %}
+{%set
+popup = {
+  name: 'delivery',
+  closeBtn: true
+}
+%}
 
-<!-- begin popup -->
-<div class="popup js-popup" data-popup="delivery">
-  <div class="popup__inner">
-    <button class="popup__close js-popup-close"></button>
+{% extends "layouts/_popup.html" %}
 
-    <div class="popup__title">
-      <h2 class="title">Полный список <br> <em class="accent">районов доставки:</em></h2>
-    </div>
-
-    <div class="popup__content">
-      <!-- begin neighborhoods -->
-      <div class="neighborhoods">
-        {% for i in neighborhoods %}
-        <div class="neighborhoods__col">
-          {% for j in i.blocks %}
-          <!-- begin neighborhood -->
-          <div class="neighborhood">
-            <div class="neighborhood__title">{{ j.title }}</div>
-
-            <div class="neighborhood__text">
-              {{ j.text }}
-            </div>
-          </div>
-          <!-- end neighborhood -->
-          {% endfor %}
-        </div>
-        
-        {% endfor %}
-      </div>
-      <!-- end neighborhoods -->
-    </div>
-  </div>
+{% block popup %}
+<div class="popup__title">
+  <h2 class="title">Полный список <br> <em class="accent">районов доставки:</em></h2>
 </div>
-<!-- end popup -->
+
+<div class="popup__content">
+  <!-- begin neighborhoods -->
+  <div class="neighborhoods">
+    {% for i in neighborhoods %}
+    <div class="neighborhoods__col">
+      {% for j in i.blocks %}
+      <!-- begin neighborhood -->
+      <div class="neighborhood">
+        <div class="neighborhood__title">{{ j.title }}</div>
+
+        <div class="neighborhood__text">
+          {{ j.text }}
+        </div>
+      </div>
+      <!-- end neighborhood -->
+      {% endfor %}
+    </div>
+
+    {% endfor %}
+  </div>
+  <!-- end neighborhoods -->
+</div>
+{% endblock %}
+
