@@ -369,8 +369,8 @@
                   </div>
                   <div class="hero__text js-anim-el" data-anim-name="fadeInLeft" data-anim-delay="0.1s">Свадьба это начало новой семьи, поэтому решение о вступлении в брак должно быть обдуманным и здравым. Не забывайте, что этот день очень знаменательный для вас обоих, так пусть ваш партнер - ресторан “Квеври” будет вашим незаменимым помощником в ее планировании.</div>
                   <div class="hero__btns js-anim-el" data-anim-name="fadeInLeft" data-anim-delay="0.2s">
-                    <div class="hero__btn border">
-                      <a href="#" class="btn btn--transp btn--white-dark">Заказать мероприятие</a>
+                    <div class="hero__btn border border">
+                      <button class="btn btn--full btn--transp btn--white-dark js-popup-open" data-popup-target="order">Заказать мероприятие</button>
                     </div>
                   </div>
                 </div>
@@ -381,7 +381,7 @@
         </section>
         <!-- end hero -->
         <!-- begin section -->
-        <section class="section">
+        <section class="section pt-sml pb-sml">
           <div class="container">
             <div class="section__title section__title-mb section-title js-anim-el" data-anim-name="fadeInLeft">
               <div class="section-title__title">
@@ -391,7 +391,7 @@
               <div class="section-title__text">Ничто и никто не расскажет вам о празднике <br> так, как сделают это качественно <br> сделанные фотоснимки</div>
             </div>
             <!-- begin gallery -->
-            <div class="gallery js-lightgallery">
+            <div class="gallery js-lightgallery js-anim-el" data-anim-name="fadeInLeft" data-anim-delay="0.2s">
               <!-- begin gallery-slide -->
               <a href="./img/gallery/01.jpg" class="gallery-slide js-lazy" data-exthumbimage="./img/gallery/01.jpg" data-background-image="./img/gallery/01.jpg"></a>
               <!-- end gallery-slide -->
@@ -416,7 +416,7 @@
         </section>
         <!-- end section -->
         <!-- begin section -->
-        <section class="section">
+        <section class="section pt-sml pb-md">
           <div class="container">
             <div class="section__title section__title-mb-sm section-title js-anim-el" data-anim-name="fadeInLeft">
               <div class="section-title__title">
@@ -460,24 +460,23 @@
         </section>
         <!-- end section -->
         <!-- begin section -->
-        <section class="section s-order-event pt-sml pb-md bg-cover bg-center-center js-lazy" data-background-image="./img/bg-section/bg-order-del.jpg">
+        <section class="section s-order-event pt-lg pb-md bg-cover bg-center-center js-lazy" data-background-image="./img/bg-section/bg-history.jpg">
+          <div class="section__layer">
+            <img alt="" class="js-lazy lazy is-loaded" src="./img/bg-layer.png" data-loaded="true">
+          </div>
           <div class="container">
             <div class="section__title section__title-mb section-title  section-title--light js-anim-el" data-anim-name="fadeInLeft">
               <div class="section-title__title">
                 <h2 class="title title--white">Мы оставляем <br> лучшие <em class="accent">впечатления</em></h2>
-              </div>
-              <div class="section-title__text">
-                <p>Хотите получить скидку 10% на наши блюда?</p>
-                <p>Забирайте товар у нас в ресторанах лично</p>
               </div>
             </div>
             <div class="section__center js-anim-el" data-anim-name="fadeInLeft" data-anim-delay="0.2s">
               <div class="section__center-img js-lazy" data-background-image="./img/events/05.jpg">
               </div>
               <div class="section__center-content">
-                <div class="section__center__text">После приготовлений наступает этот день, и он должен быть совершенен. Вы встаете рано, так как это было довольно сложно выспаться из-за нервов. Все ваши родственники улыбаются и разделяют ваше счастье. Через несколько часов вы выглядите самой роскошный в вашей жизни и все ваши усилия того стоили.</div>
+                <div class="section__center-text">После приготовлений наступает этот день, и он должен быть совершенен. Вы встаете рано, так как это было довольно сложно выспаться из-за нервов. Все ваши родственники улыбаются и разделяют ваше счастье. Через несколько часов вы выглядите самой роскошный в вашей жизни и все ваши усилия того стоили.</div>
                 <div class="section__center-btn border">
-                  <a href="#" class="btn btn--full">Заказать мероприятие</a>
+                  <button class="btn btn--full js-popup-open" data-popup-target="order">Заказать мероприятие</button>
                 </div>
               </div>
             </div>
@@ -583,55 +582,48 @@
     <!-- END content -->
     <!-- begin popups -->
     <!-- begin popup -->
-    <div class="popup js-popup" data-popup="delivery">
+    <div class="popup js-popup popup--sm popup--noisy-white" data-popup="order">
       <div class="popup__inner">
-        <button class="popup__close js-popup-close"></button>
-        <div class="popup__title">
-          <h2 class="title">Полный список <br> <em class="accent">районов доставки:</em></h2>
+        <div class="popup__title-xs">
+          <h3 class="title title--h3">Оставьте <em class="accent">заявку</em></h3>
         </div>
-        <div class="popup__content">
-          <!-- begin neighborhoods -->
-          <div class="neighborhoods">
-            <div class="neighborhoods__col">
-              <!-- begin neighborhood -->
-              <div class="neighborhood">
-                <div class="neighborhood__title">Голосеевский:</div>
-                <div class="neighborhood__text"> Новое Строение, Голосеево, Китаево, Мышеловка, Сапёрная слободка, Добрый Путь, Корчеватое, Демиевка, Ширма, Теремки-I, Теремки-II, Чапаевка, Феофания, Покол, Пирогово, Нижняя Теличка, Паньковщина, ВДНХ, Забайковье, Монтажник, Комсомольское, Жовтневое (Багринова гора), промзона «По улице Васильковской», промзона «Пирогово», промзона «Корчеватое», промрайон «Теличка». </div>
+        <div class="popup__subttl-sm">Оставьте ваши контактные данные и наш менеджер свяжется с вами</div>
+        <div class="popup__form">
+          <!-- begin form -->
+          <div class="form">
+            <form>
+              <div class="form__inner">
+                <div class="form__field">
+                  <!-- begin input -->
+                  <div class="input">
+                    <input type="text" placeholder="Введите ваше имя">
+                  </div>
+                  <!-- end input -->
+                </div>
+                <div class="form__field">
+                  <!-- begin input -->
+                  <div class="input">
+                    <input type="tel" placeholder="Введите ваш телефон">
+                  </div>
+                  <!-- end input -->
+                </div>
+                <div class="form__btn">
+                  <div class="border border--sm-dark">
+                    <button class="btn btn--full">Оставить заявку</button>
+                  </div>
+                </div>
+                <div class="form__checkbox">
+                  <!-- begin checkbox -->
+                  <label class="checkbox checkbox--gray checkbox--sm">
+                    <input type="checkbox" checked="">
+                    <span>Я ознакомился с <a href="#">политикой конфиденциальности</a></span>
+                  </label>
+                  <!-- end checkbox -->
+                </div>
               </div>
-              <!-- end neighborhood -->
-            </div>
-            <div class="neighborhoods__col">
-              <!-- begin neighborhood -->
-              <div class="neighborhood">
-                <div class="neighborhood__title">Шевченковский:</div>
-                <div class="neighborhood__text"> Лукьяновка, Кудрявец, Татарка, Сырец, Волейков, Шулявка, Нивки, Солдатская слободка, промзона «По улице Дегтяревской» </div>
-              </div>
-              <!-- end neighborhood -->
-              <!-- begin neighborhood -->
-              <div class="neighborhood">
-                <div class="neighborhood__title">Печерский:</div>
-                <div class="neighborhood__text"> Печерск, Липки, Зверинец, Верхняя Теличка, Чёрная гора, Сапёрное поле, Черепанова Гора. </div>
-              </div>
-              <!-- end neighborhood -->
-            </div>
-            <div class="neighborhoods__col">
-              <!-- begin neighborhood -->
-              <div class="neighborhood">
-                <div class="neighborhood__title">оСТАЛЬНЫЕ:</div>
-                <div class="neighborhood__text"> Дарница, Соцгородок, Русановка, Березняки, район М. Левобережная, район М. Черниговская, район М Лесная, Харьковский массив (М Бориспольская, М. Вырлица, М. Харьковская, М. Позняки, М. Осокорки), ДВРЗ. </div>
-              </div>
-              <!-- end neighborhood -->
-            </div>
-            <div class="neighborhoods__col">
-              <!-- begin neighborhood -->
-              <div class="neighborhood">
-                <div class="neighborhood__title">Подольский:</div>
-                <div class="neighborhood__text"> Подол, Куренёвка, Цветоводство, Приорка , Мостицкий массив, Виноградарь, Ветряные горы, Беличье Поле, Берковец. </div>
-              </div>
-              <!-- end neighborhood -->
-            </div>
+            </form>
           </div>
-          <!-- end neighborhoods -->
+          <!-- end form -->
         </div>
       </div>
     </div>
