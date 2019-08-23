@@ -3,7 +3,7 @@ import 'intersection-observer';
 import './lib/polyfill';
 
 import sayHello from './lib/sayHello';
-import setTouch from './components/setHTMLClassNames';
+import { setTouch, setReady } from './components/setHTMLClassNames';
 import setLazy from './components/setLazy';
 import setSliders from './components/setSliders';
 import setTabs from './components/setTabs';
@@ -19,6 +19,7 @@ import setScrollbar from './components/setScrollbar';
 $(() => {
   sayHello();
   setTouch();
+  setReady();
   setLazy();
   setSliders();
   setTabs();

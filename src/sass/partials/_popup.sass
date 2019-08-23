@@ -12,7 +12,8 @@
   padding: 15px
   visibility: hidden
   opacity: 0
-  +tr(opacity .3s, visibility .3s)
+  +ready
+    +tr(opacity .3s, visibility .3s)
   &.is-active
     visibility: visible
     opacity: 1

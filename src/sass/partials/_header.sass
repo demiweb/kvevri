@@ -36,9 +36,10 @@
       left: 0
       top: 0
       z-index: 10
-      transform: translate(-102%, 0)
-      +tr(transform .3s)
+      transform: translate(-102%, 0)      
       +vertical
+      +ready
+        +tr(transform .3s)
       .container
         display: inline-block
         vertical-align: middle
