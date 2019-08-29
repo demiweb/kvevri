@@ -15,6 +15,7 @@ import animateOnScroll from './components/animateOnScroll';
 import setTextareaHeight from './components/setTextareaHeight';
 import setPopups from './components/setPopups';
 import setScrollbar from './components/setScrollbar';
+import toggleFormAdressBlock from './components/toggleFormAdressBlock';
 
 $(() => {
   sayHello();
@@ -30,4 +31,5 @@ $(() => {
   setTextareaHeight();
   setPopups();
   setScrollbar();
+  toggleFormAdressBlock();
 });

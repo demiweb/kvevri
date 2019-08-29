@@ -12,7 +12,7 @@ formBlocks = [
     title: 'Выберите способ получения заказа:',
     radios: [
       { label: 'Доставка курьером', fieldAttributes: { name: 'delivery', checked: '' } },
-      { label: 'Самовывоз', fieldAttributes: { name: 'delivery' } }
+      { label: 'Самовывоз', fieldAttributes: { name: 'delivery', 'data-toggle-block-target': 'address' }, fieldClass: 'js-toggle-btn' }
     ]
   },
   {
@@ -20,6 +20,16 @@ formBlocks = [
     radios: [
       { label: 'Наличными курьеру', fieldAttributes: { name: 'payment', checked: '' } },
       { label: 'Картой Visa/Mastercard', fieldAttributes: { name: 'payment' } }
+    ]
+  },
+  {
+    colMod: 'js-toggle-block is-hidden',
+    colAttributes: { 'data-toggle-block': 'address' },
+    title: 'Выберите адрес для самовывоза:',
+    radios: [
+      { label: 'Строителей, 34/1', fieldAttributes: { name: 'delivery_address', checked: '' } },
+      { label: 'Броварской проспект 3A', fieldAttributes: { name: 'delivery_address' } },
+      { label: 'Княжной Затон, 4', fieldAttributes: { name: 'delivery_address' } }
     ]
   }
 ]
@@ -66,7 +76,7 @@ banner = {
                 </div>
                 <div class="form__row">
                  {% for i in formBlocks %}
-                 <div class="form__col">
+                 <div class="form__col{% if i.colMod %} {{ i.colMod }}{% endif %}" {% for attr, attr_value in i.colAttributes %} {{ attr }}="{{ attr_value }}" {% endfor %}>
                    <!-- begin form-block -->
                    <div class="form-block">
                      <div class="form-block__title">{{ i.title }}</div>
@@ -79,7 +89,7 @@ banner = {
                          type = 'radio',
                          placeholder = '',
                          value = '',
-                         fieldClass = '',
+                         fieldClass = j.fieldClass,
                          label = { last: j.label, span: true },
                          fieldAttributes = j.fieldAttributes
                        ) }}

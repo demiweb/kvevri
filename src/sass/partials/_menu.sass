@@ -90,10 +90,12 @@
     border: 1px solid transparent
     padding: 7px
     border-radius: 20px
-    +tr(color .3s, border-color .3s)
+    +tr(color .3s, border-color .3s, background-color .3s)
     +xss
       padding: 4px
     &.is-active
       border-color: $accent
+      color: $white
+      background-color: $accent
     +hover
       @extend .menu-nav__link.is-active

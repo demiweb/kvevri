@@ -43,7 +43,8 @@ button
   &.is-loaded 
     animation: fadeIn 1s
 
-.main  
+.main
+  position: relative
   &__breadcrumbs
     padding-top: 25px
     padding-bottom: 25px
@@ -55,6 +56,19 @@ button
       padding-top: 40px
     +xss
       padding-bottom: 10px
+  &__img
+    position: absolute
+    z-index: 0
+    top: 0
+    right: 0
+    width: percentage(530/1920)
+    overflow: hidden
+    .lazy
+      &.is-loaded
+        position: relative
+        display: inline-block
+        margin-top: -10%
+        right: -20%
   &--noisy
     @extend .section--noisy
 

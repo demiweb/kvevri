@@ -418,7 +418,7 @@
                               <!-- end radio -->
                               <!-- begin radio -->
                               <label class="radio">
-                                <input type="radio" name="delivery">
+                                <input class="js-toggle-btn" type="radio" name="delivery" data-toggle-block-target="address">
                                 <span>Самовывоз</span>
                               </label>
                               <!-- end radio -->
@@ -441,6 +441,33 @@
                               <label class="radio">
                                 <input type="radio" name="payment">
                                 <span>Картой Visa/Mastercard</span>
+                              </label>
+                              <!-- end radio -->
+                            </div>
+                          </div>
+                          <!-- end form-block -->
+                        </div>
+                        <div class="form__col js-toggle-block is-hidden" data-toggle-block="address">
+                          <!-- begin form-block -->
+                          <div class="form-block">
+                            <div class="form-block__title">Выберите адрес для самовывоза:</div>
+                            <div class="form-block__radios">
+                              <!-- begin radio -->
+                              <label class="radio">
+                                <input type="radio" name="delivery_address" checked="">
+                                <span>Строителей, 34/1</span>
+                              </label>
+                              <!-- end radio -->
+                              <!-- begin radio -->
+                              <label class="radio">
+                                <input type="radio" name="delivery_address">
+                                <span>Броварской проспект 3A</span>
+                              </label>
+                              <!-- end radio -->
+                              <!-- begin radio -->
+                              <label class="radio">
+                                <input type="radio" name="delivery_address">
+                                <span>Княжной Затон, 4</span>
                               </label>
                               <!-- end radio -->
                             </div>
@@ -543,7 +570,7 @@
               </div>
               <div class="footer__copy">
                 <p>&copy; 2019 Квеври</p>
-                <p>Квеври - лучший ресторан<br> грузинской кухня в Киеве!</p>
+                <p>Поєднуючи традиції та інновації</p>
               </div>
               <div class="footer__pay">
                 <span>Принимаем к оплате:</span>
