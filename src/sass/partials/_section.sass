@@ -203,6 +203,33 @@
   &--sm
     #{$this}__title
 
+.section-text
+  h2, h3, h4
+    @extend .title
+  h2
+    @extend .title--h3
+  h3
+    @extend .title--h4
+  h4
+    @extend .title--h5
+  p, ol, ul
+    margin-bottom: 30px
+    +md
+      margin-bottom: 15px
+  ul
+    li
+      &::before
+        content: '\2022'
+        display: inline-block
+        margin-right: 5px
+  ol
+    list-style-type: decimal
+    margin-left: 1.1em
+  a
+    color: $blue
+    text-decoration: underline
+
+
 .s-hits
   .section__layer
     +css-lock(20, 135, 320, 1499, height)

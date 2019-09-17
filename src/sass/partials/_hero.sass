@@ -46,6 +46,14 @@
   &__breadcrumbs
     @extend .main__breadcrumbs
     padding-bottom: 0
+  &__bottom-layer
+    position: absolute
+    bottom: -1px
+    left: 0
+    right: 0
+    z-index: 0
+    transform: scaleY(-1)
+    font-size: 0
 
 
   .hero-inner
@@ -68,3 +76,10 @@
       +xs
         padding-left: 0
         padding-right: 0
+
+    &--noisy
+      @extend .section--noisy
+    &--sm
+      .hero-inner__inner
+        padding-top: 5%
+        padding-bottom: 10%

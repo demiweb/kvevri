@@ -1,5 +1,5 @@
 <!-- begin hero-inner -->
-<div class="hero-inner js-lazy" data-background-image="./img/hero/{{ hero.bg }}">
+<div class="hero-inner{% if hero.innerMod %} {{ hero.innerMod }}{% endif %} {% if hero.bg %} js-lazy{% endif %}" {% if hero.bg %} data-background-image="./img/hero/{{ hero.bg }}"{% endif %}>
   {% if hero.breadcrumbs %}
     <div class="hero__breadcrumbs">
       <div class="container">
@@ -43,6 +43,12 @@
           <div class="hero__del js-anim-el" data-anim-name="fadeInLeft" data-anim-delay="0.3s">
             {{ hero.text | safe }}
           </div>
+        {% endif %}
+
+        {% if hero.bottomLayer %}
+        <div class="hero__bottom-layer">
+          <img class="js-lazy" alt="" data-src="./img/bg-layer.png"/>
+        </div>
         {% endif %}
         
       </div>
