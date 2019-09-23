@@ -39,6 +39,15 @@ button
     width: 50px
     height: 73px
 
+.out
+  padding-top: $header-height
+  +lg
+    padding-top: $header-height-lg
+  +md
+    padding-top: $header-height-md
+  +sm
+    padding-top: $header-height-sm
+
 .lazy
   &.is-loaded 
     animation: fadeIn 1s
@@ -46,7 +55,8 @@ button
 .main
   position: relative
   &__breadcrumbs
-    padding-top: 25px
+    // padding-top: 25px
+    padding-top: 70px
     padding-bottom: 25px
     +md
       padding-top: 70px
@@ -119,6 +129,10 @@ button
   // +light
   font-size: 13px
   color: $gray-light
+  .price & 
+    font-size: inherit
+    span
+      font-size: 0.55em
   &--gray
     color: $gray
 
@@ -149,6 +163,7 @@ button
     background-color: $black
     border-radius: 20px
     +flex(center, center)
+    border: 1px solid $white
   &--white
     input, button
       // background-color: $white
@@ -237,3 +252,6 @@ button
   .icon
     margin-right: 5px
     font-size: 18px
+
+.added_to_cart
+  display: none !important

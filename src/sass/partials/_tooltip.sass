@@ -41,6 +41,8 @@
     max-height: 465px
     overflow: auto
     padding-right: 15px
+    +sm
+      max-height: 265px
   &__bottom
     +flex(space-between, center)
     padding-top: 15px
@@ -68,8 +70,17 @@
     flex-wrap: wrap
     padding-right: 0
   &__img
+    max-width: 25%
+    font-size: 0
+    +sm
+      max-width: 100px
+      margin-left: auto
+      margin-right: auto
+      padding-top: 10px
+      padding-bottom: 10px
     img
       min-width: 10px
+      min-height: 10px
     +sm
       // width: 70px
       // flex: 0 0 70px
@@ -77,6 +88,11 @@
     padding-left: 20px
     padding-right: 20px
     flex-grow: 1
+    +sm
+      padding-left: 0
+      padding-right: 0
+      width: 100%
+      text-align: center
   &__price
     border-left: 1px solid  $gray-light
     border-right: 1px solid  $gray-light
@@ -102,6 +118,8 @@
       +light
   &__counter
     +flex
+    +sm
+      display: block
   &__close
     +icon-close(16, 1, currentColor)
     position: absolute

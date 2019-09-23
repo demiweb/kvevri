@@ -37,4 +37,10 @@
   &--full
     min-width: 0
     width: 100%
-    
+  &--arrow
+    +after
+      +icon-arrow(12, 12, 2, currentColor, -45)
+      display: inline-block
+      position: relative
+      top: -.1em
+      margin-left: 10px

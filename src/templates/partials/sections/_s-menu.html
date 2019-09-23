@@ -3,8 +3,8 @@
   <div class="container">
     <!-- begin menu -->
     <div class="menu">
-      <div class="menu__toggle-wrap">
-        <button class="menu__toggle js-burger" data-menu-target="menu_nav">Смотреть все меню</button>
+      <div class="menu__toggle">
+        <button class="btn btn--arrow  js-burger" data-menu-target="menu_nav">Смотреть все меню</button>
       </div>
 
       <div class="menu__aside js-menu" data-menu="menu_nav">
@@ -25,6 +25,7 @@
         <div class="title title--h3 title--white title--semi">Люля-кебаб из баранины</div>
       </div>
 
+      <div class="menu__items-in">
         {% for i in items %}
           <div class="menu__item">
             {{ mixins.item(
@@ -36,6 +37,9 @@
             ) }}
           </div>
         {% endfor %}
+      </div>
+
+        
       </div>
     </div>
     <!-- end menu -->
