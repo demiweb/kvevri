@@ -1,6 +1,10 @@
 .form
   &__field
     margin-bottom: 15px
+  &__field-mb-md
+    margin-bottom: 30px
+    +md
+      margin-bottom: 15px
   &__checkbox
     .checkbox
       display: inline-block
@@ -43,6 +47,11 @@
   &__col-md
     +md
       width: 100%
+  &__radios
+    +flex(space-between, center)
+    +xs
+      flex-direction: column
+      align-items: flex-start
   
 .form-block
   &__title
@@ -63,6 +72,7 @@
     padding: 10px 20px
     border-radius: 30px
     +tr(border-color .3s)
+    appearence: none
     &:focus
       border-color: $accent
     +placeholder

@@ -16,7 +16,7 @@ import setTextareaHeight from './components/setTextareaHeight';
 import setPopups from './components/setPopups';
 import setScrollbar from './components/setScrollbar';
 import toggleFormAdressBlock from './components/toggleFormAdressBlock';
-// import toggleHeader from './components/toggleHeader';
+import setDatepicker from './components/setDatepicker';
 
 $(() => {
   sayHello();
@@ -33,7 +33,7 @@ $(() => {
   setPopups();
   setScrollbar();
   toggleFormAdressBlock();
-  // toggleHeader();
+  setDatepicker();
 });
 
 window.setLazy = setLazy;

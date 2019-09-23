@@ -15,3 +15,4 @@ PageList:
 - file: popup-thanks.html
 - file: 404.html
 - file: text-page.html
+- file: popup-event.html

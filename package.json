@@ -64,6 +64,7 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.4.4",
+    "flatpickr": "^4.6.2",
     "intersection-observer": "^0.7.0",
     "jquery": "^3.4.1",
     "lg-autoplay": "^1.0.4",

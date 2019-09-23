@@ -5,12 +5,17 @@
     +md
       display: block
   li
+    position: relative
     +xss
       +notlast
         margin-bottom: 10px
     &.current-menu-item
       color: $white
       background-color: $accent
+    +hover
+      > .sub-menu
+        visibility: visible
+        opacity: 1
   a
     display: block
     text-transform: uppercase
@@ -57,3 +62,23 @@
       +hover
         color: $white
         background-color: transparent
+
+
+.sub-menu
+  position: absolute
+  top: 100%
+  left: 0
+  z-index: 1
+  background-color: $black-light
+  display: block !important
+  width: 300px
+  visibility: hidden
+  opacity: 0
+  +ready
+    +tr(visibility .3s, opacity .3s)
+  +md
+    position: static
+    visibility: visible
+    opacity: 1
+    font-size: .75em !important
+    width: auto
