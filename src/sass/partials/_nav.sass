@@ -82,3 +82,11 @@
     opacity: 1
     font-size: .75em !important
     width: auto
+    max-height: 0
+    overflow: hidden
+  &.is-active
+    visibility: visible
+    opacity: 1
+    +md
+      overflow: visible
+      max-height: none

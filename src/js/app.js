@@ -17,6 +17,7 @@ import setPopups from './components/setPopups';
 import setScrollbar from './components/setScrollbar';
 import toggleFormAdressBlock from './components/toggleFormAdressBlock';
 import setDatepicker from './components/setDatepicker';
+import toggleDropdown from './components/toggleDropdown';
 
 $(() => {
   sayHello();
@@ -34,6 +35,7 @@ $(() => {
   setScrollbar();
   toggleFormAdressBlock();
   setDatepicker();
+  toggleDropdown();
 });
 
 window.setLazy = setLazy;
