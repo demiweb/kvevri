@@ -14,7 +14,15 @@ class Dropdown {
       this.close();
     }
 
-    this.btn = e.target.classList.contains(this.classNames.btn) ? e.target : null;
+    if (e.target.classList && e.target.classList.contains(this.classNames.btn)) {
+      this.btn = e.target.querySelector('a');
+    } else if (e.target.parentNode.classList
+       && e.target.parentNode.classList.contains(this.classNames.btn)) {
+      this.btn = e.target.parentNode.querySelector('a');
+    } else {
+      this.btn = null;
+    }
+
     if (!this.btn) return;
 
     e.preventDefault();
@@ -22,9 +30,11 @@ class Dropdown {
     this.dropdown = this.btn.parentNode.querySelector(`.${this.classNames.dropdown}`)
       || this.btn.nextElementSibling;
 
-    this.btnsElse = [...document.querySelectorAll(`.${this.classNames.btn}`)].filter((btn) => btn !== this.btn);
+    this.btnsElse = [...document.querySelectorAll(`.${this.classNames.btn} > a`)].filter((btn) => btn !== this.btn);
+
     this.dropdownsElse = this.btnsElse.map((btn) => btn.parentNode.querySelector(`.${this.classNames.dropdown}`)
         || btn.nextElementSibling);
+
 
     this.btnsElse.forEach((btn) => {
       btn.classList.remove(IS_ACTIVE);
